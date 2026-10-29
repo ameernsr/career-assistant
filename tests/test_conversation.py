@@ -139,3 +139,11 @@ def test_explicit_claim_survives_not_known_of_its_prerequisite(tax):
                     claims=[ConceptClaim(concept_id="bi_tools", proficiency="used")], not_known=["sql_basics"])
     known, _ = known_sets(p, tax)
     assert "bi_tools" in known and "data_modeling" not in known
+
+
+def test_role_menu_shown_whenever_role_is_unknown_even_if_llm_does_not_flag_it(tax):
+    # Real case: «تعمیرکار سفینه» → the model left unsupported_role empty and just asked again.
+    llm = FakeLLM(TurnExtraction(next_question="برای چه مسیر شغلی‌ای می‌خوای راهنمایی بگیری؟"))
+    reply, st = next_turn(ConversationState(), "تعمیرکار سفینه", llm, tax)
+    assert st.profile.target_role is None
+    assert "تحلیلگر داده" in reply  # the supported roles are listed, deterministically

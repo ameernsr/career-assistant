@@ -153,6 +153,8 @@ def next_turn(state: ConversationState, user_msg: str, llm, tax: Taxonomy) -> tu
             p.target_level = "junior"
         return "ممنون! نقشه‌ی راه شما آماده است.", state
     question = ext.next_question or FALLBACK_QUESTIONS[min(state.questions_asked, MAX_QUESTIONS - 1)]
+    if p.target_role is None:  # deterministic: never depend on the model noticing an unsupported job
+        question = _role_menu(tax, question)
     return _ask(state, question)
 
 
@@ -229,7 +231,8 @@ the single most useful next question. Reply with JSON only, matching this shape:
  "enough_info": true when target role, target level and background are clear}}
 
 Rules:
-- Use only ids from the catalog below. If the wanted job is not in ROLES, set target_role null and put the job in unsupported_role.
+- Use only ids from the catalog below. If the user names ANY job that is not in ROLES (also unusual, fictional or
+  joking ones, e.g. «تعمیرکار سفینه», «خلبان»), set target_role null and put that job, as written, in unsupported_role.
 - "heard" means the user only heard the name; "used" means they worked with it in projects or a job.
 - current_level is the user's current level in the target role (students with no job experience: "none").
 - Ask one short, friendly Persian question at a time; prioritise target role, then target level, then education and

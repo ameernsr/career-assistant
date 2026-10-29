@@ -308,6 +308,11 @@ with tab_path:
                     st.chat_message(m["role"], avatar="🧑" if m["role"] == "user" else "🧭").markdown(m["content"])
             hint = "اصلاح کنید، مثلاً «من اکسل بلد نیستم»" if ss.conv.done else "پیامتان را بنویسید…"
             msg = st.chat_input(hint)
+            if not ss.conv.done and ss.conv.profile.target_role is None and ss.conv.questions_asked > 0:
+                pick = st.pills("یا یکی از نقش‌ها را انتخاب کنید", list(tax.roles), key=f"role-pick-{ss.conv.questions_asked}",
+                                format_func=lambda r: tax.roles[r]["name_fa"])
+                if pick:
+                    msg = f"می‌خوام {tax.roles[pick]['name_fa']} بشم"
             voice = st.audio_input("🎤 یا با صدا بگویید", key="voice")  # A-10 (idea from Amir's prototype)
             if voice is not None:
                 data = voice.getvalue()
