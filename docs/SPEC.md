@@ -50,9 +50,10 @@ known  -= not_known                                                            #
 stages  = nx.topological_generations(G.subgraph(closure − known))
 ```
 
-**Ranking (B-04, B-07):** baseline = Jaccard on taxonomy ids. hybrid = `0.45·cos(emb) + 0.35·coverage + 0.10·seniority_fit + 0.10·location_fit`, then optional LLM rerank of the top 20. Weights are chosen once, not tuned on the eval set.
+**Ranking (B-04, B-07):** baseline = Jaccard on taxonomy ids. hybrid = `0.45·cos(emb) + 0.35·coverage + 0.10·φ_exp + 0.10·location_fit`, then optional LLM rerank of the top 20. Weights are chosen once, not tuned on the eval set. If the LLM rerank fails or exceeds its timeout, return the hybrid order (NF-06).
+- `φ_exp` (optional, P2 decides): `1` if `y_user ≥ y_min(job)`, else `exp(−λ·(y_min − y_user)²)` with λ = 0.5; `y_min` is extracted per job in the same LLM pass that maps job skills to taxonomy ids. Without `y_min`, fall back to seniority-label match.
 
-**Evaluation (RFP 10.2):** 3 synthetic resumes × 25 postings, labels in `data/eval/labels.csv` (`resume_id,job_id,relevant`). Report P@5 and nDCG@10 for baseline, hybrid, hybrid+rerank.
+**Evaluation (RFP 10.2):** 3 synthetic resumes × 25 postings: junior data analyst, mid backend developer, and one business profile (marketing or accounting), because most cached postings are non-technical. Binary labels in `data/eval/labels.csv` (`resume_id,job_id,relevant`). Report P@5, nDCG@10, MRR and Recall@10 for baseline, hybrid, hybrid+rerank. **Only numbers produced by `scripts/eval_ranking.py` go into the report or slides.**
 
 ## 4. Requirements and acceptance criteria
 
@@ -96,3 +97,14 @@ Status: ☐ todo · ◐ in progress · ☑ done (update in your PR).
 - **13:00** each module runs alone with sample data.
 - **14:45** every Must and Should works end to end in the app. After this, only Coulds and fixes.
 - **16:15** code freeze → rehearse demo, secret scan, submit by 17:00.
+
+## 6. Decisions log
+
+| Time | Decision | Why |
+|---|---|---|
+| 11:00 | Knowing a concept implies its prerequisites; explicit «بلد نیستم» wins | Team vote; shorter, more realistic roadmaps |
+| 11:50 | Remotive/RemoteOK dropped | Their robots.txt disallows `/api/*` for bots (NF-08) |
+| 12:40 | From Erfan's architecture doc: adopt metric definitions (P@5, R@10, MRR, nDCG@10), φ_exp (optional), LLM-timeout fallback; use its formulas in REPORT.md | Cheap, improves the 20-pt ML criterion |
+| 12:40 | Not adopted: BM25, semantic chat cache, graded 0–3 labels, required/preferred split (unless free in the extraction prompt) | Time, privacy risk (shared cache across users), RFP asks for binary relevance |
+| 12:40 | The doc's results table holds placeholder numbers; it stays empty until eval runs | Reporting unmeasured results would mislead the jury |
+| 12:40 | `fa_normalize` applies NFKC | Persian PDFs extract as presentation forms (ﻣﺴﺎﺑﻘﻪ); verified on a real LuaTeX PDF |
