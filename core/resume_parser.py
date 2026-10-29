@@ -72,10 +72,14 @@ def _parse_month(value: Optional[str], today: date) -> Optional[date]:
     s = fa_normalize(str(value)).strip().lower()
     if s in PRESENT:
         return today
-    m = re.search(r"(\d{4})(?:\D+(\d{1,2}))?", s)
-    if not m:
+    m_first = re.search(r"(?<!\d)(\d{1,2})\D+(\d{4})(?!\d)", s)  # MM/YYYY (common in English resumes)
+    m = re.search(r"(\d{4})(?:\D+(\d{1,2}))?", s)          # YYYY-MM, YYYY/MM (Jalali), YYYY
+    if m_first:
+        month, year = int(m_first.group(1)), int(m_first.group(2))
+    elif m:
+        year, month = int(m.group(1)), int(m.group(2) or 1)
+    else:
         return None
-    year, month = int(m.group(1)), int(m.group(2) or 1)
     month = min(max(month, 1), 12)
     if year < 1700:  # Jalali
         import jdatetime

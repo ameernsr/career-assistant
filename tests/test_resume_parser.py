@@ -72,3 +72,9 @@ def test_years_accept_jalali_and_persian_words():
 def test_years_unknown_dates_give_none():
     assert experience_years([{"start": None, "end": None}], today=TODAY) is None
     assert experience_years([], today=TODAY) is None
+
+
+def test_years_accept_month_first_dates():
+    # MM/YYYY, as many English resumes write it: 12/2022 → 03/2026 is 3.25 years, not 4.
+    roles = [{"start": "12/2022", "end": "09/2023"}, {"start": "09/2023", "end": "10/2024"}, {"start": "10/2024", "end": "03/2026"}]
+    assert experience_years(roles, today=TODAY) == pytest.approx(3.25, abs=0.05)

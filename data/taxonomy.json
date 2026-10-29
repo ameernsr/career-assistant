@@ -392,7 +392,10 @@
     "آمار",
     "آمار توصیفی",
     "probability",
-    "احتمال"
+    "احتمال",
+    "statistical analysis",
+    "statistical modeling",
+    "تحلیل آماری"
    ],
    "prerequisites": []
   },
@@ -1125,7 +1128,10 @@
     "metabase",
     "هوش تجاری",
     "business intelligence",
-    "bi"
+    "bi",
+    "redash",
+    "superset",
+    "apache superset"
    ],
    "prerequisites": [
     "data_visualization",
@@ -1361,7 +1367,9 @@
     "pyspark",
     "hadoop",
     "big data",
-    "کلان داده"
+    "کلان داده",
+    "trino",
+    "presto"
    ],
    "prerequisites": [
     "sql_advanced",
@@ -1375,7 +1383,9 @@
    "aliases": [
     "airflow",
     "dagster",
-    "prefect"
+    "prefect",
+    "argo",
+    "argo workflows"
    ],
    "prerequisites": [
     "etl_pipelines"
