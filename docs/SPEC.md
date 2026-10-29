@@ -62,9 +62,9 @@ Status: ☐ todo · ◐ in progress · ☑ done (update in your PR).
 |---|---|---|---|---|
 | A-01 | Must | P3 | Persian chat reaches `done` in ≤ 6 assistant questions for all 3 Appendix B personas; the counter is enforced in code | ☐ |
 | A-02 | Must | P1 | `taxonomy.json` has ≥ 10 roles in ≥ 3 domains, each with junior/mid/senior concept lists | ☐ |
-| A-03 | Must | P1 | `check_dag()` passes on our file and raises with the cycle path on a test file containing a cycle | ☐ |
-| A-04 | Must | P3 | A test feeds LLM JSON containing a fake role and fake concept; both are dropped | ☐ |
-| A-05 | Must | P1 | Test: every concept appears after all its prerequisites; known concepts are absent | ☐ |
+| A-03 | Must | P1 | `check_dag()` passes on our file and raises with the cycle path on a test file containing a cycle | ◐ code+tests done; real file pending |
+| A-04 | Must | P3 | A test feeds LLM JSON containing a fake role and fake concept; both are dropped | ◐ roadmap drops fake ids; conversation side pending |
+| A-05 | Must | P1 | Test: every concept appears after all its prerequisites; known concepts are absent | ☑ `core/roadmap.py` |
 | A-06 | Must | P3 | Graph renders on one laptop screen for a 25-node roadmap, known vs to-learn colored | ☐ |
 | A-07 | Must | P1 | Every displayed URL comes from `resources.json` and `verify_links.py` reports 0 failures | ☐ |
 | A-08 | Should | P3 | «من اکسل بلد نیستم» adds excel back into the graph without restarting the chat | ☐ |
