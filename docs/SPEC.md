@@ -78,7 +78,7 @@ Status: ☐ todo · ◐ in progress · ☑ done (update in your PR).
 | B-04 | Must | P2 | Top 10 with scores in < 60 s for the full cached set | ◐ `rank()` 0.54 s on 258 jobs; UI pending |
 | B-05 | Must | P2 | Each result lists matched and missing taxonomy concepts | ◐ in `MatchResult`; UI pending |
 | B-06 | Must | P2 | Each result links to `job.url` | ☐ |
-| B-07 | Should | P2 | Eval table shows hybrid vs baseline P@5 and nDCG@10 | ◐ pipeline + 72-pair sheet ready; labels pending |
+| B-07 | Should | P2 | Eval table shows hybrid vs baseline P@5 and nDCG@10 | ☑ hybrid > baseline on all 4 metrics (P@5 0.533 vs 0.467, nDCG@10 0.594 vs 0.524) |
 | B-08 | Should | P2 | Filters for city, seniority, remote change the result list | ◐ `rank(filters=…)` tested; UI pending |
 | B-09 | Should | P2 | `dedup()` used in `run_collect` ✅; duplicates count shown in meta | ☑ |
 | B-10 | Could | P3 | "برای این شغل چه یاد بگیرم؟" button draws a roadmap of that job's missing concepts | ☐ |
@@ -115,4 +115,6 @@ Status: ☐ todo · ◐ in progress · ☑ done (update in your PR).
 | 15:40 | Explicit «بلد نیستم» also removes skills that were only inferred from the user's level and depend on it | "Senior but no SQL" left advanced SQL/BI/data modeling as known — contradictory |
 | 15:40 | Business roles enriched (bookkeeping, reconciliation, cost accounting, graphic design, job descriptions, user stories); junior roadmaps 8–9 skills like technical roles | Junior financial/marketing roadmaps had only 5 skills |
 | 15:40 | Closed ads: 60-day filter on by default + `collectors/check_alive.py` (404/410 or JobPosting data gone) in the periodic refresh | 89/258 ads older than 30 days |
+| 16:00 | Primary labels: Erfan (human). Second column: Claude (AI), reported as such; used only for agreement (92%) and a robustness check | A second human annotator was not available; an AI label must not be presented as human judgement |
+| 16:00 | Prices: embeddings and TTS from OpenAI list, STT from OpenRouter list (per second); TTS cost counts input text only | Metis page lists chat models only; the speech endpoint returns no usage |
 | 12:40 | `fa_normalize` applies NFKC | Persian PDFs extract as presentation forms (ﻣﺴﺎﺑﻘﻪ); verified on a real LuaTeX PDF |

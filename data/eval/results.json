@@ -1,0 +1,63 @@
+{
+ "table": [
+  {
+   "method": "baseline",
+   "P@5": 0.467,
+   "nDCG@10": 0.524,
+   "MRR": 0.667,
+   "Recall@10": 0.543
+  },
+  {
+   "method": "hybrid",
+   "P@5": 0.533,
+   "nDCG@10": 0.594,
+   "MRR": 0.778,
+   "Recall@10": 0.564
+  }
+ ],
+ "per_resume": {
+  "r1_data_analyst_fa": {
+   "baseline": {
+    "P@5": 0.6,
+    "nDCG@10": 0.55,
+    "MRR": 0.5,
+    "Recall@10": 0.667
+   },
+   "hybrid": {
+    "P@5": 0.4,
+    "nDCG@10": 0.555,
+    "MRR": 1.0,
+    "Recall@10": 0.5
+   }
+  },
+  "r2_backend_en": {
+   "baseline": {
+    "P@5": 0.2,
+    "nDCG@10": 0.387,
+    "MRR": 0.5,
+    "Recall@10": 0.5
+   },
+   "hybrid": {
+    "P@5": 0.2,
+    "nDCG@10": 0.307,
+    "MRR": 0.333,
+    "Recall@10": 0.5
+   }
+  },
+  "r3_marketer_fa": {
+   "baseline": {
+    "P@5": 0.6,
+    "nDCG@10": 0.634,
+    "MRR": 1.0,
+    "Recall@10": 0.462
+   },
+   "hybrid": {
+    "P@5": 1.0,
+    "nDCG@10": 0.922,
+    "MRR": 1.0,
+    "Recall@10": 0.692
+   }
+  }
+ },
+ "notes": "3 synthetic resumes, 72 labelled pairs, 21 relevant. Unlabelled jobs count as not relevant (pooling). Inter-annotator agreement: 66/72 (92%)."
+}

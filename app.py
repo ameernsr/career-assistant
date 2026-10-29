@@ -489,12 +489,22 @@ with tab_eval:
             budget = llm.settings.session_budget_usd
             st.progress(min(u["cost_usd"] / budget, 1.0), text=f"از سقف بودجه‌ی جلسه (${budget})")
             prices = llm.settings.prices
+
+            def price_str(model):
+                pr = prices.get(model)
+                if pr is None:
+                    return "نامشخص"
+                if isinstance(pr, dict):
+                    return f"${pr.get('per_second', 0)} بر ثانیه"
+                return f"${pr[0]} / ${pr[1]}"
+
             st.dataframe([
-                {"کاربرد": "گفتگو و استخراج", "مدل": llm.settings.chat_model, "قیمت ورودی/خروجی ($/1M)": "/".join(map(str, prices.get(llm.settings.chat_model, ["—"])))},
-                {"کاربرد": "embedding", "مدل": llm.settings.embed_model, "قیمت ورودی/خروجی ($/1M)": "/".join(map(str, prices.get(llm.settings.embed_model, ["نامشخص"])))},
-                {"کاربرد": "صدا به متن", "مدل": llm.settings.stt_model, "قیمت ورودی/خروجی ($/1M)": "نامشخص"},
-                {"کاربرد": "متن به صدا", "مدل": llm.settings.tts_model, "قیمت ورودی/خروجی ($/1M)": "نامشخص"},
+                {"کاربرد": "گفتگو و استخراج", "مدل": llm.settings.chat_model, "قیمت (ورودی / خروجی به‌ازای ۱M توکن)": price_str(llm.settings.chat_model)},
+                {"کاربرد": "embedding", "مدل": llm.settings.embed_model, "قیمت (ورودی / خروجی به‌ازای ۱M توکن)": price_str(llm.settings.embed_model)},
+                {"کاربرد": "صدا به متن", "مدل": llm.settings.stt_model, "قیمت (ورودی / خروجی به‌ازای ۱M توکن)": price_str(llm.settings.stt_model)},
+                {"کاربرد": "متن به صدا", "مدل": llm.settings.tts_model, "قیمت (ورودی / خروجی به‌ازای ۱M توکن)": price_str(llm.settings.tts_model)},
             ], width="stretch", hide_index=True)
+            st.caption("هزینه‌ی متن به صدا فقط بر اساس متن ورودی برآورد می‌شود (سرویس توکن خروجی صوتی را گزارش نمی‌دهد).")
             if u["unpriced_models"]:
                 st.caption("قیمت این مدل‌ها در صفحه‌ی متیس نیامده و در هزینه صفر حساب شده: " + "، ".join(u["unpriced_models"]))
 

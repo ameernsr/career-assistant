@@ -48,13 +48,19 @@ class LLM:
     def transcribe(self, audio: bytes, filename: str = "voice.wav") -> str:
         """A-10: Persian speech → text. WAV (what browsers record) is converted to MP3 first: the gateway rejects WAV."""
         self._check_budget()
+        seconds = len(audio) * 8 / 64000  # rough for compressed input; exact for WAV below
         if audio[:4] == b"RIFF":
+            import io
+            import wave
+
             from core.audio import wav_to_mp3
 
+            with wave.open(io.BytesIO(audio)) as w:
+                seconds = w.getnframes() / w.getframerate()
             audio, filename = wav_to_mp3(audio), "voice.mp3"
         r = self._call(lambda: self.client.audio.transcriptions.create(
             model=self.settings.stt_model, file=(filename, audio), language="fa"))
-        self._record(self.settings.stt_model, 0, 0)
+        self._record(self.settings.stt_model, 0, 0, audio_seconds=seconds)
         return (getattr(r, "text", "") or "").strip()
 
     def speak(self, text: str) -> bytes:
@@ -62,7 +68,9 @@ class LLM:
         self._check_budget()
         r = self._call(lambda: self.client.audio.speech.create(
             model=self.settings.tts_model, voice="alloy", input=text[:1500]))
-        self._record(self.settings.tts_model, 0, 0)
+        # The speech endpoint returns no usage: estimate input tokens (~3 chars per token in Persian).
+        # Audio output tokens are not reported, so TTS cost here is a lower bound.
+        self._record(self.settings.tts_model, max(1, len(text[:1500]) // 3), 0)
         return r.content if hasattr(r, "content") else r.read()
 
     def chat_json(self, messages: list[dict], model_cls: type[M], *, model: str | None = None) -> M:
@@ -91,13 +99,16 @@ class LLM:
         self._record(model, getattr(u, "prompt_tokens", 0), getattr(u, "completion_tokens", 0))
         return r.choices[0].message.content or ""
 
-    def _record(self, model: str, prompt_tokens: int, completion_tokens: int) -> None:
+    def _record(self, model: str, prompt_tokens: int, completion_tokens: int, audio_seconds: float = 0.0) -> None:
         self._usage["calls"] += 1
         self._usage["prompt_tokens"] += prompt_tokens or 0
         self._usage["completion_tokens"] += completion_tokens or 0
         price = self.settings.prices.get(model)
         if price is None:
             self._unpriced.add(model)
+            return
+        if isinstance(price, dict):  # e.g. speech-to-text: {"per_second": 0.000075}
+            self._usage["cost_usd"] += audio_seconds * price.get("per_second", 0.0)
             return
         self._usage["cost_usd"] += ((prompt_tokens or 0) * price[0] + (completion_tokens or 0) * price[1]) / 1_000_000
 

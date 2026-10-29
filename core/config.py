@@ -25,8 +25,9 @@ class Settings:
     stt_model: str = ""
     tts_model: str = ""
     session_budget_usd: float = 0.5
-    # USD per 1M tokens: {"model": [input, output]}. Unknown models are counted as 0 and flagged.
-    prices: dict[str, list[float]] = field(default_factory=dict)
+    # USD per 1M tokens {"model": [input, output]}, or per audio second {"model": {"per_second": x}}.
+    # Unknown models are counted as 0 and flagged.
+    prices: dict = field(default_factory=dict)
 
 
 def load_settings() -> Settings:

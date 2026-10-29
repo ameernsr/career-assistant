@@ -157,3 +157,16 @@ def test_transcribe_sends_mp3_when_given_wav():
     LLM(replace(SETTINGS, stt_model="stt-m"), client=gw).transcribe(_wav(), "voice.wav")
     name, data = sent["file"][0], sent["file"][1]
     assert name.endswith(".mp3") and not data.startswith(b"RIFF")
+
+
+def test_speech_to_text_is_priced_per_second_of_audio():
+    from dataclasses import replace
+
+    from tests.test_audio import _wav
+
+    gw = FakeGateway()
+    gw.audio = NS(transcriptions=NS(create=lambda **kw: NS(text="سلام")), speech=None)
+    llm = LLM(replace(SETTINGS, stt_model="stt-m", prices={"stt-m": {"per_second": 0.001}}), client=gw)
+    llm.transcribe(_wav(seconds=2.0), "voice.wav")
+    assert llm.usage["cost_usd"] == pytest.approx(0.002, rel=0.01)
+    assert llm.usage["unpriced_models"] == []

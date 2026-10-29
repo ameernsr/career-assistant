@@ -9,6 +9,8 @@ Step 2 — score:
     .venv/bin/python scripts/eval_ranking.py score
     → prints P@5, nDCG@10, MRR, Recall@10 per method and writes data/eval/results.json (shown in the app's eval tab)
 
+    .venv/bin/python scripts/eval_ranking.py score-second   # same metrics with the second annotator's labels
+
 Parsed resume profiles are cached in data/eval/profiles.json so scoring is deterministic and costs nothing.
 Jobs that nobody labelled count as not relevant (standard pooling assumption; noted in the report).
 """
@@ -97,7 +99,7 @@ def cmd_pool() -> None:
     print(f"{len(rows)} rows → {TODO.relative_to(ROOT)}  (fill `relevant` with 1/0, save as {LABELS.name})")
 
 
-def cmd_score() -> None:
+def cmd_score(column: str = "relevant", write: bool = True) -> None:
     if not LABELS.exists():
         sys.exit(f"{LABELS.relative_to(ROOT)} not found: run `pool`, label the sheet, save it as labels.csv")
     tax = load_taxonomy()
@@ -107,7 +109,7 @@ def cmd_score() -> None:
     relevant: dict[str, set[str]] = {}
     pairs = agree = 0
     for r in labels:
-        if r["relevant"].strip() == "1":
+        if r.get(column, "").strip() == "1":
             relevant.setdefault(r["resume_id"], set()).add(r["job_id"])
         if r.get("relevant_2", "").strip() in ("0", "1") and r["relevant"].strip() in ("0", "1"):
             pairs += 1
@@ -129,13 +131,20 @@ def cmd_score() -> None:
              f"{sum(map(len, relevant.values()))} relevant. Unlabelled jobs count as not relevant (pooling).")
     if pairs:
         notes += f" Inter-annotator agreement: {agree}/{pairs} ({agree / pairs:.0%})."
-    RESULTS.write_text(json.dumps({"table": table, "per_resume": per_resume, "notes": notes}, ensure_ascii=False, indent=1),
-                       encoding="utf-8")
+    if write:
+        RESULTS.write_text(json.dumps({"table": table, "per_resume": per_resume, "notes": notes}, ensure_ascii=False, indent=1),
+                           encoding="utf-8")
     print(f"{'method':10} {'P@5':>6} {'nDCG@10':>8} {'MRR':>6} {'R@10':>6}")
     for t in table:
         print(f"{t['method']:10} {t['P@5']:6.3f} {t['nDCG@10']:8.3f} {t['MRR']:6.3f} {t['Recall@10']:6.3f}")
-    print(notes, f"→ {RESULTS.relative_to(ROOT)}")
+    print(notes, f"→ {RESULTS.relative_to(ROOT)}" if write else f"(labels column: {column}; not written)")
 
 
 if __name__ == "__main__":
-    {"pool": cmd_pool, "score": cmd_score}.get(sys.argv[1] if len(sys.argv) > 1 else "score", cmd_score)()
+    cmd = sys.argv[1] if len(sys.argv) > 1 else "score"
+    if cmd == "pool":
+        cmd_pool()
+    elif cmd == "score-second":  # robustness check with the second annotator's labels
+        cmd_score("relevant_2", write=False)
+    else:
+        cmd_score()
