@@ -78,7 +78,7 @@ Status: ☐ todo · ◐ in progress · ☑ done (update in your PR).
 | B-04 | Must | P2 | Top 10 with scores in < 60 s for the full cached set | ◐ `rank()` 0.54 s on 258 jobs; UI pending |
 | B-05 | Must | P2 | Each result lists matched and missing taxonomy concepts | ◐ in `MatchResult`; UI pending |
 | B-06 | Must | P2 | Each result links to `job.url` | ☐ |
-| B-07 | Should | P2 | Eval table shows hybrid vs baseline P@5 and nDCG@10 | ☐ |
+| B-07 | Should | P2 | Eval table shows hybrid vs baseline P@5 and nDCG@10 | ◐ pipeline + 72-pair sheet ready; labels pending |
 | B-08 | Should | P2 | Filters for city, seniority, remote change the result list | ◐ `rank(filters=…)` tested; UI pending |
 | B-09 | Should | P2 | `dedup()` used in `run_collect` ✅; duplicates count shown in meta | ☑ |
 | B-10 | Could | P3 | "برای این شغل چه یاد بگیرم؟" button draws a roadmap of that job's missing concepts | ☐ |

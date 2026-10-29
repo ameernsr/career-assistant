@@ -1,0 +1,7 @@
+Reza Karimi — synthetic resume for evaluation
+Location: Tehran (open to remote)
+Education: B.Sc. Computer Engineering, Amirkabir University of Technology, 2021
+Experience:
+- Backend Developer, Sample Fintech, 2021-09 to 2023-08: built REST APIs with Django and Django REST Framework, PostgreSQL, Celery
+- Backend Developer, Sample E-commerce, 2023-09 to present: FastAPI microservices, Redis caching, Docker, GitLab CI, unit tests with pytest
+Skills: Python, Django, FastAPI, PostgreSQL, Redis, Docker, Git, Linux, REST API design, JWT authentication
