@@ -59,3 +59,23 @@ def test_unknown_role_raises_clear_error(tax):
 
     with pytest.raises(TaxonomyError, match="pilot"):
         compute_roadmap(tax, "pilot", "junior", known=set(), not_known=set())
+
+
+def test_roadmap_for_arbitrary_targets_b10(tax):
+    from core.roadmap import compute_roadmap_for_targets
+
+    # A job asks for bi_tools; the user knows excel → still needs sql chain + bi.
+    rm = compute_roadmap_for_targets(tax, {"bi_tools"}, known={"excel"}, not_known=set(), label="job:42")
+    assert rm.role_id == "job:42"
+    assert rm.stages == [["relational_db"], ["sql_basics"], ["bi_tools"]]
+
+
+def test_summary_names_exactly_the_roadmap_concepts(tax):
+    from core.summary import summarize
+
+    rm = compute_roadmap(tax, "data_analyst", "junior", known={"sql_basics"}, not_known=set())
+    text = summarize(rm, tax)
+    assert "تحلیلگر داده" in text and "اکسل" in text and "آمار" in text
+    for cid in tax.concepts:  # A-09: nothing outside the roadmap is mentioned
+        if cid not in {"excel", "statistics"}:
+            assert tax.concepts[cid]["name_fa"] not in text

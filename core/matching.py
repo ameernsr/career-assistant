@@ -100,12 +100,17 @@ def rank(
         else:
             parts = {
                 "semantic": semantic.get(j.id),
-                "coverage": len(matched) / len(need) if need else None,  # no extractable skills → skip (B8)
+                # +1 in the denominator: a job listing one skill is weaker evidence than one listing five (B8: none → skip)
+                "coverage": len(matched) / (len(need) + 1) if need else None,
                 "seniority": _seniority_fit(level, j.seniority),
                 "location": _location_fit(resume, j),
             }
             used = {n: v for n, v in parts.items() if v is not None}
-            score = sum(WEIGHTS[n] * v for n, v in used.items()) / sum(WEIGHTS[n] for n in used)
+            content = [n for n in ("semantic", "coverage") if n in used]
+            if content:
+                score = sum(WEIGHTS[n] * v for n, v in used.items()) / sum(WEIGHTS[n] for n in used)
+            else:  # nothing about the job's content is known: context fit alone caps at 0.2
+                score = WEIGHTS["seniority"] * used["seniority"] + WEIGHTS["location"] * used["location"]
         results.append(MatchResult(job_id=j.id, score=round(min(max(score, 0.0), 1.0), 4),
                                    matched_skills=matched, missing_skills=missing))
     results.sort(key=lambda r: (-r.score, -len(r.matched_skills), r.job_id))

@@ -70,3 +70,16 @@ def test_filters_and_k(tax):
     out = rank(resume, jobs, tax, method="baseline", filters={"city": "تهران", "remote_ok": True}, k=10)
     assert {r.job_id for r in out} == {"0", "2", "4", "3"}  # Tehran jobs + the remote one
     assert len(rank(resume, jobs, tax, method="baseline", k=2)) == 2
+
+
+def test_jobs_without_content_signal_cannot_score_high(tax):
+    # No skills extracted and no embeddings: city/seniority fit alone must not look like a strong match.
+    resume = ResumeProfile(skill_ids=["excel"], location="تهران")
+    r = rank(resume, [job("x", "کارشناس", desc="شرح نامشخص")], tax, method="hybrid")[0]
+    assert r.score < 0.3
+
+
+def test_one_skill_job_does_not_beat_a_broad_full_match(tax):
+    resume = ResumeProfile(skill_ids=["excel", "sql_basics", "statistics"])
+    jobs = [job("narrow", "Clerk", reqs=["Excel"]), job("broad", "Analyst", reqs=["Excel", "SQL", "آمار"])]
+    assert rank(resume, jobs, tax, method="hybrid")[0].job_id == "broad"
