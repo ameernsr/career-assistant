@@ -29,15 +29,59 @@ st.markdown(
     """
 <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700&display=swap" rel="stylesheet">
 <style>
+:root { --ink:#16232B; --muted:#5B6B78; --line:#DDE5E8; --card:#FFFFFF; --bg:#F5F7F8;
+        --teal:#0E6B62; --teal-d:#0A4E48; --teal-soft:#E3F1EF; --saffron:#C98A0B; --saffron-soft:#FBF1DC;
+        --ok:#1F6B34; --ok-soft:#DDF1E2; --bad:#9A2F22; --bad-soft:#FBE3DF; }
 html, body, .stApp, [class*="st-"], .stMarkdown, .stChatMessage, input, textarea, button, label {
   font-family: Vazirmatn, Tahoma, sans-serif !important; }
 .stApp, .main, [data-testid="stSidebar"] { direction: rtl; text-align: right; }
+.stApp { background: var(--bg); color: var(--ink); }
 [data-testid="stChatInput"] textarea { direction: rtl; text-align: right; }
-.chip { display:inline-block; padding:2px 10px; margin:2px; border-radius:999px; font-size:0.85rem; }
-.chip.ok { background:#D8F0DD; color:#1F5E2A; } .chip.miss { background:#FBE0DC; color:#8A2A1F; }
+#MainMenu, footer, [data-testid="stDecoration"], [data-testid="stStatusWidget"] { visibility: hidden; }
+header[data-testid="stHeader"] { background: transparent; }
+.block-container { padding-top: 1.2rem; max-width: 1280px; }
+.hero { background: var(--teal-d); color:#fff; border-radius: 18px; padding: 22px 28px; margin-bottom: 14px;
+        display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:16px; }
+.hero h1 { font-size: 1.75rem; font-weight: 700; margin: 0; color:#fff; line-height:1.4; }
+.hero p { margin: 4px 0 0; color: #CFE6E2; font-size: 0.98rem; }
+.stats { display:flex; gap:10px; flex-wrap:wrap; }
+.stat { background: rgba(255,255,255,0.10); border:1px solid rgba(255,255,255,0.18); border-radius: 12px;
+        padding: 8px 14px; min-width: 96px; text-align:center; }
+.stat b { display:block; font-size: 1.25rem; color:#fff; font-variant-numeric: tabular-nums; }
+.stat span { font-size: 0.78rem; color:#CFE6E2; }
+.stTabs [data-baseweb="tab-list"] { gap: 6px; border-bottom: 1px solid var(--line); }
+.stTabs [data-baseweb="tab"] { height: 46px; padding: 0 18px; border-radius: 10px 10px 0 0; font-weight: 600; color: var(--muted); }
+.stTabs [aria-selected="true"] { color: var(--teal) !important; background: var(--card); }
+.stTabs [data-baseweb="tab-highlight"] { background: var(--teal); height: 3px; }
+[data-testid="stVerticalBlockBorderWrapper"]:has(> div > [data-testid="stVerticalBlock"]) { border-radius: 14px; }
+div[data-testid="stVerticalBlockBorderWrapper"] { background: var(--card); border-color: var(--line) !important;
+        box-shadow: 0 1px 2px rgba(16,35,43,0.04); transition: box-shadow .15s ease, transform .15s ease; }
+div[data-testid="stVerticalBlockBorderWrapper"]:hover { box-shadow: 0 6px 18px rgba(16,35,43,0.08); }
+[data-testid="stExpander"] { background: var(--card); border-radius: 12px; border-color: var(--line); }
+[data-testid="stChatMessage"] { background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 10px 14px; }
+.panel-title { font-size: 1.15rem; font-weight: 700; color: var(--ink); margin: 2px 0 8px; }
+.panel-sub { color: var(--muted); font-size: 0.92rem; margin-bottom: 10px; }
+.empty { background: var(--card); border: 1px dashed #C5D3D6; border-radius: 16px; padding: 26px; }
+.empty h3 { margin: 0 0 6px; font-size: 1.1rem; }
+.steps { display:flex; gap:10px; flex-wrap:wrap; margin-top: 14px; }
+.step { flex:1; min-width: 140px; background: var(--teal-soft); border-radius: 12px; padding: 12px; }
+.step b { color: var(--teal); display:block; margin-bottom: 4px; }
+.chip { display:inline-block; padding:3px 11px; margin:3px 2px; border-radius:999px; font-size:0.84rem; font-weight:500; }
+.chip.ok { background:var(--ok-soft); color:var(--ok); } .chip.miss { background:var(--bad-soft); color:var(--bad); }
 .chip.heard { background:#ECEFF3; color:#45505E; }
-.job-meta { color:#56657A; font-size:0.9rem; }
-[data-testid="stGraphVizChart"] { direction: ltr; }
+.job-title { font-size: 1.05rem; font-weight: 700; color: var(--ink); }
+.job-meta { color: var(--muted); font-size: 0.88rem; }
+.score { display:inline-flex; flex-direction:column; align-items:center; justify-content:center; width: 76px; height: 64px;
+         border-radius: 14px; font-weight: 700; font-variant-numeric: tabular-nums; }
+.score b { font-size: 1.35rem; line-height: 1.1; } .score span { font-size: 0.72rem; font-weight: 500; }
+.score.hi { background: var(--ok-soft); color: var(--ok); } .score.mid { background: var(--saffron-soft); color: #8A5D05; }
+.score.lo { background: #ECEFF3; color: #45505E; }
+.rank { color: var(--saffron); font-weight: 700; margin-left: 6px; }
+[data-testid="stSidebar"] { background: #FFFFFF; border-left: 1px solid var(--line); }
+.brand { font-weight: 700; font-size: 1.15rem; color: var(--teal-d); }
+[data-testid="stMetricValue"] { font-variant-numeric: tabular-nums; color: var(--teal-d); }
+.stButton > button, .stDownloadButton > button, .stLinkButton > a { border-radius: 10px; font-weight: 600; }
+[data-testid="stGraphVizChart"] { direction: ltr; background: var(--card); border:1px solid var(--line); border-radius: 14px; padding: 8px; }
 </style>""",
     unsafe_allow_html=True,
 )
@@ -120,7 +164,8 @@ def show_roadmap(rm, goal_title: str, key: str):
 
 # ---------------- sidebar: cost & privacy ----------------
 with st.sidebar:
-    st.header("🧭 دستیار مسیر شغلی")
+    st.markdown('<div class="brand">🧭 دستیار مسیر شغلی</div>', unsafe_allow_html=True)
+    st.caption("هزینه و حریم خصوصی این جلسه")
     u = llm.usage
     st.metric("هزینه‌ی این جلسه", f"${u['cost_usd']:.4f}", help="بر اساس قیمت‌های متیس (MODEL_PRICES در .env)")
     st.caption(f"درخواست به مدل: {u['calls']}")
@@ -136,6 +181,15 @@ with st.sidebar:
             ss.pop(k, None)
         st.rerun()
 
+st.markdown(
+    f"""<div class="hero"><div><h1>دستیار مسیر شغلی</h1>
+<p>نقشه‌ی راه یادگیری از روی مدل صریح مهارت‌ها، و پیدا کردن شغل‌های مناسب از روی رزومه</p></div>
+<div class="stats"><div class="stat"><b>{len(JOBS)}</b><span>آگهی واقعی</span></div>
+<div class="stat"><b>{len(JOBS_META.get("per_source", {})) or 5}</b><span>سایت کاریابی</span></div>
+<div class="stat"><b>{len(tax.roles)}</b><span>نقش شغلی</span></div>
+<div class="stat"><b>{len(tax.concepts)}</b><span>مهارت</span></div></div></div>""",
+    unsafe_allow_html=True,
+)
 tab_path, tab_jobs, tab_eval = st.tabs(["🗺️ مسیر شغلی", "💼 تطبیق رزومه با شغل", "📊 ارزیابی و هزینه"])
 
 # ---------------- Module A ----------------
@@ -178,7 +232,7 @@ with tab_path:
             known, not_known = known_sets(p, tax)
             rm = compute_roadmap(tax, p.target_role, p.target_level or "junior", known, not_known)
             goal = f"{tax.roles[p.target_role]['name_fa']} در سطح {LEVEL_FA[rm.target_level]}"
-            st.subheader(f"نقشه‌ی راه: {goal}")
+            st.markdown(f'<div class="panel-title">🗺️ نقشه‌ی راه: {goal}</div>', unsafe_allow_html=True)
             heard = [c.concept_id for c in p.claims if c.proficiency == "heard"]
             st.markdown("**آنچه از شما فهمیدم** (اگر اشتباه است در چت اصلاح کنید):", unsafe_allow_html=True)
             st.markdown(f"بلد هستید: {chips(rm.known, 'ok') or '—'}", unsafe_allow_html=True)
@@ -201,8 +255,14 @@ with tab_path:
                 except Exception as exc:  # broad on purpose: never show a traceback (NF-06)
                     st.error(str(exc) if type(exc).__name__ == "LLMError" else "ساختن صدا انجام نشد. لطفاً دوباره امتحان کنید.")
         else:
-            st.markdown("#### نقشه‌ی راه شما اینجا نمایش داده می‌شود")
-            st.caption("بعد از چند سؤال کوتاه، مسیر یادگیری به‌صورت گراف مرحله‌به‌مرحله ساخته می‌شود.")
+            st.markdown(
+                """<div class="empty"><h3>نقشه‌ی راه شما اینجا ساخته می‌شود</h3>
+<div class="panel-sub">در گفتگوی کنار، شغل هدفتان را بگویید. حداکثر ۶ سؤال کوتاه می‌پرسم.</div>
+<div class="steps"><div class="step"><b>۱. هدف</b>نقش و سطحی که می‌خواهید</div>
+<div class="step"><b>۲. پیشینه</b>آنچه واقعاً بلدید، نه فقط شنیده‌اید</div>
+<div class="step"><b>۳. نقشه</b>گراف مرحله‌به‌مرحله با منابع فارسی و رسمی</div></div></div>""",
+                unsafe_allow_html=True,
+            )
 
 # ---------------- Module B ----------------
 with tab_jobs:
@@ -251,11 +311,14 @@ with tab_jobs:
             for c in r.missing_skills:
                 gap[c] = gap.get(c, 0) + 1
             with st.container(border=True):
-                a, b = st.columns([4, 1])
-                a.markdown(f"**{rank_i}. {j.title}**  \n<span class='job-meta'>{j.company or ''} · {j.location or ''}"
+                pct = round(r.score * 100)
+                band = "hi" if pct >= 70 else "mid" if pct >= 50 else "lo"
+                a, b = st.columns([5, 1])
+                a.markdown(f"<div class='job-title'><span class='rank'>{rank_i}</span>{j.title}</div>"
+                           f"<div class='job-meta'>{j.company or ''} · {j.location or ''}"
                            f"{' · دورکاری' if j.remote else ''} · {SOURCE_FA.get(j.source, j.source)}"
-                           f"{' · ' + j.date_posted if j.date_posted else ''}</span>", unsafe_allow_html=True)
-                b.metric("تطابق", f"{round(r.score * 100)}٪")
+                           f"{' · ' + j.date_posted if j.date_posted else ''}</div>", unsafe_allow_html=True)
+                b.markdown(f"<div class='score {band}'><b>{pct}٪</b><span>تطابق</span></div>", unsafe_allow_html=True)
                 st.markdown(f"✅ مهارت‌های منطبق: {chips(r.matched_skills, 'ok') or '—'}", unsafe_allow_html=True)
                 st.markdown(f"❌ مهارت‌های لازم که ندارید: {chips(r.missing_skills, 'miss') or '—'}", unsafe_allow_html=True)
                 c1, c2 = st.columns([1, 1])
