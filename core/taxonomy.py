@@ -2,13 +2,23 @@
 from __future__ import annotations
 
 import json
+import re
 from pathlib import Path
 
 import networkx as nx
 
-from core.text_fa import skill_key
+from core.text_fa import fa_normalize, skill_key
 
 DEFAULT_PATH = Path(__file__).resolve().parent.parent / "data" / "taxonomy.json"
+
+# Aliases too ambiguous to search for inside running text (fine as exact requirement phrases).
+TEXT_SCAN_STOPWORDS = {
+    "go", "rest", "net", "ts", "js", "ml", "bi", "api", "web", "http", "https", "content", "growth", "brand",
+    "marketing", "network", "interview", "tax", "audit", "shell", "cache", "container", "reporting", "dashboard",
+    "security", "programming", "algorithm", "algorithms", "english", "math", "storytelling", "stakeholder",
+    "budgeting", "forecasting", "recruitment", "recruiting", "screening", "sourcing", "compensation", "accounting",
+    "مصاحبه", "شبکه", "محتوا", "برند", "امنیت", "بودجه", "مالیات", "انگلیسی", "وب", "کش", "صف پیام",
+}
 
 
 class TaxonomyError(ValueError):
@@ -49,6 +59,20 @@ class Taxonomy:
         tax = cls(roles, concepts, graph)
         tax.check_dag()
         return tax
+
+    def find_in_text(self, text: str) -> set[str]:
+        """Concept ids whose names/aliases appear as whole words in free text (job ads, resumes)."""
+        if not hasattr(self, "_text_rx"):
+            names: dict[str, str] = {}
+            for cid, c in self.concepts.items():
+                for name in [c.get("name_fa", ""), c.get("name_en", ""), *c.get("aliases", [])]:
+                    n = fa_normalize(name).lower()
+                    if len(n) >= 2 and n not in TEXT_SCAN_STOPWORDS:
+                        names.setdefault(n, cid)
+            alternation = "|".join(re.escape(n) for n in sorted(names, key=len, reverse=True))
+            self._text_rx = re.compile(rf"(?<![\w.#+])(?:{alternation})(?![\w#+])")
+            self._text_names = names
+        return {self._text_names[m] for m in self._text_rx.findall(fa_normalize(text or "").lower())}
 
     def resolve(self, text: str) -> str | None:
         """Map a free-text skill mention (any language, alias, spelling) to a concept id, or None."""
