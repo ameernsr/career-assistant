@@ -61,25 +61,25 @@ Status: ☐ todo · ◐ in progress · ☑ done (update in your PR).
 
 | ID | Pri | Owner | Done when | Status |
 |---|---|---|---|---|
-| A-01 | Must | P3 | Persian chat reaches `done` in ≤ 6 assistant questions for all 3 Appendix B personas; the counter is enforced in code | ☐ |
+| A-01 | Must | P3 | Persian chat reaches `done` in ≤ 6 assistant questions for all 3 Appendix B personas; the counter is enforced in code | ◐ `core/conversation.py` done; real run: persona 1 → 4 q, persona 2 → 3 q; UI pending |
 | A-02 | Must | P1 | `taxonomy.json` has ≥ 10 roles in ≥ 3 domains, each with junior/mid/senior concept lists | ☑ draft: 12 roles, 109 concepts — P1 to review |
 | A-03 | Must | P1 | `check_dag()` passes on our file and raises with the cycle path on a test file containing a cycle | ☑ guard test passes on real file |
-| A-04 | Must | P3 | A test feeds LLM JSON containing a fake role and fake concept; both are dropped | ◐ roadmap drops fake ids; conversation side pending |
+| A-04 | Must | P3 | A test feeds LLM JSON containing a fake role and fake concept; both are dropped | ☑ `test_unknown_role_and_concepts_are_dropped` |
 | A-05 | Must | P1 | Test: every concept appears after all its prerequisites; known concepts are absent | ☑ `core/roadmap.py` |
 | A-06 | Must | P3 | Graph renders on one laptop screen for a 25-node roadmap, known vs to-learn colored | ☐ |
 | A-07 | Must | P1 | Every displayed URL comes from `resources.json` and `verify_links.py` reports 0 failures | ☐ |
-| A-08 | Should | P3 | «من اکسل بلد نیستم» adds excel back into the graph without restarting the chat | ☐ |
+| A-08 | Should | P3 | «من اکسل بلد نیستم» adds excel back into the graph without restarting the chat | ◐ logic done + real run («داکر بلد نیستم»); UI pending |
 | A-09 | Should | P1 | Summary text names exactly the concepts in `roadmap.stages` (test) | ☐ |
 | A-10 | Could | P3 | Voice input transcribed into the chat; summary playable as audio | ☐ |
 | A-11 | Could | P1 | Download buttons for SVG/PNG of the graph | ☐ |
 | B-01 | Must | P3 | Persian PDF, English PDF, and DOCX samples parse; corrupt/encrypted file shows a Persian error | ☐ |
 | B-02 | Must | P3 | `ResumeProfile` filled for all eval resumes; years computed in code (Jalali supported) | ☐ |
 | B-03 | Must | P2 | `jobs_meta.json` shows ≥ 50 jobs from ≥ 2 sources ✅ (155 from 4 at 11:50) | ☑ |
-| B-04 | Must | P2 | Top 10 with scores in < 60 s for the full cached set | ☐ |
-| B-05 | Must | P2 | Each result lists matched and missing taxonomy concepts | ☐ |
+| B-04 | Must | P2 | Top 10 with scores in < 60 s for the full cached set | ◐ `rank()` 0.54 s on 258 jobs; UI pending |
+| B-05 | Must | P2 | Each result lists matched and missing taxonomy concepts | ◐ in `MatchResult`; UI pending |
 | B-06 | Must | P2 | Each result links to `job.url` | ☐ |
 | B-07 | Should | P2 | Eval table shows hybrid vs baseline P@5 and nDCG@10 | ☐ |
-| B-08 | Should | P2 | Filters for city, seniority, remote change the result list | ☐ |
+| B-08 | Should | P2 | Filters for city, seniority, remote change the result list | ◐ `rank(filters=…)` tested; UI pending |
 | B-09 | Should | P2 | `dedup()` used in `run_collect` ✅; duplicates count shown in meta | ☑ |
 | B-10 | Could | P3 | "برای این شغل چه یاد بگیرم؟" button draws a roadmap of that job's missing concepts | ☐ |
 | B-11 | Could | P2 | `--incremental` crawl + refresh button with last-updated time | ◐ |
@@ -109,4 +109,5 @@ Status: ☐ todo · ◐ in progress · ☑ done (update in your PR).
 | 12:40 | The doc's results table holds placeholder numbers; it stays empty until eval runs | Reporting unmeasured results would mislead the jury |
 | 13:30 | Chat model `gpt-5.4-mini` (fallback `gpt-4.1-mini`), embeddings `text-embedding-3-small`, STT `gpt-4o-mini-transcribe`, TTS `gpt-4o-mini-tts` | `scripts/check_models.py`: 5.4-mini 1.1 s avg, 3/3 valid+correct, fewest tokens; 4.1-mini 1.4 s 3/3; 4o-mini 1.9 s 3/3; 4.1-nano deprecated; gpt-5-mini rejects temperature=0. Embeddings: fa↔en same meaning cos 0.57 vs unrelated 0.19–0.26 |
 | 13:30 | LLM JSON schemas use enums/Literal for ids, never free strings | Smoke test: with a loose schema the model stuffed advice into the `role` field |
+| 14:10 | Measured cost per chat session ≈ $0.01 (gpt-5.4-mini, 4–5 calls, ~2k-token catalog in the system prompt); 1.2–1.8 s per turn | Real runs of personas 1 and 2 |
 | 12:40 | `fa_normalize` applies NFKC | Persian PDFs extract as presentation forms (ﻣﺴﺎﺑﻘﻪ); verified on a real LuaTeX PDF |

@@ -1,0 +1,94 @@
+import pytest
+
+from core.conversation import MAX_QUESTIONS, ConversationState, TurnExtraction, known_sets, next_turn
+from core.llm import LLMError
+from core.schemas import ConceptClaim, ProfileDelta, UserProfile
+from core.taxonomy import Taxonomy
+
+
+@pytest.fixture
+def tax(mini_dict):
+    return Taxonomy.from_dict(mini_dict)
+
+
+class FakeLLM:
+    """Stands in for core.llm.LLM: returns queued objects (or raises queued exceptions) from chat_json."""
+
+    def __init__(self, *replies):
+        self.replies = list(replies)
+        self.prompts = []
+
+    def chat_json(self, messages, model_cls, **_):
+        self.prompts.append(messages)
+        r = self.replies.pop(0) if len(self.replies) > 1 else self.replies[0]
+        if isinstance(r, Exception):
+            raise r
+        assert isinstance(r, model_cls), f"expected {model_cls.__name__}"
+        return r
+
+
+def test_everything_in_first_message_ends_without_questions(tax):
+    llm = FakeLLM(TurnExtraction(target_role="data_analyst", target_level="junior", current_level="none",
+                                 claims=[ConceptClaim(concept_id="excel", proficiency="used")], enough_info=True))
+    reply, st = next_turn(ConversationState(), "دانشجوام، اکسل کار کردم، می‌خوام تحلیلگر داده‌ی جونیور بشم", llm, tax)
+    assert st.done and st.questions_asked == 0
+    assert st.profile.target_role == "data_analyst"
+
+
+def test_never_more_than_six_questions(tax):
+    llm = FakeLLM(TurnExtraction(target_role="data_analyst", target_level="junior", next_question="سؤال بعدی؟"))
+    st = ConversationState()
+    for i in range(MAX_QUESTIONS + 1):
+        _, st = next_turn(st, f"جواب {i}", llm, tax)
+    assert MAX_QUESTIONS == 6
+    assert st.questions_asked == MAX_QUESTIONS and st.done
+
+
+def test_unknown_role_and_concepts_are_dropped(tax):
+    llm = FakeLLM(TurnExtraction(target_role="pilot", unsupported_role="خلبان", target_level="junior",
+                                 claims=[ConceptClaim(concept_id="flying", proficiency="proficient"),
+                                         ConceptClaim(concept_id="excel", proficiency="used")],
+                                 next_question="کدام نقش؟"))
+    reply, st = next_turn(ConversationState(), "می‌خوام خلبان بشم", llm, tax)
+    assert st.profile.target_role is None
+    assert [c.concept_id for c in st.profile.claims] == ["excel"]
+    assert "پوشش" in reply and "تحلیلگر داده" in reply  # offers the supported roles
+
+
+def test_heard_is_not_known_and_current_level_counts(tax):
+    p = UserProfile(target_role="data_analyst", target_level="mid", current_level="junior",
+                    claims=[ConceptClaim(concept_id="pandas", proficiency="heard")], not_known=["sql_basics"])
+    known, not_known = known_sets(p, tax)
+    assert "pandas" not in known
+    assert {"excel", "statistics"} <= known  # junior concepts of the target role
+    assert "sql_basics" in not_known and "sql_basics" not in known
+
+
+def test_correction_after_roadmap_updates_profile(tax):
+    st = ConversationState(done=True, profile=UserProfile(
+        target_role="data_analyst", target_level="junior",
+        claims=[ConceptClaim(concept_id="excel", proficiency="used")]))
+    llm = FakeLLM(ProfileDelta(remove_known=["excel", "made_up"]))
+    reply, st = next_turn(st, "من اکسل بلد نیستم", llm, tax)
+    assert "excel" in st.profile.not_known and "made_up" not in st.profile.not_known
+    assert all(c.concept_id != "excel" for c in st.profile.claims)
+    assert st.done and reply
+
+
+def test_llm_failure_falls_back_to_fixed_question(tax):
+    llm = FakeLLM(LLMError("سرویس هوش مصنوعی فعلاً در دسترس نیست."))
+    reply, st = next_turn(ConversationState(), "سلام", llm, tax)
+    assert "در دسترس نیست" in reply and "؟" in reply
+    assert st.questions_asked == 1 and not st.done
+
+
+def test_later_not_known_overrides_earlier_claim(tax):
+    llm = FakeLLM(
+        TurnExtraction(target_role="data_analyst", claims=[ConceptClaim(concept_id="statistics", proficiency="used")],
+                       next_question="سطح؟"),
+        TurnExtraction(not_known=["statistics"], next_question="ابزار؟"),
+    )
+    _, st = next_turn(ConversationState(), "آمار بلدم", llm, tax)
+    _, st = next_turn(st, "راستش آمار بلد نیستم", llm, tax)
+    assert all(c.concept_id != "statistics" for c in st.profile.claims)
+    assert "statistics" in st.profile.not_known
