@@ -4,8 +4,12 @@ from __future__ import annotations
 import json
 import os
 from dataclasses import dataclass, field
+from pathlib import Path
 
 from dotenv import load_dotenv
+
+
+ENV_FILE = Path(__file__).resolve().parent.parent / ".env"
 
 
 class ConfigError(RuntimeError):
@@ -26,7 +30,7 @@ class Settings:
 
 
 def load_settings() -> Settings:
-    load_dotenv()
+    load_dotenv(ENV_FILE)  # explicit path: find_dotenv() breaks under stdin / some runners
     missing = [k for k in ("OPENAI_BASE_URL", "OPENAI_API_KEY", "CHAT_MODEL", "EMBED_MODEL") if not os.getenv(k)]
     if missing:
         raise ConfigError(f"Missing in .env: {', '.join(missing)}. Copy .env.example to .env and fill it in.")

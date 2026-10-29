@@ -107,4 +107,6 @@ Status: ☐ todo · ◐ in progress · ☑ done (update in your PR).
 | 12:40 | From Erfan's architecture doc: adopt metric definitions (P@5, R@10, MRR, nDCG@10), φ_exp (optional), LLM-timeout fallback; use its formulas in REPORT.md | Cheap, improves the 20-pt ML criterion |
 | 12:40 | Not adopted: BM25, semantic chat cache, graded 0–3 labels, required/preferred split (unless free in the extraction prompt) | Time, privacy risk (shared cache across users), RFP asks for binary relevance |
 | 12:40 | The doc's results table holds placeholder numbers; it stays empty until eval runs | Reporting unmeasured results would mislead the jury |
+| 13:30 | Chat model `gpt-5.4-mini` (fallback `gpt-4.1-mini`), embeddings `text-embedding-3-small`, STT `gpt-4o-mini-transcribe`, TTS `gpt-4o-mini-tts` | `scripts/check_models.py`: 5.4-mini 1.1 s avg, 3/3 valid+correct, fewest tokens; 4.1-mini 1.4 s 3/3; 4o-mini 1.9 s 3/3; 4.1-nano deprecated; gpt-5-mini rejects temperature=0. Embeddings: fa↔en same meaning cos 0.57 vs unrelated 0.19–0.26 |
+| 13:30 | LLM JSON schemas use enums/Literal for ids, never free strings | Smoke test: with a loose schema the model stuffed advice into the `role` field |
 | 12:40 | `fa_normalize` applies NFKC | Persian PDFs extract as presentation forms (ﻣﺴﺎﺑﻘﻪ); verified on a real LuaTeX PDF |
