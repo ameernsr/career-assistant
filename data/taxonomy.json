@@ -242,14 +242,15 @@
     "junior": [
      "communication",
      "agile_scrum",
+     "user_stories",
      "ui_ux_basics",
      "business_analysis",
-     "excel"
+     "excel",
+     "product_metrics"
     ],
     "mid": [
      "product_discovery",
      "roadmapping",
-     "product_metrics",
      "stakeholder_management",
      "sql_basics"
     ],
@@ -270,13 +271,15 @@
      "marketing_fundamentals",
      "content_marketing",
      "social_media_marketing",
+     "seo",
+     "graphic_design_basics",
      "excel"
     ],
     "mid": [
-     "seo",
      "paid_ads",
      "email_marketing",
-     "web_analytics"
+     "web_analytics",
+     "ab_testing"
     ],
     "senior": [
      "growth_marketing",
@@ -294,12 +297,13 @@
     "junior": [
      "communication",
      "recruitment_process",
+     "job_descriptions",
      "interviewing",
+     "ats_tools",
      "excel",
      "labor_law"
     ],
     "mid": [
-     "ats_tools",
      "compensation_benefits",
      "performance_management",
      "employer_branding"
@@ -318,15 +322,19 @@
    "levels": {
     "junior": [
      "accounting_principles",
+     "journal_entries",
      "excel",
      "accounting_software",
-     "financial_statements"
+     "financial_statements",
+     "reconciliation",
+     "tax_regulations"
     ],
     "mid": [
      "financial_analysis",
-     "tax_regulations",
      "ifrs",
-     "budgeting_forecasting"
+     "budgeting_forecasting",
+     "cost_accounting",
+     "compensation_benefits"
     ],
     "senior": [
      "financial_modeling",
@@ -1920,6 +1928,105 @@
    "prerequisites": [
     "financial_modeling",
     "budgeting_forecasting"
+   ]
+  },
+  {
+   "id": "journal_entries",
+   "name_fa": "ثبت اسناد و دفاتر حسابداری",
+   "name_en": "Bookkeeping & journal entries",
+   "aliases": [
+    "ثبت اسناد",
+    "ثبت سند",
+    "دفترداری",
+    "دفتر کل",
+    "دفتر روزنامه",
+    "سند حسابداری",
+    "journal entry",
+    "journal entries",
+    "general ledger"
+   ],
+   "prerequisites": [
+    "accounting_principles"
+   ]
+  },
+  {
+   "id": "reconciliation",
+   "name_fa": "مغایرت‌گیری و تطبیق حساب‌ها",
+   "name_en": "Reconciliation",
+   "aliases": [
+    "مغایرت گیری",
+    "مغایرت‌گیری بانکی",
+    "مغایرت گیری بانکی",
+    "تطبیق حساب",
+    "bank reconciliation"
+   ],
+   "prerequisites": [
+    "journal_entries"
+   ]
+  },
+  {
+   "id": "cost_accounting",
+   "name_fa": "حسابداری صنعتی و بهای تمام‌شده",
+   "name_en": "Cost accounting",
+   "aliases": [
+    "حسابداری صنعتی",
+    "بهای تمام شده",
+    "حسابداری بهای تمام شده",
+    "حسابداری انبار",
+    "cost accounting"
+   ],
+   "prerequisites": [
+    "journal_entries"
+   ]
+  },
+  {
+   "id": "graphic_design_basics",
+   "name_fa": "طراحی گرافیک پایه",
+   "name_en": "Graphic design basics",
+   "aliases": [
+    "canva",
+    "کانوا",
+    "photoshop",
+    "فتوشاپ",
+    "illustrator",
+    "ایلاستریتور",
+    "طراحی گرافیک",
+    "graphic design"
+   ],
+   "prerequisites": []
+  },
+  {
+   "id": "job_descriptions",
+   "name_fa": "نوشتن شرح شغل و آگهی استخدام",
+   "name_en": "Job descriptions & job ads",
+   "aliases": [
+    "شرح شغل",
+    "شرح وظایف شغلی",
+    "تحلیل شغل",
+    "job description",
+    "job analysis",
+    "نوشتن آگهی استخدام"
+   ],
+   "prerequisites": [
+    "communication"
+   ]
+  },
+  {
+   "id": "user_stories",
+   "name_fa": "یوزر استوری و مستند نیازمندی",
+   "name_en": "User stories & requirements",
+   "aliases": [
+    "user story",
+    "user stories",
+    "یوزر استوری",
+    "prd",
+    "backlog",
+    "بک لاگ",
+    "بک‌لاگ",
+    "سند نیازمندی"
+   ],
+   "prerequisites": [
+    "agile_scrum"
    ]
   }
  ]

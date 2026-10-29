@@ -1992,5 +1992,95 @@
    "lang": "fa",
    "verified_at": "2026-10-29"
   }
+ ],
+ "journal_entries": [
+  {
+   "title": "Wikipedia: General journal",
+   "url": "https://en.wikipedia.org/wiki/General_journal",
+   "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "Wikipedia: Double-entry bookkeeping",
+   "url": "https://en.wikipedia.org/wiki/Double-entry_bookkeeping",
+   "lang": "en",
+   "verified_at": "2026-10-29"
+  }
+ ],
+ "reconciliation": [
+  {
+   "title": "AccountingCoach: Bank reconciliation",
+   "url": "https://www.accountingcoach.com/bank-reconciliation/explanation",
+   "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: مغایرت گیری بانکی اکسل",
+   "url": "https://maktabkhooneh.org/course/%D9%85%D8%BA%D8%A7%DB%8C%D8%B1%D8%AA-%DA%AF%DB%8C%D8%B1%DB%8C-%D8%A8%D8%A7%D9%86%DA%A9%DB%8C-%D8%A7%DA%A9%D8%B3%D9%84-mk14522/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: reconciliation",
+   "url": "https://faradars.org/videos/reconciliation-fvtgs12265",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  }
+ ],
+ "cost_accounting": [
+  {
+   "title": "Wikipedia: Cost accounting",
+   "url": "https://en.wikipedia.org/wiki/Cost_accounting",
+   "lang": "en",
+   "verified_at": "2026-10-29"
+  }
+ ],
+ "graphic_design_basics": [
+  {
+   "title": "Wikipedia: Graphic design",
+   "url": "https://en.wikipedia.org/wiki/Graphic_design",
+   "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش مقدماتی فتوشاپ",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%85%D9%82%D8%AF%D9%85%D8%A7%D8%AA%DB%8C-%D9%81%D8%AA%D9%88%D8%B4%D8%A7%D9%BE-mk14018/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: graphic design styles introduction",
+   "url": "https://faradars.org/videos/graphic-design-styles-introduction-fvtgs7772",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  }
+ ],
+ "job_descriptions": [
+  {
+   "title": "Workable: Job description templates",
+   "url": "https://resources.workable.com/job-descriptions",
+   "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: job description writing guide",
+   "url": "https://faradars.org/videos/job-description-writing-guide-fvtgs7678",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  }
+ ],
+ "user_stories": [
+  {
+   "title": "Wikipedia: User story",
+   "url": "https://en.wikipedia.org/wiki/User_story",
+   "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: user story",
+   "url": "https://faradars.org/videos/user-story-fvtgs7733",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  }
  ]
 }

@@ -112,4 +112,7 @@ Status: ☐ todo · ◐ in progress · ☑ done (update in your PR).
 | 14:10 | Measured cost per chat session ≈ $0.01 (gpt-5.4-mini, 4–5 calls, ~2k-token catalog in the system prompt); 1.2–1.8 s per turn | Real runs of personas 1 and 2 |
 | 15:30 | Merged from Amir's FastAPI prototype: direct skill editing (A-08 without LLM), voice (A-10), rule-based fallback extraction. Not merged: FastAPI/Cytoscape frontend, its taxonomy (no aliases), hard-coded cost | Strengths that fit our stack before the freeze; its substring keyword fallback had an `html`→`ml` false positive, ours matches whole words |
 | 15:30 | STT model `gpt-transcribe` | `gpt-4o-mini-transcribe`, `gpt-4o-transcribe`, `whisper-1` return 404 on the gateway; `gpt-transcribe` transcribed a TTS round trip exactly |
+| 15:40 | Explicit «بلد نیستم» also removes skills that were only inferred from the user's level and depend on it | "Senior but no SQL" left advanced SQL/BI/data modeling as known — contradictory |
+| 15:40 | Business roles enriched (bookkeeping, reconciliation, cost accounting, graphic design, job descriptions, user stories); junior roadmaps 8–9 skills like technical roles | Junior financial/marketing roadmaps had only 5 skills |
+| 15:40 | Closed ads: 60-day filter on by default + `collectors/check_alive.py` (404/410 or JobPosting data gone) in the periodic refresh | 89/258 ads older than 30 days |
 | 12:40 | `fa_normalize` applies NFKC | Persian PDFs extract as presentation forms (ﻣﺴﺎﺑﻘﻪ); verified on a real LuaTeX PDF |

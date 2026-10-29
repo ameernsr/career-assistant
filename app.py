@@ -53,6 +53,18 @@ def fa_date(iso: str | None, with_time: bool = False) -> str:
     return fa(text + (f" · {dt:%H:%M}" if with_time else ""))
 
 
+def age_fa(iso: str | None) -> str | None:
+    if not iso:
+        return None
+    from datetime import date
+
+    try:
+        days = (date.today() - date.fromisoformat(iso[:10])).days
+    except ValueError:
+        return None
+    return "امروز" if days <= 0 else f"{fa(days)} روز پیش"
+
+
 def is_llm_error(exc: Exception) -> bool:
     # a Streamlit module reload can leave an LLM object raising the previous LLMError class
     return isinstance(exc, LLMError) or type(exc).__name__ == "LLMError"
@@ -326,6 +338,9 @@ with tab_path:
         elif ss.conv.done:
             known, not_known = known_sets(p, tax)
             rm = compute_roadmap(tax, p.target_role, p.target_level or "junior", known, not_known)
+            order = ["junior", "mid", "senior"]
+            if p.current_level in order and order.index(p.current_level) >= order.index(rm.target_level) and rm.target_level != "senior":
+                st.info(f"سطح هدف ({LEVEL_FA[rm.target_level]}) از سطح فعلی شما بالاتر نیست؛ در چت بنویسید «می‌خوام {LEVEL_FA[order[order.index(rm.target_level) + 1]]} بشم» تا نقشه‌ی سطح بعد را ببینید.")
             with st.container(border=True):
                 roadmap_view(rm, f"{tax.roles[p.target_role]['name_fa']} · {LEVEL_FA[rm.target_level]}", key="path", profile=p)
         else:
@@ -381,7 +396,9 @@ with tab_jobs:
                 city = st.selectbox("شهر", ["همه‌ی شهرها"] + cities)
                 levels = st.pills("سطح", list(SENIORITY_FA), format_func=SENIORITY_FA.get, selection_mode="multi")
                 remote_ok = st.toggle("آگهی‌های دورکاری هم باشد", value=True)
-                filters = {"city": None if city == "همه‌ی شهرها" else city, "remote_ok": remote_ok, "seniority": levels or None}
+                fresh_only = st.toggle("فقط آگهی‌های ۶۰ روز اخیر", value=True, help="آگهی‌های قدیمی احتمالاً بسته شده‌اند. آگهی‌هایی که سایت حذف کرده با بررسی دوره‌ای کنار گذاشته می‌شوند")
+                filters = {"city": None if city == "همه‌ی شهرها" else city, "remote_ok": remote_ok, "seniority": levels or None,
+                           "max_age_days": 60 if fresh_only else None}
 
     with main:
         if not ss.resume:
@@ -418,7 +435,7 @@ with tab_jobs:
                 with st.container(border=True):
                     a, b = st.columns([6, 1])
                     meta = " · ".join(x for x in [j.company, j.location, "دورکاری" if j.remote else None,
-                                                  SOURCE_FA.get(j.source, j.source), fa_date(j.date_posted) or None] if x)
+                                                  SOURCE_FA.get(j.source, j.source), age_fa(j.date_posted)] if x)
                     a.markdown(f"<div class='job-title'><span class='rank'>{fa(rank_i)}</span>{j.title}</div>"
                                f"<div class='job-meta'>{meta}</div>", unsafe_allow_html=True)
                     b.markdown(f"<div class='score {band}'><b>{fa(pct)}٪</b><span>تطابق</span></div>", unsafe_allow_html=True)

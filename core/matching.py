@@ -62,6 +62,15 @@ def _passes(job: JobPosting, filters: dict | None) -> bool:
     levels = filters.get("seniority")
     if levels and job.seniority and job.seniority not in levels:
         return False
+    max_age = filters.get("max_age_days")
+    if max_age and job.date_posted:  # old ads are likely closed
+        from datetime import date
+
+        try:
+            if (date.today() - date.fromisoformat(job.date_posted)).days > max_age:
+                return False
+        except ValueError:
+            pass
     return True
 
 

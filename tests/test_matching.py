@@ -83,3 +83,15 @@ def test_one_skill_job_does_not_beat_a_broad_full_match(tax):
     resume = ResumeProfile(skill_ids=["excel", "sql_basics", "statistics"])
     jobs = [job("narrow", "Clerk", reqs=["Excel"]), job("broad", "Analyst", reqs=["Excel", "SQL", "آمار"])]
     assert rank(resume, jobs, tax, method="hybrid")[0].job_id == "broad"
+
+
+def test_max_age_filter_drops_old_ads(tax):
+    from datetime import date, timedelta
+
+    resume = ResumeProfile(skill_ids=["excel"])
+    fresh, old = job("fresh", "Excel", reqs=["Excel"]), job("old", "Excel", reqs=["Excel"])
+    fresh.date_posted = (date.today() - timedelta(days=5)).isoformat()
+    old.date_posted = (date.today() - timedelta(days=90)).isoformat()
+    undated = job("undated", "Excel", reqs=["Excel"])
+    out = rank(resume, [fresh, old, undated], tax, method="baseline", filters={"max_age_days": 60})
+    assert {r.job_id for r in out} == {"fresh", "undated"}  # unknown date: keep, the card says so

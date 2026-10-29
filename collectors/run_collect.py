@@ -65,9 +65,11 @@ def run_source(name: str, limit: int, incremental: bool, use_cache: bool) -> tup
 
 def merge() -> dict:
     set_focus(None)  # judge relevance against all 12 roles, whatever --focus was
+    closed_file = ROOT / "data" / "jobs_closed.json"
+    closed = set(json.loads(closed_file.read_text(encoding="utf-8"))) if closed_file.exists() else set()
     jobs: list[JobPosting] = []
     for f in sorted(JOBS_DIR.glob("*.jsonl")):
-        jobs += [j for j in load_jsonl(f) if is_relevant(j.title, " ".join(j.requirements))]
+        jobs += [j for j in load_jsonl(f) if j.id not in closed and is_relevant(j.title, " ".join(j.requirements))]
     unique, dropped = dedup(jobs)
     MERGED.write_text(json.dumps([j.model_dump() for j in unique], ensure_ascii=False, indent=1), encoding="utf-8")
     per_source: dict[str, int] = {}
@@ -103,6 +105,9 @@ def main() -> None:
             for name in sources:
                 print(f"== {name}", flush=True)
                 run_source(name, args.max_per_source, True, use_cache=False)
+            from .check_alive import check as check_alive
+
+            print(f"closed-ad check: {check_alive()}", flush=True)  # drop ads that were taken down
             meta = merge()
             print(f"[{meta['last_updated']}] {meta['total']} jobs; next refresh in {interval // 60} min", flush=True)
             time.sleep(interval)

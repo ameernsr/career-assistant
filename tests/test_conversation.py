@@ -121,3 +121,21 @@ def test_fallback_does_not_match_short_tokens_inside_words(tax):
     llm = FakeLLM(LLMError("قطع"))
     _, st = next_turn(ConversationState(), "من html بلدم", llm, tax)
     assert st.profile.target_role is None
+
+
+def test_not_known_also_removes_inferred_dependents(tax):
+    # "I'm a senior data analyst but I don't know SQL": skills built on SQL that were only inferred from the
+    # level cannot count as known either (BI tools, data modeling depend on SQL in the mini taxonomy).
+    p = UserProfile(target_role="data_analyst", target_level="senior", current_level="senior", not_known=["sql_basics"])
+    known, not_known = known_sets(p, tax)
+    assert "sql_basics" not in known
+    assert "bi_tools" not in known and "data_modeling" not in known
+    assert "excel" in known and "statistics" in known  # unrelated inferred skills stay
+
+
+def test_explicit_claim_survives_not_known_of_its_prerequisite(tax):
+    # The user explicitly said they use BI tools: keep it (their word), even though they deny SQL.
+    p = UserProfile(target_role="data_analyst", target_level="senior", current_level="senior",
+                    claims=[ConceptClaim(concept_id="bi_tools", proficiency="used")], not_known=["sql_basics"])
+    known, _ = known_sets(p, tax)
+    assert "bi_tools" in known and "data_modeling" not in known

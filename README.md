@@ -27,7 +27,7 @@ cp .env.example .env        # OPENAI_BASE_URL و OPENAI_API_KEY گیت‌وی ر
 
 ## تست‌ها
 ```bash
-.venv/bin/python -m pytest -q          # ۹۶ تست
+.venv/bin/python -m pytest -q          # ۹۹ تست
 ```
 بخش‌های قطعی با TDD نوشته شده‌اند: تاکسونومی، نقشه‌ی راه، رتبه‌بندی، معیارهای ارزیابی، پارسر رزومه، robots.txt و نرمال‌سازی متن. در تست‌های مربوط به LLM فقط خود گیت‌وی شبیه‌سازی شده و بقیه‌ی منطق واقعاً اجرا می‌شود.
 
@@ -38,7 +38,9 @@ cp .env.example .env        # OPENAI_BASE_URL و OPENAI_API_KEY گیت‌وی ر
 | کرال آگهی‌ها (۵ منبع) | `.venv/bin/python -m collectors.run_collect --sources jobinja jobvision karboom irantalent quera --max-per-source 50` |
 | کرال افزایشی (B-11) | همان دستور با `--incremental`. برای اجرای خودکار هر ۶ ساعت: `--every 360`. معادل cron: `0 */6 * * * cd /app && .venv/bin/python -m collectors.run_collect --incremental` |
 | پر کردن جای خالی یک نقش | `... --focus data_analyst data_engineer --incremental` |
+| حذف آگهی‌های بسته‌شده (404/410 یا حذف داده‌ی آگهی از صفحه). در حالت `--every` خودکار اجرا می‌شود | `.venv/bin/python -m collectors.check_alive` |
 | embedding آگهی‌ها (فقط آگهی‌های جدید) | `.venv/bin/python scripts/embed_jobs.py` |
+| دوره‌های فارسی مکتب‌خونه و فرادرس (از sitemap خود سایت‌ها) | `.venv/bin/python scripts/find_persian_courses.py` |
 | بررسی لینک منابع آموزشی (A-07) | `.venv/bin/python scripts/verify_links.py` |
 | انتخاب مدل با بنچمارک | `.venv/bin/python scripts/check_models.py MODEL_A MODEL_B` |
 | ارزیابی رتبه‌بندی (۱۰.۲) | `scripts/eval_ranking.py pool`، برچسب‌زنی، سپس `scripts/eval_ranking.py score` (راهنما در [`data/eval/README.md`](data/eval/README.md)) |

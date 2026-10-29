@@ -4,6 +4,7 @@ from __future__ import annotations
 import re
 from typing import Literal, Optional
 
+import networkx as nx
 from pydantic import BaseModel, Field
 
 from core.llm import LLMError
@@ -110,13 +111,16 @@ def known_sets(profile: UserProfile, tax: Taxonomy) -> tuple[set[str], set[str]]
 
     'heard' does not count (Appendix B). Someone already at level L of the target role is assumed to know
     that role's concepts up to L (Appendix B, junior → senior backend). Explicit «بلد نیستم» always wins."""
-    known = {c.concept_id for c in profile.claims if c.proficiency in KNOWN_LEVELS}
+    explicit = {c.concept_id for c in profile.claims if c.proficiency in KNOWN_LEVELS}
+    inferred: set[str] = set()
     role = tax.roles.get(profile.target_role or "")
     if role and profile.current_level in LEVELS:
         for level in LEVELS[: LEVELS.index(profile.current_level) + 1]:
-            known |= set(role["levels"].get(level, []))
-    not_known = set(profile.not_known)
-    return known - not_known, not_known
+            inferred |= set(role["levels"].get(level, []))
+    not_known = {c for c in profile.not_known if c in tax.concepts}
+    for cid in not_known:  # nobody knows advanced SQL without SQL: inferred dependents go too
+        inferred -= nx.descendants(tax.graph, cid)
+    return (explicit | inferred) - not_known, not_known
 
 
 def next_turn(state: ConversationState, user_msg: str, llm, tax: Taxonomy) -> tuple[str, ConversationState]:
