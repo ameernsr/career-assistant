@@ -81,6 +81,8 @@ st.markdown(
 html, body, .stApp, [class*="st-"], .stMarkdown, .stChatMessage, input, textarea, button, label, p, h1, h2, h3 {
   font-family: Vazirmatn, Tahoma, sans-serif !important; }
 .stApp, .main { direction: rtl; text-align: right; }
+.stApp [data-testid="stMarkdownContainer"], .stApp [data-testid="stCaptionContainer"], .stApp [data-testid="stWidgetLabel"], .stApp [data-testid="stAlertContentInfo"], .stApp [data-testid="stAlertContentWarning"], .stApp [data-testid="stAlertContentError"], .stApp [data-testid="stAlertContentSuccess"], .stApp [data-testid="stText"], .stApp [data-testid="stProgress"] p, .stApp [data-testid="stExpander"] summary, .stApp [data-baseweb="select"], .stApp [data-testid="stFileUploaderDropzoneInstructions"] { direction: rtl; text-align: right; }
+.stApp [data-testid="stMarkdownContainer"] ul, .stApp [data-testid="stMarkdownContainer"] ol { padding-right: 1.2rem; padding-left: 0; }
 .stApp { background: var(--bg); color: var(--ink); }
 [data-testid="stSidebar"], [data-testid="stSidebarCollapsedControl"], [data-testid="collapsedControl"] { display: none; }
 #MainMenu, footer, [data-testid="stDecoration"], [data-testid="stStatusWidget"], [data-testid="stToolbar"] { visibility: hidden; }
@@ -89,7 +91,7 @@ header[data-testid="stHeader"] { background: transparent; height: 0; }
 [data-testid="stChatInput"] textarea { direction: rtl; text-align: right; }
 .hero { background: var(--teal-d); color:#fff; border-radius: 18px; padding: 20px 26px; display:flex; flex-wrap:wrap;
         align-items:center; justify-content:space-between; gap:18px; }
-.hero h1 { font-size: 1.6rem; font-weight: 800; margin: 0; color:#fff; line-height:1.5; padding:0; }
+.hero .h1 { font-size: 1.6rem; font-weight: 800; margin: 0; color:#fff; line-height:1.5; }
 .hero p { margin: 2px 0 0; color: #C7E2DE; font-size: 0.95rem; }
 .stats { display:flex; gap:10px; flex-wrap:wrap; }
 .stat { background: rgba(255,255,255,0.09); border:1px solid rgba(255,255,255,0.16); border-radius: 12px; padding: 8px 14px; min-width: 92px; text-align:center; }
@@ -106,7 +108,7 @@ div[data-testid="stVerticalBlockBorderWrapper"] { background: var(--card); borde
 .panel-sub { color: var(--muted); font-size: 0.9rem; margin: 0 0 10px; }
 .eyebrow { font-size: 0.78rem; font-weight: 600; color: var(--saffron); letter-spacing: .02em; }
 .map-head { display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:14px; margin-bottom: 6px; }
-.map-head h2 { font-size: 1.3rem; font-weight: 800; margin: 2px 0 0; color: var(--ink); padding:0; }
+.map-head .h2 { font-size: 1.3rem; font-weight: 800; margin: 2px 0 0; color: var(--ink); }
 .kpis { display:flex; gap:8px; flex-wrap:wrap; }
 .kpi { background: var(--teal-soft); border-radius: 12px; padding: 8px 14px; text-align:center; min-width: 96px; }
 .kpi b { display:block; font-size: 1.25rem; color: var(--teal-d); font-weight: 800; }
@@ -126,7 +128,7 @@ div[data-testid="stVerticalBlockBorderWrapper"] { background: var(--card); borde
 .tag { display:inline-block; font-size: 0.7rem; font-weight: 700; border-radius: 6px; padding: 0 6px; margin-left: 4px; }
 .tag.fa { background: var(--saffron-soft); color: #7A5204; } .tag.en { background: var(--grey-soft); color: var(--muted); }
 .empty { background: var(--card); border: 1px dashed #C3D1D5; border-radius: 16px; padding: 24px; }
-.empty h3 { margin: 0 0 4px; font-size: 1.08rem; font-weight: 700; padding:0; }
+.empty .h3 { margin: 0 0 4px; font-size: 1.08rem; font-weight: 700; color: var(--ink); }
 .steps { display:flex; gap:10px; flex-wrap:wrap; margin-top: 12px; }
 .step { flex:1; min-width: 140px; background: var(--teal-soft); border-radius: 12px; padding: 12px; font-size: 0.9rem; }
 .step b { color: var(--teal); display:block; margin-bottom: 2px; }
@@ -151,6 +153,8 @@ div[data-testid="stVerticalBlockBorderWrapper"] { background: var(--card); borde
 .stButton > button, .stDownloadButton > button, .stLinkButton > a { border-radius: 10px; font-weight: 600; }
 [data-testid="stGraphVizChart"] { direction: ltr; background: var(--card); border:1px solid var(--line); border-radius: 14px; padding: 6px; }
 [data-testid="stFileUploaderDropzone"] { background: var(--teal-soft); border-color: #B9D9D4; }
+[data-testid="stFileUploaderDropzone"] button, [data-testid="stFileUploaderDropzone"] small { direction: ltr; }
+.stApp [data-testid="stIconMaterial"] { font-family: "Material Symbols Rounded" !important; direction: ltr; }
 </style>""",
     unsafe_allow_html=True,
 )
@@ -226,7 +230,7 @@ def html(markup: str):
 def roadmap_view(rm, goal: str, key: str, profile=None):
     total = sum(len(s) for s in rm.stages)
     summary = summarize(rm, tax, goal=goal)
-    html(f"""<div class="map-head"><div><div class="eyebrow">نقشه‌ی راه یادگیری</div><h2>{goal}</h2></div>
+    html(f"""<div class="map-head"><div><div class="eyebrow">نقشه‌ی راه یادگیری</div><div class="h2">{goal}</div></div>
 <div class="kpis"><div class="kpi warm"><b>{fa(total)}</b><span>مهارت برای یادگیری</span></div>
 <div class="kpi"><b>{fa(len(rm.stages))}</b><span>مرحله</span></div>
 <div class="kpi"><b>{fa(len(rm.known))}</b><span>مهارتی که دارید</span></div></div></div>""")
@@ -280,7 +284,7 @@ def roadmap_view(rm, goal: str, key: str, profile=None):
 
 
 # ---------------- header ----------------
-html(f"""<div class="hero"><div><h1>🧭 دستیار مسیر شغلی</h1>
+html(f"""<div class="hero"><div><div class="h1">🧭 دستیار مسیر شغلی</div>
 <p>نقشه‌ی راه یادگیری از روی یک مدل صریح مهارت‌ها، و شغل‌های مناسب شما از روی رزومه</p></div>
 <div class="stats"><div class="stat"><b>{fa(len(JOBS))}</b><span>آگهی واقعی</span></div>
 <div class="stat"><b>{fa(len(JOBS_META.get("per_source", {})) or 5)}</b><span>سایت کاریابی</span></div>
@@ -349,11 +353,11 @@ with tab_path:
             with st.container(border=True):
                 roadmap_view(rm, f"{tax.roles[p.target_role]['name_fa']} · {LEVEL_FA[rm.target_level]}", key="path", profile=p)
         else:
-            html("""<div class="empty"><h3>نقشه‌ی راه شما اینجا ساخته می‌شود</h3>
+            html("""<div class="empty"><div class="h3">نقشه‌ی راه شما اینجا ساخته می‌شود</div>
 <div class="panel-sub">در گفتگو بگویید چه شغلی می‌خواهید. حداکثر ۶ سؤال کوتاه می‌پرسم.</div>
-<div class="steps"><div class="step"><b>۱. هدف</b>نقش و سطحی که می‌خواهید</div>
-<div class="step"><b>۲. پیشینه</b>آنچه واقعاً بلدید، نه فقط شنیده‌اید</div>
-<div class="step"><b>۳. نقشه</b>گراف مرحله‌به‌مرحله با منابع فارسی و رسمی</div></div></div>""")
+<div class="steps"><div class="step"><b>گام ۱: هدف</b>نقش و سطحی که می‌خواهید</div>
+<div class="step"><b>گام ۲: پیشینه</b>آنچه واقعاً بلدید، نه فقط شنیده‌اید</div>
+<div class="step"><b>گام ۳: نقشه</b>گراف مرحله‌به‌مرحله با منابع فارسی و رسمی</div></div></div>""")
 
 # ---------------- Module B ----------------
 with tab_jobs:
@@ -407,11 +411,11 @@ with tab_jobs:
 
     with main:
         if not ss.resume:
-            html("""<div class="empty"><h3>شغل‌های مناسب شما اینجا نمایش داده می‌شود</h3>
+            html("""<div class="empty"><div class="h3">شغل‌های مناسب شما اینجا نمایش داده می‌شود</div>
 <div class="panel-sub">رزومه را از ستون کناری بارگذاری کنید. ۱۰ شغل برتر از میان آگهی‌های واقعی جابینجا، جاب‌ویژن، کاربوم، ایران‌تلنت و کوئرا رتبه‌بندی می‌شود.</div>
-<div class="steps"><div class="step"><b>۱. پروفایل</b>مهارت‌ها و سابقه از رزومه استخراج می‌شود</div>
-<div class="step"><b>۲. تطبیق</b>هر شغل با مهارت‌های منطبق و جاافتاده</div>
-<div class="step"><b>۳. نقشه</b>برای هر شغل: چه چیزی یاد بگیرم؟</div></div></div>""")
+<div class="steps"><div class="step"><b>گام ۱: پروفایل</b>مهارت‌ها و سابقه از رزومه استخراج می‌شود</div>
+<div class="step"><b>گام ۲: تطبیق</b>هر شغل با مهارت‌های منطبق و جاافتاده</div>
+<div class="step"><b>گام ۳: نقشه</b>برای هر شغل: چه چیزی یاد بگیرم؟</div></div></div>""")
         else:
             profile, rvec = ss.resume
             results = rank(profile, JOBS, tax, method=method, filters=filters, k=10,
