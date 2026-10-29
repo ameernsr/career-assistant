@@ -16,15 +16,16 @@ def _q(text: str) -> str:
     return json.dumps(text, ensure_ascii=False)  # DOT accepts JSON-style quoted strings
 
 
-def roadmap_dot(rm: Roadmap, tax: Taxonomy) -> str:
-    """Stages top to bottom; to-learn concepts orange, known direct prerequisites green."""
+def roadmap_dot(rm: Roadmap, tax: Taxonomy, show_known: bool = False) -> str:
+    """Stages flow right to left (Persian reading order), one column per stage. Known prerequisites are optional:
+    shown, they can outnumber the to-learn nodes and squeeze the graph (A-06: readable on one screen)."""
     todo = [c for stage in rm.stages for c in stage]
     todo_set = set(todo)
-    known_shown = sorted({p for c in todo for p in tax.graph.predecessors(c) if p not in todo_set})
+    known_shown = sorted({p for c in todo for p in tax.graph.predecessors(c) if p not in todo_set}) if show_known else []
     lines = [
         "digraph roadmap {",
-        f'  graph [rankdir=TB, nodesep=0.25, ranksep=0.45, bgcolor="transparent", fontname={_q(FONT)}];',
-        f'  node [shape=box, style="rounded,filled", fontname={_q(FONT)}, fontsize=12, margin="0.15,0.06"];',
+        f'  graph [rankdir=RL, nodesep=0.18, ranksep=0.55, bgcolor="transparent", fontname={_q(FONT)}, fontsize=13];',
+        f'  node [shape=box, style="rounded,filled", fontname={_q(FONT)}, fontsize=13, margin="0.18,0.08", width=1.6];',
         '  edge [color="#8A94A6", arrowsize=0.6];',
     ]
     if known_shown:
