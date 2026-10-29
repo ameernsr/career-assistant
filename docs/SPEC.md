@@ -67,7 +67,7 @@ Status: ☐ todo · ◐ in progress · ☑ done (update in your PR).
 | A-04 | Must | P3 | A test feeds LLM JSON containing a fake role and fake concept; both are dropped | ☑ `test_unknown_role_and_concepts_are_dropped` |
 | A-05 | Must | P1 | Test: every concept appears after all its prerequisites; known concepts are absent | ☑ `core/roadmap.py` |
 | A-06 | Must | P3 | Graph renders on one laptop screen for a 25-node roadmap, known vs to-learn colored | ☐ |
-| A-07 | Must | P1 | Every displayed URL comes from `resources.json` and `verify_links.py` reports 0 failures | ☐ |
+| A-07 | Must | P1 | Every displayed URL comes from `resources.json` and `verify_links.py` reports 0 failures | ☑ 129/129 links verified, 109/109 concepts covered |
 | A-08 | Should | P3 | «من اکسل بلد نیستم» adds excel back into the graph without restarting the chat | ◐ logic done + real run («داکر بلد نیستم»); UI pending |
 | A-09 | Should | P1 | Summary text names exactly the concepts in `roadmap.stages` (test) | ☐ |
 | A-10 | Could | P3 | Voice input transcribed into the chat; summary playable as audio | ☐ |

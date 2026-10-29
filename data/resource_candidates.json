@@ -1,0 +1,865 @@
+{
+ "computer_basics": [
+  {
+   "title": "GCFGlobal: Computer Basics",
+   "url": "https://edu.gcfglobal.org/en/computerbasics/",
+   "lang": "en"
+  }
+ ],
+ "english_technical": [
+  {
+   "title": "Wikipedia: English for specific purposes",
+   "url": "https://en.wikipedia.org/wiki/English_for_specific_purposes",
+   "lang": "en"
+  }
+ ],
+ "communication": [
+  {
+   "title": "Wikipedia: Teamwork",
+   "url": "https://en.wikipedia.org/wiki/Teamwork",
+   "lang": "en"
+  },
+  {
+   "title": "ویکی‌پدیا: ارتباطات",
+   "url": "https://fa.wikipedia.org/wiki/ارتباطات",
+   "lang": "fa"
+  }
+ ],
+ "excel": [
+  {
+   "title": "Microsoft Excel help & learning",
+   "url": "https://support.microsoft.com/en-us/excel",
+   "lang": "en"
+  },
+  {
+   "title": "Exceljet",
+   "url": "https://exceljet.net/",
+   "lang": "en"
+  }
+ ],
+ "statistics": [
+  {
+   "title": "Khan Academy: Statistics and probability",
+   "url": "https://www.khanacademy.org/math/statistics-probability",
+   "lang": "en"
+  }
+ ],
+ "linear_algebra": [
+  {
+   "title": "Khan Academy: Linear algebra",
+   "url": "https://www.khanacademy.org/math/linear-algebra",
+   "lang": "en"
+  }
+ ],
+ "programming_basics": [
+  {
+   "title": "Harvard CS50x",
+   "url": "https://cs50.harvard.edu/x/",
+   "lang": "en"
+  }
+ ],
+ "python_basics": [
+  {
+   "title": "The Python Tutorial",
+   "url": "https://docs.python.org/3/tutorial/",
+   "lang": "en"
+  },
+  {
+   "title": "Kaggle Learn: Python",
+   "url": "https://www.kaggle.com/learn/python",
+   "lang": "en"
+  }
+ ],
+ "javascript": [
+  {
+   "title": "javascript.info",
+   "url": "https://javascript.info/",
+   "lang": "en"
+  },
+  {
+   "title": "MDN: JavaScript Guide",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
+   "lang": "en"
+  }
+ ],
+ "typescript": [
+  {
+   "title": "TypeScript Handbook",
+   "url": "https://www.typescriptlang.org/docs/handbook/intro.html",
+   "lang": "en"
+  }
+ ],
+ "java": [
+  {
+   "title": "dev.java: Learn Java",
+   "url": "https://dev.java/learn/",
+   "lang": "en"
+  }
+ ],
+ "csharp_dotnet": [
+  {
+   "title": "Microsoft Learn: C#",
+   "url": "https://learn.microsoft.com/en-us/dotnet/csharp/",
+   "lang": "en"
+  }
+ ],
+ "php": [
+  {
+   "title": "PHP Manual: Getting started",
+   "url": "https://www.php.net/manual/en/getting-started.php",
+   "lang": "en"
+  }
+ ],
+ "golang": [
+  {
+   "title": "A Tour of Go",
+   "url": "https://go.dev/tour/",
+   "lang": "en"
+  }
+ ],
+ "oop": [
+  {
+   "title": "Real Python: OOP in Python",
+   "url": "https://realpython.com/python3-object-oriented-programming/",
+   "lang": "en"
+  }
+ ],
+ "data_structures_algorithms": [
+  {
+   "title": "roadmap.sh: Data Structures & Algorithms",
+   "url": "https://roadmap.sh/datastructures-and-algorithms",
+   "lang": "en"
+  }
+ ],
+ "git": [
+  {
+   "title": "Pro Git book",
+   "url": "https://git-scm.com/book/en/v2",
+   "lang": "en"
+  }
+ ],
+ "linux": [
+  {
+   "title": "Ubuntu: The Linux command line for beginners",
+   "url": "https://ubuntu.com/tutorials/command-line-for-beginners",
+   "lang": "en"
+  }
+ ],
+ "testing": [
+  {
+   "title": "pytest: Get started",
+   "url": "https://docs.pytest.org/en/stable/getting-started.html",
+   "lang": "en"
+  }
+ ],
+ "design_patterns": [
+  {
+   "title": "Refactoring.Guru: Design Patterns",
+   "url": "https://refactoring.guru/design-patterns",
+   "lang": "en"
+  }
+ ],
+ "http_web_basics": [
+  {
+   "title": "MDN: An overview of HTTP",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview",
+   "lang": "en"
+  }
+ ],
+ "relational_db": [
+  {
+   "title": "PostgreSQL Tutorial (official)",
+   "url": "https://www.postgresql.org/docs/current/tutorial.html",
+   "lang": "en"
+  }
+ ],
+ "sql_basics": [
+  {
+   "title": "Kaggle Learn: Intro to SQL",
+   "url": "https://www.kaggle.com/learn/intro-to-sql",
+   "lang": "en"
+  },
+  {
+   "title": "SQLBolt",
+   "url": "https://sqlbolt.com/",
+   "lang": "en"
+  },
+  {
+   "title": "ویکی‌پدیا: اس‌کیوال",
+   "url": "https://fa.wikipedia.org/wiki/اس‌کیوال",
+   "lang": "fa"
+  }
+ ],
+ "sql_advanced": [
+  {
+   "title": "Kaggle Learn: Advanced SQL",
+   "url": "https://www.kaggle.com/learn/advanced-sql",
+   "lang": "en"
+  },
+  {
+   "title": "PostgreSQL: Window Functions",
+   "url": "https://www.postgresql.org/docs/current/tutorial-window.html",
+   "lang": "en"
+  }
+ ],
+ "rest_api": [
+  {
+   "title": "MDN: HTTP request methods",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods",
+   "lang": "en"
+  },
+  {
+   "title": "restfulapi.net",
+   "url": "https://restfulapi.net/",
+   "lang": "en"
+  }
+ ],
+ "backend_framework": [
+  {
+   "title": "Django tutorial",
+   "url": "https://docs.djangoproject.com/en/stable/intro/tutorial01/",
+   "lang": "en"
+  },
+  {
+   "title": "FastAPI tutorial",
+   "url": "https://fastapi.tiangolo.com/tutorial/",
+   "lang": "en"
+  }
+ ],
+ "orm": [
+  {
+   "title": "SQLAlchemy ORM Quick Start",
+   "url": "https://docs.sqlalchemy.org/en/20/orm/quickstart.html",
+   "lang": "en"
+  }
+ ],
+ "authentication": [
+  {
+   "title": "OWASP Top Ten",
+   "url": "https://owasp.org/www-project-top-ten/",
+   "lang": "en"
+  },
+  {
+   "title": "Introduction to JWT",
+   "url": "https://jwt.io/introduction",
+   "lang": "en"
+  }
+ ],
+ "nosql": [
+  {
+   "title": "MongoDB University",
+   "url": "https://learn.mongodb.com/",
+   "lang": "en"
+  }
+ ],
+ "caching": [
+  {
+   "title": "Django: Cache framework",
+   "url": "https://docs.djangoproject.com/en/stable/topics/cache/",
+   "lang": "en"
+  }
+ ],
+ "message_queues": [
+  {
+   "title": "RabbitMQ tutorials",
+   "url": "https://www.rabbitmq.com/tutorials",
+   "lang": "en"
+  },
+  {
+   "title": "Apache Kafka quickstart",
+   "url": "https://kafka.apache.org/quickstart",
+   "lang": "en"
+  }
+ ],
+ "docker": [
+  {
+   "title": "Docker: Get started",
+   "url": "https://docs.docker.com/get-started/",
+   "lang": "en"
+  }
+ ],
+ "system_design": [
+  {
+   "title": "The System Design Primer",
+   "url": "https://github.com/donnemartin/system-design-primer",
+   "lang": "en"
+  }
+ ],
+ "distributed_systems": [
+  {
+   "title": "microservices.io patterns",
+   "url": "https://microservices.io/patterns/",
+   "lang": "en"
+  }
+ ],
+ "html_css": [
+  {
+   "title": "MDN: Structuring content with HTML",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Structuring_content",
+   "lang": "en"
+  },
+  {
+   "title": "MDN: CSS styling basics",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics",
+   "lang": "en"
+  }
+ ],
+ "responsive_design": [
+  {
+   "title": "MDN: Responsive design",
+   "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design",
+   "lang": "en"
+  }
+ ],
+ "frontend_framework": [
+  {
+   "title": "React: Quick Start",
+   "url": "https://react.dev/learn",
+   "lang": "en"
+  },
+  {
+   "title": "Vue.js guide",
+   "url": "https://vuejs.org/guide/introduction.html",
+   "lang": "en"
+  }
+ ],
+ "state_management": [
+  {
+   "title": "Redux Essentials tutorial",
+   "url": "https://redux.js.org/tutorials/essentials/part-1-overview-concepts",
+   "lang": "en"
+  }
+ ],
+ "web_performance": [
+  {
+   "title": "MDN: Web performance",
+   "url": "https://developer.mozilla.org/en-US/docs/Web/Performance",
+   "lang": "en"
+  }
+ ],
+ "ui_ux_basics": [
+  {
+   "title": "NN/g: 10 Usability Heuristics",
+   "url": "https://www.nngroup.com/articles/ten-usability-heuristics/",
+   "lang": "en"
+  },
+  {
+   "title": "Figma Learn",
+   "url": "https://help.figma.com/hc/en-us",
+   "lang": "en"
+  }
+ ],
+ "android_kotlin": [
+  {
+   "title": "Kotlin: Get started",
+   "url": "https://kotlinlang.org/docs/getting-started.html",
+   "lang": "en"
+  }
+ ],
+ "ios_swift": [
+  {
+   "title": "Apple: SwiftUI tutorials",
+   "url": "https://developer.apple.com/tutorials/swiftui",
+   "lang": "en"
+  }
+ ],
+ "cross_platform_mobile": [
+  {
+   "title": "Flutter: Get started",
+   "url": "https://docs.flutter.dev/get-started",
+   "lang": "en"
+  }
+ ],
+ "mobile_ui": [
+  {
+   "title": "Material Design 3",
+   "url": "https://m3.material.io/",
+   "lang": "en"
+  }
+ ],
+ "app_publishing": [
+  {
+   "title": "Google Play Console Help",
+   "url": "https://support.google.com/googleplay/android-developer/",
+   "lang": "en"
+  }
+ ],
+ "networking_basics": [
+  {
+   "title": "Cloudflare Learning Center",
+   "url": "https://www.cloudflare.com/learning/",
+   "lang": "en"
+  }
+ ],
+ "shell_scripting": [
+  {
+   "title": "GNU Bash manual",
+   "url": "https://www.gnu.org/software/bash/manual/bash.html",
+   "lang": "en"
+  }
+ ],
+ "ci_cd": [
+  {
+   "title": "GitHub Actions documentation",
+   "url": "https://docs.github.com/en/actions",
+   "lang": "en"
+  }
+ ],
+ "kubernetes": [
+  {
+   "title": "Kubernetes basics tutorial",
+   "url": "https://kubernetes.io/docs/tutorials/kubernetes-basics/",
+   "lang": "en"
+  }
+ ],
+ "cloud": [
+  {
+   "title": "AWS: Getting started",
+   "url": "https://aws.amazon.com/getting-started/",
+   "lang": "en"
+  }
+ ],
+ "iac": [
+  {
+   "title": "Terraform tutorials",
+   "url": "https://developer.hashicorp.com/terraform/tutorials",
+   "lang": "en"
+  }
+ ],
+ "monitoring": [
+  {
+   "title": "Prometheus overview",
+   "url": "https://prometheus.io/docs/introduction/overview/",
+   "lang": "en"
+  }
+ ],
+ "data_cleaning": [
+  {
+   "title": "Kaggle Learn: Data Cleaning",
+   "url": "https://www.kaggle.com/learn/data-cleaning",
+   "lang": "en"
+  }
+ ],
+ "data_visualization": [
+  {
+   "title": "Kaggle Learn: Data Visualization",
+   "url": "https://www.kaggle.com/learn/data-visualization",
+   "lang": "en"
+  }
+ ],
+ "bi_tools": [
+  {
+   "title": "Microsoft Learn: Power BI training",
+   "url": "https://learn.microsoft.com/en-us/training/powerplatform/power-bi",
+   "lang": "en"
+  }
+ ],
+ "dashboard_reporting": [
+  {
+   "title": "Power BI: Dashboards",
+   "url": "https://learn.microsoft.com/en-us/power-bi/create-reports/service-dashboards",
+   "lang": "en"
+  }
+ ],
+ "pandas": [
+  {
+   "title": "Kaggle Learn: Pandas",
+   "url": "https://www.kaggle.com/learn/pandas",
+   "lang": "en"
+  },
+  {
+   "title": "pandas: 10 minutes to pandas",
+   "url": "https://pandas.pydata.org/docs/user_guide/10min.html",
+   "lang": "en"
+  }
+ ],
+ "ab_testing": [
+  {
+   "title": "Khan Academy: Significance tests",
+   "url": "https://www.khanacademy.org/math/statistics-probability/significance-tests-one-sample",
+   "lang": "en"
+  }
+ ],
+ "data_storytelling": [
+  {
+   "title": "Storytelling with Data",
+   "url": "https://www.storytellingwithdata.com/",
+   "lang": "en"
+  }
+ ],
+ "data_modeling": [
+  {
+   "title": "Power BI guidance: Star schema",
+   "url": "https://learn.microsoft.com/en-us/power-bi/guidance/star-schema",
+   "lang": "en"
+  }
+ ],
+ "machine_learning": [
+  {
+   "title": "Kaggle Learn: Intro to Machine Learning",
+   "url": "https://www.kaggle.com/learn/intro-to-machine-learning",
+   "lang": "en"
+  },
+  {
+   "title": "scikit-learn: Getting started",
+   "url": "https://scikit-learn.org/stable/getting_started.html",
+   "lang": "en"
+  },
+  {
+   "title": "ویکی‌پدیا: یادگیری ماشین",
+   "url": "https://fa.wikipedia.org/wiki/یادگیری_ماشین",
+   "lang": "fa"
+  }
+ ],
+ "feature_engineering": [
+  {
+   "title": "Kaggle Learn: Feature Engineering",
+   "url": "https://www.kaggle.com/learn/feature-engineering",
+   "lang": "en"
+  }
+ ],
+ "model_evaluation": [
+  {
+   "title": "scikit-learn: Model evaluation",
+   "url": "https://scikit-learn.org/stable/modules/model_evaluation.html",
+   "lang": "en"
+  }
+ ],
+ "deep_learning": [
+  {
+   "title": "fast.ai: Practical Deep Learning",
+   "url": "https://course.fast.ai/",
+   "lang": "en"
+  },
+  {
+   "title": "PyTorch: Learn the basics",
+   "url": "https://pytorch.org/tutorials/beginner/basics/intro.html",
+   "lang": "en"
+  }
+ ],
+ "nlp": [
+  {
+   "title": "Hugging Face LLM Course",
+   "url": "https://huggingface.co/learn/llm-course/chapter1/1",
+   "lang": "en"
+  }
+ ],
+ "computer_vision": [
+  {
+   "title": "Kaggle Learn: Computer Vision",
+   "url": "https://www.kaggle.com/learn/computer-vision",
+   "lang": "en"
+  }
+ ],
+ "mlops": [
+  {
+   "title": "MLOps Zoomcamp",
+   "url": "https://github.com/DataTalksClub/mlops-zoomcamp",
+   "lang": "en"
+  }
+ ],
+ "model_serving": [
+  {
+   "title": "FastAPI: Deployment",
+   "url": "https://fastapi.tiangolo.com/deployment/",
+   "lang": "en"
+  }
+ ],
+ "etl_pipelines": [
+  {
+   "title": "Data Engineering Zoomcamp",
+   "url": "https://github.com/DataTalksClub/data-engineering-zoomcamp",
+   "lang": "en"
+  }
+ ],
+ "data_warehousing": [
+  {
+   "title": "ClickHouse: Introduction",
+   "url": "https://clickhouse.com/docs/en/intro",
+   "lang": "en"
+  }
+ ],
+ "big_data": [
+  {
+   "title": "Apache Spark quick start",
+   "url": "https://spark.apache.org/docs/latest/quick-start.html",
+   "lang": "en"
+  }
+ ],
+ "workflow_orchestration": [
+  {
+   "title": "Airflow tutorial: Fundamentals",
+   "url": "https://airflow.apache.org/docs/apache-airflow/stable/tutorial/fundamentals.html",
+   "lang": "en"
+  }
+ ],
+ "streaming": [
+  {
+   "title": "Kafka Streams documentation",
+   "url": "https://kafka.apache.org/documentation/streams/",
+   "lang": "en"
+  }
+ ],
+ "business_analysis": [
+  {
+   "title": "Wikipedia: Business analysis",
+   "url": "https://en.wikipedia.org/wiki/Business_analysis",
+   "lang": "en"
+  }
+ ],
+ "agile_scrum": [
+  {
+   "title": "The Scrum Guide",
+   "url": "https://scrumguides.org/scrum-guide.html",
+   "lang": "en"
+  }
+ ],
+ "product_discovery": [
+  {
+   "title": "Wikipedia: User research",
+   "url": "https://en.wikipedia.org/wiki/User_research",
+   "lang": "en"
+  }
+ ],
+ "roadmapping": [
+  {
+   "title": "Wikipedia: Technology roadmap",
+   "url": "https://en.wikipedia.org/wiki/Technology_roadmap",
+   "lang": "en"
+  }
+ ],
+ "product_metrics": [
+  {
+   "title": "Google Analytics help: Metrics",
+   "url": "https://support.google.com/analytics/answer/9143382",
+   "lang": "en"
+  }
+ ],
+ "stakeholder_management": [
+  {
+   "title": "Wikipedia: Stakeholder management",
+   "url": "https://en.wikipedia.org/wiki/Stakeholder_management",
+   "lang": "en"
+  }
+ ],
+ "product_strategy": [
+  {
+   "title": "SVPG articles",
+   "url": "https://www.svpg.com/articles/",
+   "lang": "en"
+  }
+ ],
+ "marketing_fundamentals": [
+  {
+   "title": "HubSpot Academy",
+   "url": "https://academy.hubspot.com/",
+   "lang": "en"
+  }
+ ],
+ "content_marketing": [
+  {
+   "title": "HubSpot Academy: Content Marketing",
+   "url": "https://academy.hubspot.com/courses/content-marketing",
+   "lang": "en"
+  }
+ ],
+ "seo": [
+  {
+   "title": "ویکی‌پدیا: بهینه‌سازی موتور جستجو",
+   "url": "https://fa.wikipedia.org/wiki/بهینه‌سازی_موتور_جستجو",
+   "lang": "fa"
+  }
+ ],
+ "social_media_marketing": [
+  {
+   "title": "HubSpot Academy: Social Media Marketing",
+   "url": "https://academy.hubspot.com/courses/social-media",
+   "lang": "en"
+  }
+ ],
+ "paid_ads": [
+  {
+   "title": "Google Ads Help",
+   "url": "https://support.google.com/google-ads/",
+   "lang": "en"
+  }
+ ],
+ "email_marketing": [
+  {
+   "title": "HubSpot Academy: Email Marketing",
+   "url": "https://academy.hubspot.com/courses/email-marketing",
+   "lang": "en"
+  }
+ ],
+ "web_analytics": [
+  {
+   "title": "Google Analytics Help Center",
+   "url": "https://support.google.com/analytics/",
+   "lang": "en"
+  }
+ ],
+ "growth_marketing": [
+  {
+   "title": "CXL blog",
+   "url": "https://cxl.com/blog/",
+   "lang": "en"
+  }
+ ],
+ "brand_strategy": [
+  {
+   "title": "HubSpot: Branding guide",
+   "url": "https://blog.hubspot.com/marketing/branding",
+   "lang": "en"
+  }
+ ],
+ "marketing_strategy": [
+  {
+   "title": "HubSpot: Marketing plan",
+   "url": "https://blog.hubspot.com/marketing/marketing-plan-examples",
+   "lang": "en"
+  }
+ ],
+ "labor_law": [
+  {
+   "title": "ویکی‌پدیا: قانون کار ایران",
+   "url": "https://fa.wikipedia.org/wiki/قانون_کار_ایران",
+   "lang": "fa"
+  }
+ ],
+ "recruitment_process": [
+  {
+   "title": "Workable: Recruiting resources",
+   "url": "https://resources.workable.com/",
+   "lang": "en"
+  }
+ ],
+ "interviewing": [
+  {
+   "title": "Workable: Interview questions",
+   "url": "https://resources.workable.com/interview-questions",
+   "lang": "en"
+  }
+ ],
+ "ats_tools": [
+  {
+   "title": "Wikipedia: Applicant tracking system",
+   "url": "https://en.wikipedia.org/wiki/Applicant_tracking_system",
+   "lang": "en"
+  }
+ ],
+ "employer_branding": [
+  {
+   "title": "Workable: Employer branding",
+   "url": "https://resources.workable.com/tutorial/employer-branding",
+   "lang": "en"
+  }
+ ],
+ "performance_management": [
+  {
+   "title": "Wikipedia: Performance management",
+   "url": "https://en.wikipedia.org/wiki/Performance_management",
+   "lang": "en"
+  }
+ ],
+ "compensation_benefits": [
+  {
+   "title": "Wikipedia: Employee benefits",
+   "url": "https://en.wikipedia.org/wiki/Employee_benefits",
+   "lang": "en"
+  }
+ ],
+ "hr_analytics": [
+  {
+   "title": "Wikipedia: People analytics",
+   "url": "https://en.wikipedia.org/wiki/People_analytics",
+   "lang": "en"
+  }
+ ],
+ "talent_strategy": [
+  {
+   "title": "Wikipedia: Talent management",
+   "url": "https://en.wikipedia.org/wiki/Talent_management",
+   "lang": "en"
+  }
+ ],
+ "accounting_principles": [
+  {
+   "title": "AccountingCoach: Accounting basics",
+   "url": "https://www.accountingcoach.com/accounting-basics/explanation",
+   "lang": "en"
+  },
+  {
+   "title": "Khan Academy: Accounting and financial statements",
+   "url": "https://www.khanacademy.org/economics-finance-domain/core-finance/accounting-and-financial-stateme",
+   "lang": "en"
+  },
+  {
+   "title": "ویکی‌پدیا: حسابداری",
+   "url": "https://fa.wikipedia.org/wiki/حسابداری",
+   "lang": "fa"
+  }
+ ],
+ "accounting_software": [
+  {
+   "title": "Microsoft Learn: Excel for accounting templates",
+   "url": "https://support.microsoft.com/en-us/excel",
+   "lang": "en"
+  }
+ ],
+ "financial_statements": [
+  {
+   "title": "AccountingCoach: Financial statements",
+   "url": "https://www.accountingcoach.com/financial-statements/explanation",
+   "lang": "en"
+  }
+ ],
+ "tax_regulations": [
+  {
+   "title": "ویکی‌پدیا: مالیات بر ارزش افزوده",
+   "url": "https://fa.wikipedia.org/wiki/مالیات_بر_ارزش_افزوده",
+   "lang": "fa"
+  }
+ ],
+ "ifrs": [
+  {
+   "title": "IFRS: List of standards",
+   "url": "https://www.ifrs.org/issued-standards/list-of-standards/",
+   "lang": "en"
+  }
+ ],
+ "financial_analysis": [
+  {
+   "title": "AccountingCoach: Financial ratios",
+   "url": "https://www.accountingcoach.com/financial-ratios/explanation",
+   "lang": "en"
+  }
+ ],
+ "budgeting_forecasting": [
+  {
+   "title": "Wikipedia: Budget",
+   "url": "https://en.wikipedia.org/wiki/Budget",
+   "lang": "en"
+  }
+ ],
+ "auditing": [
+  {
+   "title": "The IIA: Global Internal Audit Standards",
+   "url": "https://www.theiia.org/en/standards/",
+   "lang": "en"
+  }
+ ],
+ "financial_modeling": [
+  {
+   "title": "Wikipedia: Financial modeling",
+   "url": "https://en.wikipedia.org/wiki/Financial_modeling",
+   "lang": "en"
+  }
+ ],
+ "corporate_finance": [
+  {
+   "title": "Khan Academy: Finance and capital markets",
+   "url": "https://www.khanacademy.org/economics-finance-domain/core-finance",
+   "lang": "en"
+  }
+ ]
+}
