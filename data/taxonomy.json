@@ -1,0 +1,1914 @@
+{
+ "version": "2026-10-29",
+ "roles": [
+  {
+   "id": "backend_developer",
+   "name_fa": "توسعه‌دهنده‌ی بک‌اند",
+   "name_en": "Backend Developer",
+   "domain": "software",
+   "levels": {
+    "junior": [
+     "python_basics",
+     "git",
+     "http_web_basics",
+     "sql_basics",
+     "rest_api",
+     "backend_framework",
+     "linux",
+     "testing"
+    ],
+    "mid": [
+     "orm",
+     "authentication",
+     "docker",
+     "nosql",
+     "caching",
+     "design_patterns",
+     "data_structures_algorithms",
+     "ci_cd"
+    ],
+    "senior": [
+     "message_queues",
+     "system_design",
+     "distributed_systems",
+     "monitoring",
+     "kubernetes"
+    ]
+   }
+  },
+  {
+   "id": "frontend_developer",
+   "name_fa": "توسعه‌دهنده‌ی فرانت‌اند",
+   "name_en": "Frontend Developer",
+   "domain": "software",
+   "levels": {
+    "junior": [
+     "html_css",
+     "javascript",
+     "git",
+     "responsive_design",
+     "http_web_basics",
+     "frontend_framework"
+    ],
+    "mid": [
+     "typescript",
+     "state_management",
+     "testing",
+     "rest_api",
+     "ui_ux_basics"
+    ],
+    "senior": [
+     "web_performance",
+     "design_patterns",
+     "ci_cd",
+     "authentication"
+    ]
+   }
+  },
+  {
+   "id": "devops_engineer",
+   "name_fa": "مهندس DevOps",
+   "name_en": "DevOps Engineer",
+   "domain": "software",
+   "levels": {
+    "junior": [
+     "linux",
+     "networking_basics",
+     "shell_scripting",
+     "git",
+     "docker",
+     "english_technical"
+    ],
+    "mid": [
+     "ci_cd",
+     "cloud",
+     "monitoring",
+     "kubernetes"
+    ],
+    "senior": [
+     "iac",
+     "distributed_systems"
+    ]
+   }
+  },
+  {
+   "id": "mobile_developer",
+   "name_fa": "توسعه‌دهنده‌ی موبایل",
+   "name_en": "Mobile Developer",
+   "domain": "software",
+   "levels": {
+    "junior": [
+     "oop",
+     "git",
+     "android_kotlin",
+     "mobile_ui",
+     "rest_api"
+    ],
+    "mid": [
+     "cross_platform_mobile",
+     "testing",
+     "app_publishing",
+     "design_patterns"
+    ],
+    "senior": [
+     "ios_swift",
+     "ci_cd",
+     "authentication"
+    ]
+   }
+  },
+  {
+   "id": "data_analyst",
+   "name_fa": "تحلیلگر داده",
+   "name_en": "Data Analyst",
+   "domain": "data",
+   "levels": {
+    "junior": [
+     "excel",
+     "statistics",
+     "sql_basics",
+     "data_cleaning",
+     "data_visualization",
+     "bi_tools"
+    ],
+    "mid": [
+     "python_basics",
+     "pandas",
+     "sql_advanced",
+     "dashboard_reporting",
+     "ab_testing",
+     "data_storytelling"
+    ],
+    "senior": [
+     "data_modeling",
+     "product_metrics",
+     "business_analysis",
+     "machine_learning"
+    ]
+   }
+  },
+  {
+   "id": "data_scientist",
+   "name_fa": "دانشمند داده",
+   "name_en": "Data Scientist",
+   "domain": "data",
+   "levels": {
+    "junior": [
+     "python_basics",
+     "pandas",
+     "statistics",
+     "sql_basics",
+     "data_visualization",
+     "machine_learning"
+    ],
+    "mid": [
+     "feature_engineering",
+     "model_evaluation",
+     "ab_testing",
+     "deep_learning",
+     "git"
+    ],
+    "senior": [
+     "mlops",
+     "nlp",
+     "data_storytelling",
+     "big_data"
+    ]
+   }
+  },
+  {
+   "id": "ml_engineer",
+   "name_fa": "مهندس یادگیری ماشین",
+   "name_en": "ML Engineer",
+   "domain": "data",
+   "levels": {
+    "junior": [
+     "python_basics",
+     "git",
+     "machine_learning",
+     "linux",
+     "data_structures_algorithms"
+    ],
+    "mid": [
+     "deep_learning",
+     "docker",
+     "model_evaluation",
+     "rest_api",
+     "testing"
+    ],
+    "senior": [
+     "mlops",
+     "model_serving",
+     "kubernetes",
+     "nlp",
+     "computer_vision"
+    ]
+   }
+  },
+  {
+   "id": "data_engineer",
+   "name_fa": "مهندس داده",
+   "name_en": "Data Engineer",
+   "domain": "data",
+   "levels": {
+    "junior": [
+     "python_basics",
+     "sql_basics",
+     "linux",
+     "git"
+    ],
+    "mid": [
+     "sql_advanced",
+     "etl_pipelines",
+     "data_warehousing",
+     "docker",
+     "data_modeling",
+     "nosql"
+    ],
+    "senior": [
+     "big_data",
+     "workflow_orchestration",
+     "streaming",
+     "cloud"
+    ]
+   }
+  },
+  {
+   "id": "product_manager",
+   "name_fa": "مدیر محصول",
+   "name_en": "Product Manager",
+   "domain": "business",
+   "levels": {
+    "junior": [
+     "communication",
+     "agile_scrum",
+     "ui_ux_basics",
+     "business_analysis",
+     "excel"
+    ],
+    "mid": [
+     "product_discovery",
+     "roadmapping",
+     "product_metrics",
+     "stakeholder_management",
+     "sql_basics"
+    ],
+    "senior": [
+     "product_strategy",
+     "ab_testing",
+     "growth_marketing"
+    ]
+   }
+  },
+  {
+   "id": "digital_marketer",
+   "name_fa": "کارشناس دیجیتال مارکتینگ",
+   "name_en": "Digital Marketer",
+   "domain": "business",
+   "levels": {
+    "junior": [
+     "marketing_fundamentals",
+     "content_marketing",
+     "social_media_marketing",
+     "excel"
+    ],
+    "mid": [
+     "seo",
+     "paid_ads",
+     "email_marketing",
+     "web_analytics"
+    ],
+    "senior": [
+     "growth_marketing",
+     "brand_strategy",
+     "marketing_strategy"
+    ]
+   }
+  },
+  {
+   "id": "recruiter_hr",
+   "name_fa": "کارشناس جذب و منابع انسانی",
+   "name_en": "Recruiter / HR",
+   "domain": "business",
+   "levels": {
+    "junior": [
+     "communication",
+     "recruitment_process",
+     "interviewing",
+     "excel",
+     "labor_law"
+    ],
+    "mid": [
+     "ats_tools",
+     "compensation_benefits",
+     "performance_management",
+     "employer_branding"
+    ],
+    "senior": [
+     "hr_analytics",
+     "talent_strategy"
+    ]
+   }
+  },
+  {
+   "id": "financial_analyst",
+   "name_fa": "تحلیلگر مالی و حسابدار",
+   "name_en": "Financial Analyst / Accountant",
+   "domain": "business",
+   "levels": {
+    "junior": [
+     "accounting_principles",
+     "excel",
+     "accounting_software",
+     "financial_statements"
+    ],
+    "mid": [
+     "financial_analysis",
+     "tax_regulations",
+     "ifrs",
+     "budgeting_forecasting"
+    ],
+    "senior": [
+     "financial_modeling",
+     "auditing",
+     "corporate_finance"
+    ]
+   }
+  }
+ ],
+ "concepts": [
+  {
+   "id": "computer_basics",
+   "name_fa": "مهارت‌های پایه‌ی کامپیوتر",
+   "name_en": "Computer basics",
+   "aliases": [
+    "icdl",
+    "مهارت های هفتگانه"
+   ],
+   "prerequisites": []
+  },
+  {
+   "id": "english_technical",
+   "name_fa": "زبان انگلیسی فنی",
+   "name_en": "Technical English",
+   "aliases": [
+    "english",
+    "زبان انگلیسی",
+    "انگلیسی"
+   ],
+   "prerequisites": []
+  },
+  {
+   "id": "communication",
+   "name_fa": "مهارت‌های ارتباطی و کار تیمی",
+   "name_en": "Communication & teamwork",
+   "aliases": [
+    "teamwork",
+    "کار تیمی",
+    "soft skills",
+    "مهارت ارتباطی"
+   ],
+   "prerequisites": []
+  },
+  {
+   "id": "excel",
+   "name_fa": "اکسل",
+   "name_en": "Excel",
+   "aliases": [
+    "microsoft excel",
+    "ms excel",
+    "اکسل پیشرفته",
+    "spreadsheet"
+   ],
+   "prerequisites": [
+    "computer_basics"
+   ]
+  },
+  {
+   "id": "statistics",
+   "name_fa": "آمار و احتمال",
+   "name_en": "Statistics & probability",
+   "aliases": [
+    "آمار",
+    "آمار توصیفی",
+    "probability",
+    "احتمال"
+   ],
+   "prerequisites": []
+  },
+  {
+   "id": "linear_algebra",
+   "name_fa": "جبر خطی",
+   "name_en": "Linear algebra",
+   "aliases": [
+    "ریاضیات",
+    "math"
+   ],
+   "prerequisites": []
+  },
+  {
+   "id": "programming_basics",
+   "name_fa": "مبانی برنامه‌نویسی",
+   "name_en": "Programming fundamentals",
+   "aliases": [
+    "programming",
+    "برنامه‌نویسی",
+    "برنامه نویسی",
+    "software engineering",
+    "مهندسی نرم افزار"
+   ],
+   "prerequisites": [
+    "computer_basics"
+   ]
+  },
+  {
+   "id": "python_basics",
+   "name_fa": "پایتون",
+   "name_en": "Python",
+   "aliases": [
+    "python3",
+    "پایتون"
+   ],
+   "prerequisites": [
+    "programming_basics"
+   ]
+  },
+  {
+   "id": "javascript",
+   "name_fa": "جاوااسکریپت",
+   "name_en": "JavaScript",
+   "aliases": [
+    "js",
+    "es6",
+    "جاوا اسکریپت"
+   ],
+   "prerequisites": [
+    "programming_basics"
+   ]
+  },
+  {
+   "id": "typescript",
+   "name_fa": "تایپ‌اسکریپت",
+   "name_en": "TypeScript",
+   "aliases": [
+    "ts"
+   ],
+   "prerequisites": [
+    "javascript"
+   ]
+  },
+  {
+   "id": "java",
+   "name_fa": "جاوا",
+   "name_en": "Java",
+   "aliases": [
+    "جاوا",
+    "java se",
+    "jvm"
+   ],
+   "prerequisites": [
+    "programming_basics"
+   ]
+  },
+  {
+   "id": "csharp_dotnet",
+   "name_fa": "سی‌شارپ و دات‌نت",
+   "name_en": "C# & .NET",
+   "aliases": [
+    "c#",
+    ".net",
+    "net",
+    "dotnet",
+    "asp.net",
+    "سی شارپ"
+   ],
+   "prerequisites": [
+    "programming_basics"
+   ]
+  },
+  {
+   "id": "php",
+   "name_fa": "PHP",
+   "name_en": "PHP",
+   "aliases": [
+    "پی اچ پی",
+    "wordpress",
+    "وردپرس"
+   ],
+   "prerequisites": [
+    "programming_basics"
+   ]
+  },
+  {
+   "id": "golang",
+   "name_fa": "Go",
+   "name_en": "Go",
+   "aliases": [
+    "go",
+    "golang",
+    "گو"
+   ],
+   "prerequisites": [
+    "programming_basics"
+   ]
+  },
+  {
+   "id": "oop",
+   "name_fa": "برنامه‌نویسی شیءگرا",
+   "name_en": "Object-oriented programming",
+   "aliases": [
+    "object oriented",
+    "شی گرا",
+    "شیءگرایی"
+   ],
+   "prerequisites": [
+    "programming_basics"
+   ]
+  },
+  {
+   "id": "data_structures_algorithms",
+   "name_fa": "ساختمان داده و الگوریتم",
+   "name_en": "Data structures & algorithms",
+   "aliases": [
+    "dsa",
+    "algorithms",
+    "algorithm",
+    "data structures",
+    "الگوریتم",
+    "ساختمان داده"
+   ],
+   "prerequisites": [
+    "programming_basics"
+   ]
+  },
+  {
+   "id": "git",
+   "name_fa": "گیت",
+   "name_en": "Git",
+   "aliases": [
+    "github",
+    "gitlab",
+    "version control",
+    "کنترل نسخه"
+   ],
+   "prerequisites": [
+    "computer_basics"
+   ]
+  },
+  {
+   "id": "linux",
+   "name_fa": "لینوکس",
+   "name_en": "Linux",
+   "aliases": [
+    "ubuntu",
+    "centos",
+    "bash",
+    "shell"
+   ],
+   "prerequisites": [
+    "computer_basics"
+   ]
+  },
+  {
+   "id": "testing",
+   "name_fa": "تست نرم‌افزار",
+   "name_en": "Software testing",
+   "aliases": [
+    "unit test",
+    "unit testing",
+    "pytest",
+    "jest",
+    "tdd",
+    "تست نویسی"
+   ],
+   "prerequisites": [
+    "programming_basics"
+   ]
+  },
+  {
+   "id": "design_patterns",
+   "name_fa": "الگوهای طراحی و کد تمیز",
+   "name_en": "Design patterns & clean code",
+   "aliases": [
+    "solid",
+    "clean code",
+    "clean architecture"
+   ],
+   "prerequisites": [
+    "oop"
+   ]
+  },
+  {
+   "id": "http_web_basics",
+   "name_fa": "مبانی وب و HTTP",
+   "name_en": "Web & HTTP basics",
+   "aliases": [
+    "http",
+    "https",
+    "وب"
+   ],
+   "prerequisites": [
+    "computer_basics"
+   ]
+  },
+  {
+   "id": "relational_db",
+   "name_fa": "پایگاه داده‌ی رابطه‌ای",
+   "name_en": "Relational databases",
+   "aliases": [
+    "rdbms",
+    "database",
+    "پایگاه داده",
+    "دیتابیس"
+   ],
+   "prerequisites": [
+    "computer_basics"
+   ]
+  },
+  {
+   "id": "sql_basics",
+   "name_fa": "SQL",
+   "name_en": "SQL",
+   "aliases": [
+    "اس‌کیو‌ال",
+    "mysql",
+    "postgresql",
+    "postgres",
+    "sql server",
+    "mssql",
+    "t-sql"
+   ],
+   "prerequisites": [
+    "relational_db"
+   ]
+  },
+  {
+   "id": "sql_advanced",
+   "name_fa": "SQL پیشرفته",
+   "name_en": "Advanced SQL",
+   "aliases": [
+    "window functions",
+    "query optimization",
+    "stored procedure",
+    "بهینه سازی کوئری"
+   ],
+   "prerequisites": [
+    "sql_basics"
+   ]
+  },
+  {
+   "id": "rest_api",
+   "name_fa": "طراحی REST API",
+   "name_en": "REST API design",
+   "aliases": [
+    "rest",
+    "restful",
+    "api",
+    "وب سرویس",
+    "web service",
+    "graphql"
+   ],
+   "prerequisites": [
+    "http_web_basics",
+    "programming_basics"
+   ]
+  },
+  {
+   "id": "backend_framework",
+   "name_fa": "فریمورک بک‌اند",
+   "name_en": "Backend framework",
+   "aliases": [
+    "django",
+    "flask",
+    "fastapi",
+    "laravel",
+    "spring",
+    "spring boot",
+    "express",
+    "nestjs",
+    "asp.net core",
+    "node.js",
+    "nodejs"
+   ],
+   "prerequisites": [
+    "rest_api",
+    "oop"
+   ]
+  },
+  {
+   "id": "orm",
+   "name_fa": "ORM",
+   "name_en": "ORM",
+   "aliases": [
+    "sqlalchemy",
+    "django orm",
+    "hibernate",
+    "entity framework",
+    "eloquent"
+   ],
+   "prerequisites": [
+    "sql_basics",
+    "oop"
+   ]
+  },
+  {
+   "id": "authentication",
+   "name_fa": "احراز هویت و امنیت وب",
+   "name_en": "Authentication & web security",
+   "aliases": [
+    "jwt",
+    "oauth",
+    "owasp",
+    "امنیت وب",
+    "web security",
+    "security",
+    "امنیت"
+   ],
+   "prerequisites": [
+    "rest_api"
+   ]
+  },
+  {
+   "id": "nosql",
+   "name_fa": "پایگاه داده‌ی NoSQL",
+   "name_en": "NoSQL databases",
+   "aliases": [
+    "mongodb",
+    "mongo",
+    "cassandra",
+    "elasticsearch"
+   ],
+   "prerequisites": [
+    "relational_db"
+   ]
+  },
+  {
+   "id": "caching",
+   "name_fa": "کش و Redis",
+   "name_en": "Caching",
+   "aliases": [
+    "redis",
+    "cache",
+    "memcached",
+    "کش"
+   ],
+   "prerequisites": [
+    "backend_framework"
+   ]
+  },
+  {
+   "id": "message_queues",
+   "name_fa": "صف پیام",
+   "name_en": "Message queues",
+   "aliases": [
+    "rabbitmq",
+    "kafka",
+    "apache kafka",
+    "celery",
+    "message broker",
+    "صف پیام"
+   ],
+   "prerequisites": [
+    "backend_framework"
+   ]
+  },
+  {
+   "id": "docker",
+   "name_fa": "داکر",
+   "name_en": "Docker",
+   "aliases": [
+    "container",
+    "کانتینر",
+    "docker compose",
+    "docker-compose"
+   ],
+   "prerequisites": [
+    "linux"
+   ]
+  },
+  {
+   "id": "system_design",
+   "name_fa": "طراحی سیستم",
+   "name_en": "System design",
+   "aliases": [
+    "software architecture",
+    "معماری نرم‌افزار",
+    "scalability",
+    "مقیاس پذیری"
+   ],
+   "prerequisites": [
+    "caching",
+    "message_queues",
+    "nosql"
+   ]
+  },
+  {
+   "id": "distributed_systems",
+   "name_fa": "سیستم‌های توزیع‌شده و میکروسرویس",
+   "name_en": "Distributed systems & microservices",
+   "aliases": [
+    "microservices",
+    "microservice",
+    "میکروسرویس"
+   ],
+   "prerequisites": [
+    "system_design"
+   ]
+  },
+  {
+   "id": "html_css",
+   "name_fa": "HTML و CSS",
+   "name_en": "HTML & CSS",
+   "aliases": [
+    "html",
+    "css",
+    "html5",
+    "css3",
+    "sass",
+    "scss",
+    "tailwind",
+    "bootstrap"
+   ],
+   "prerequisites": [
+    "computer_basics"
+   ]
+  },
+  {
+   "id": "responsive_design",
+   "name_fa": "طراحی واکنش‌گرا",
+   "name_en": "Responsive design",
+   "aliases": [
+    "responsive",
+    "ریسپانسیو",
+    "flexbox",
+    "css grid"
+   ],
+   "prerequisites": [
+    "html_css"
+   ]
+  },
+  {
+   "id": "frontend_framework",
+   "name_fa": "فریمورک فرانت‌اند",
+   "name_en": "Frontend framework",
+   "aliases": [
+    "react",
+    "reactjs",
+    "react.js",
+    "vue",
+    "vue.js",
+    "vuejs",
+    "angular",
+    "next.js",
+    "nextjs",
+    "nuxt"
+   ],
+   "prerequisites": [
+    "javascript",
+    "html_css"
+   ]
+  },
+  {
+   "id": "state_management",
+   "name_fa": "مدیریت state",
+   "name_en": "State management",
+   "aliases": [
+    "redux",
+    "zustand",
+    "pinia",
+    "ngrx",
+    "mobx"
+   ],
+   "prerequisites": [
+    "frontend_framework"
+   ]
+  },
+  {
+   "id": "web_performance",
+   "name_fa": "بهینه‌سازی عملکرد وب",
+   "name_en": "Web performance",
+   "aliases": [
+    "lighthouse",
+    "core web vitals",
+    "web performance"
+   ],
+   "prerequisites": [
+    "frontend_framework"
+   ]
+  },
+  {
+   "id": "ui_ux_basics",
+   "name_fa": "مبانی UI/UX",
+   "name_en": "UI/UX basics",
+   "aliases": [
+    "ui/ux",
+    "figma",
+    "فیگما",
+    "user experience",
+    "تجربه کاربری",
+    "رابط کاربری"
+   ],
+   "prerequisites": []
+  },
+  {
+   "id": "android_kotlin",
+   "name_fa": "توسعه‌ی اندروید (Kotlin)",
+   "name_en": "Android development",
+   "aliases": [
+    "android",
+    "kotlin",
+    "کاتلین",
+    "اندروید",
+    "jetpack compose"
+   ],
+   "prerequisites": [
+    "oop"
+   ]
+  },
+  {
+   "id": "ios_swift",
+   "name_fa": "توسعه‌ی iOS (Swift)",
+   "name_en": "iOS development",
+   "aliases": [
+    "ios",
+    "swift",
+    "swiftui"
+   ],
+   "prerequisites": [
+    "oop"
+   ]
+  },
+  {
+   "id": "cross_platform_mobile",
+   "name_fa": "توسعه‌ی موبایل چندسکویی",
+   "name_en": "Cross-platform mobile",
+   "aliases": [
+    "flutter",
+    "dart",
+    "react native",
+    "فلاتر"
+   ],
+   "prerequisites": [
+    "oop"
+   ]
+  },
+  {
+   "id": "mobile_ui",
+   "name_fa": "رابط کاربری موبایل",
+   "name_en": "Mobile UI",
+   "aliases": [
+    "material design",
+    "mobile ui"
+   ],
+   "prerequisites": [
+    "ui_ux_basics"
+   ]
+  },
+  {
+   "id": "app_publishing",
+   "name_fa": "انتشار اپلیکیشن",
+   "name_en": "App publishing",
+   "aliases": [
+    "play store",
+    "google play",
+    "app store",
+    "کافه بازار",
+    "مایکت"
+   ],
+   "prerequisites": []
+  },
+  {
+   "id": "networking_basics",
+   "name_fa": "مبانی شبکه",
+   "name_en": "Networking basics",
+   "aliases": [
+    "network",
+    "شبکه",
+    "tcp/ip",
+    "dns",
+    "ccna"
+   ],
+   "prerequisites": [
+    "computer_basics"
+   ]
+  },
+  {
+   "id": "shell_scripting",
+   "name_fa": "اسکریپت‌نویسی Bash",
+   "name_en": "Shell scripting",
+   "aliases": [
+    "bash scripting",
+    "shell script",
+    "اسکریپت نویسی"
+   ],
+   "prerequisites": [
+    "linux"
+   ]
+  },
+  {
+   "id": "ci_cd",
+   "name_fa": "CI/CD",
+   "name_en": "CI/CD",
+   "aliases": [
+    "cicd",
+    "jenkins",
+    "gitlab ci",
+    "github actions",
+    "continuous integration"
+   ],
+   "prerequisites": [
+    "git",
+    "docker"
+   ]
+  },
+  {
+   "id": "kubernetes",
+   "name_fa": "کوبرنتیز",
+   "name_en": "Kubernetes",
+   "aliases": [
+    "k8s",
+    "helm",
+    "openshift",
+    "devops"
+   ],
+   "prerequisites": [
+    "docker",
+    "networking_basics"
+   ]
+  },
+  {
+   "id": "cloud",
+   "name_fa": "سرویس‌های ابری",
+   "name_en": "Cloud platforms",
+   "aliases": [
+    "aws",
+    "azure",
+    "gcp",
+    "google cloud",
+    "ابر آروان",
+    "arvancloud"
+   ],
+   "prerequisites": [
+    "networking_basics",
+    "linux"
+   ]
+  },
+  {
+   "id": "iac",
+   "name_fa": "زیرساخت به‌صورت کد",
+   "name_en": "Infrastructure as code",
+   "aliases": [
+    "terraform",
+    "ansible",
+    "infrastructure as code"
+   ],
+   "prerequisites": [
+    "cloud",
+    "shell_scripting"
+   ]
+  },
+  {
+   "id": "monitoring",
+   "name_fa": "مانیتورینگ و لاگ",
+   "name_en": "Monitoring & logging",
+   "aliases": [
+    "prometheus",
+    "grafana",
+    "elk",
+    "monitoring",
+    "مانیتورینگ",
+    "observability"
+   ],
+   "prerequisites": [
+    "linux"
+   ]
+  },
+  {
+   "id": "data_cleaning",
+   "name_fa": "پاک‌سازی و آماده‌سازی داده",
+   "name_en": "Data cleaning",
+   "aliases": [
+    "data cleaning",
+    "data wrangling",
+    "آماده سازی داده",
+    "پاکسازی داده"
+   ],
+   "prerequisites": [
+    "excel"
+   ]
+  },
+  {
+   "id": "data_visualization",
+   "name_fa": "مصورسازی داده",
+   "name_en": "Data visualization",
+   "aliases": [
+    "visualization",
+    "matplotlib",
+    "seaborn",
+    "plotly",
+    "مصورسازی",
+    "نمودار"
+   ],
+   "prerequisites": [
+    "statistics"
+   ]
+  },
+  {
+   "id": "bi_tools",
+   "name_fa": "ابزارهای هوش تجاری",
+   "name_en": "BI tools",
+   "aliases": [
+    "power bi",
+    "powerbi",
+    "tableau",
+    "looker",
+    "metabase",
+    "هوش تجاری",
+    "business intelligence",
+    "bi"
+   ],
+   "prerequisites": [
+    "data_visualization",
+    "sql_basics"
+   ]
+  },
+  {
+   "id": "dashboard_reporting",
+   "name_fa": "داشبورد و گزارش‌سازی",
+   "name_en": "Dashboards & reporting",
+   "aliases": [
+    "dashboard",
+    "reporting",
+    "گزارش سازی",
+    "گزارش‌گیری",
+    "kpi"
+   ],
+   "prerequisites": [
+    "bi_tools"
+   ]
+  },
+  {
+   "id": "pandas",
+   "name_fa": "پانداس و NumPy",
+   "name_en": "Pandas & NumPy",
+   "aliases": [
+    "numpy",
+    "dataframe"
+   ],
+   "prerequisites": [
+    "python_basics"
+   ]
+  },
+  {
+   "id": "ab_testing",
+   "name_fa": "آزمون A/B",
+   "name_en": "A/B testing",
+   "aliases": [
+    "a/b test",
+    "ab test",
+    "ab testing",
+    "hypothesis testing",
+    "آزمون فرض"
+   ],
+   "prerequisites": [
+    "statistics"
+   ]
+  },
+  {
+   "id": "data_storytelling",
+   "name_fa": "روایت داده و ارائه",
+   "name_en": "Data storytelling",
+   "aliases": [
+    "storytelling",
+    "data storytelling",
+    "ارائه نتایج"
+   ],
+   "prerequisites": [
+    "data_visualization",
+    "communication"
+   ]
+  },
+  {
+   "id": "data_modeling",
+   "name_fa": "مدل‌سازی داده",
+   "name_en": "Data modeling",
+   "aliases": [
+    "star schema",
+    "dimensional modeling",
+    "مدل سازی داده"
+   ],
+   "prerequisites": [
+    "sql_advanced"
+   ]
+  },
+  {
+   "id": "machine_learning",
+   "name_fa": "یادگیری ماشین",
+   "name_en": "Machine learning",
+   "aliases": [
+    "ml",
+    "scikit-learn",
+    "sklearn",
+    "یادگیری ماشین"
+   ],
+   "prerequisites": [
+    "pandas",
+    "statistics",
+    "linear_algebra"
+   ]
+  },
+  {
+   "id": "feature_engineering",
+   "name_fa": "مهندسی ویژگی",
+   "name_en": "Feature engineering",
+   "aliases": [
+    "feature selection",
+    "مهندسی ویژگی"
+   ],
+   "prerequisites": [
+    "machine_learning"
+   ]
+  },
+  {
+   "id": "model_evaluation",
+   "name_fa": "ارزیابی مدل",
+   "name_en": "Model evaluation",
+   "aliases": [
+    "cross validation",
+    "cross-validation",
+    "ارزیابی مدل"
+   ],
+   "prerequisites": [
+    "machine_learning"
+   ]
+  },
+  {
+   "id": "deep_learning",
+   "name_fa": "یادگیری عمیق",
+   "name_en": "Deep learning",
+   "aliases": [
+    "pytorch",
+    "tensorflow",
+    "keras",
+    "neural network",
+    "neural networks",
+    "شبکه عصبی"
+   ],
+   "prerequisites": [
+    "machine_learning"
+   ]
+  },
+  {
+   "id": "nlp",
+   "name_fa": "پردازش زبان طبیعی",
+   "name_en": "Natural language processing",
+   "aliases": [
+    "transformers",
+    "bert",
+    "llm",
+    "llms",
+    "large language model",
+    "large language model (llm)",
+    "پردازش زبان"
+   ],
+   "prerequisites": [
+    "deep_learning"
+   ]
+  },
+  {
+   "id": "computer_vision",
+   "name_fa": "بینایی ماشین",
+   "name_en": "Computer vision",
+   "aliases": [
+    "opencv",
+    "cnn",
+    "پردازش تصویر",
+    "image processing"
+   ],
+   "prerequisites": [
+    "deep_learning"
+   ]
+  },
+  {
+   "id": "mlops",
+   "name_fa": "MLOps",
+   "name_en": "MLOps",
+   "aliases": [
+    "mlflow",
+    "model deployment",
+    "kubeflow",
+    "dvc"
+   ],
+   "prerequisites": [
+    "model_evaluation",
+    "docker"
+   ]
+  },
+  {
+   "id": "model_serving",
+   "name_fa": "سرویس‌دهی مدل",
+   "name_en": "Model serving",
+   "aliases": [
+    "triton",
+    "onnx",
+    "torchserve",
+    "bentoml"
+   ],
+   "prerequisites": [
+    "mlops",
+    "rest_api"
+   ]
+  },
+  {
+   "id": "etl_pipelines",
+   "name_fa": "پایپ‌لاین ETL",
+   "name_en": "ETL pipelines",
+   "aliases": [
+    "etl",
+    "elt",
+    "data pipeline",
+    "پایپ لاین داده"
+   ],
+   "prerequisites": [
+    "sql_advanced",
+    "python_basics"
+   ]
+  },
+  {
+   "id": "data_warehousing",
+   "name_fa": "انبار داده",
+   "name_en": "Data warehousing",
+   "aliases": [
+    "data warehouse",
+    "dwh",
+    "snowflake",
+    "bigquery",
+    "clickhouse",
+    "انبار داده"
+   ],
+   "prerequisites": [
+    "sql_advanced"
+   ]
+  },
+  {
+   "id": "big_data",
+   "name_fa": "پردازش کلان‌داده",
+   "name_en": "Big data processing",
+   "aliases": [
+    "spark",
+    "pyspark",
+    "hadoop",
+    "big data",
+    "کلان داده"
+   ],
+   "prerequisites": [
+    "sql_advanced",
+    "python_basics"
+   ]
+  },
+  {
+   "id": "workflow_orchestration",
+   "name_fa": "زمان‌بندی جریان کار داده",
+   "name_en": "Workflow orchestration",
+   "aliases": [
+    "airflow",
+    "dagster",
+    "prefect"
+   ],
+   "prerequisites": [
+    "etl_pipelines"
+   ]
+  },
+  {
+   "id": "streaming",
+   "name_fa": "پردازش جریانی",
+   "name_en": "Stream processing",
+   "aliases": [
+    "kafka streams",
+    "flink",
+    "spark streaming",
+    "stream processing"
+   ],
+   "prerequisites": [
+    "big_data",
+    "message_queues"
+   ]
+  },
+  {
+   "id": "business_analysis",
+   "name_fa": "تحلیل کسب‌وکار",
+   "name_en": "Business analysis",
+   "aliases": [
+    "business analysis",
+    "تحلیل کسب و کار",
+    "bpmn"
+   ],
+   "prerequisites": [
+    "communication"
+   ]
+  },
+  {
+   "id": "agile_scrum",
+   "name_fa": "اجایل و اسکرام",
+   "name_en": "Agile & Scrum",
+   "aliases": [
+    "agile",
+    "scrum",
+    "اسکرام",
+    "اجایل",
+    "kanban",
+    "jira"
+   ],
+   "prerequisites": []
+  },
+  {
+   "id": "product_discovery",
+   "name_fa": "کشف محصول و تحقیق کاربر",
+   "name_en": "Product discovery",
+   "aliases": [
+    "user research",
+    "customer interview",
+    "مصاحبه با کاربر",
+    "تحقیق کاربر"
+   ],
+   "prerequisites": [
+    "ui_ux_basics",
+    "business_analysis"
+   ]
+  },
+  {
+   "id": "roadmapping",
+   "name_fa": "نقشه‌ی راه و اولویت‌بندی محصول",
+   "name_en": "Roadmapping & prioritization",
+   "aliases": [
+    "product roadmap",
+    "prioritization",
+    "rice",
+    "okr",
+    "اولویت بندی"
+   ],
+   "prerequisites": [
+    "product_discovery",
+    "agile_scrum"
+   ]
+  },
+  {
+   "id": "product_metrics",
+   "name_fa": "متریک‌های محصول",
+   "name_en": "Product metrics",
+   "aliases": [
+    "mixpanel",
+    "amplitude",
+    "retention",
+    "funnel",
+    "north star"
+   ],
+   "prerequisites": [
+    "statistics",
+    "excel"
+   ]
+  },
+  {
+   "id": "stakeholder_management",
+   "name_fa": "مدیریت ذی‌نفعان و رهبری",
+   "name_en": "Stakeholder management",
+   "aliases": [
+    "stakeholder",
+    "ذی نفعان",
+    "leadership",
+    "رهبری تیم"
+   ],
+   "prerequisites": [
+    "communication"
+   ]
+  },
+  {
+   "id": "product_strategy",
+   "name_fa": "استراتژی محصول",
+   "name_en": "Product strategy",
+   "aliases": [
+    "go to market",
+    "go-to-market",
+    "market research",
+    "تحقیقات بازار"
+   ],
+   "prerequisites": [
+    "roadmapping",
+    "product_metrics",
+    "stakeholder_management"
+   ]
+  },
+  {
+   "id": "marketing_fundamentals",
+   "name_fa": "مبانی بازاریابی",
+   "name_en": "Marketing fundamentals",
+   "aliases": [
+    "marketing",
+    "بازاریابی",
+    "مارکتینگ",
+    "4p"
+   ],
+   "prerequisites": []
+  },
+  {
+   "id": "content_marketing",
+   "name_fa": "بازاریابی محتوایی",
+   "name_en": "Content marketing",
+   "aliases": [
+    "content",
+    "تولید محتوا",
+    "copywriting",
+    "کپی رایتینگ",
+    "محتوا",
+    "content creation"
+   ],
+   "prerequisites": [
+    "marketing_fundamentals"
+   ]
+  },
+  {
+   "id": "seo",
+   "name_fa": "سئو",
+   "name_en": "SEO",
+   "aliases": [
+    "search engine optimization",
+    "بهینه سازی موتور جستجو",
+    "سئو تکنیکال"
+   ],
+   "prerequisites": [
+    "content_marketing",
+    "http_web_basics"
+   ]
+  },
+  {
+   "id": "social_media_marketing",
+   "name_fa": "بازاریابی شبکه‌های اجتماعی",
+   "name_en": "Social media marketing",
+   "aliases": [
+    "social media",
+    "instagram",
+    "اینستاگرام",
+    "شبکه های اجتماعی",
+    "linkedin",
+    "لینکدین"
+   ],
+   "prerequisites": [
+    "content_marketing"
+   ]
+  },
+  {
+   "id": "paid_ads",
+   "name_fa": "تبلیغات کلیکی",
+   "name_en": "Paid advertising",
+   "aliases": [
+    "google ads",
+    "sem",
+    "ppc",
+    "تبلیغات کلیکی",
+    "یکتانت",
+    "performance marketing"
+   ],
+   "prerequisites": [
+    "marketing_fundamentals"
+   ]
+  },
+  {
+   "id": "email_marketing",
+   "name_fa": "ایمیل مارکتینگ",
+   "name_en": "Email marketing",
+   "aliases": [
+    "email marketing",
+    "ایمیل مارکتینگ",
+    "newsletter"
+   ],
+   "prerequisites": [
+    "content_marketing"
+   ]
+  },
+  {
+   "id": "web_analytics",
+   "name_fa": "تحلیل وب",
+   "name_en": "Web analytics",
+   "aliases": [
+    "google analytics",
+    "ga4",
+    "tag manager",
+    "گوگل آنالیتیکس"
+   ],
+   "prerequisites": [
+    "marketing_fundamentals",
+    "excel"
+   ]
+  },
+  {
+   "id": "growth_marketing",
+   "name_fa": "رشد و بهینه‌سازی نرخ تبدیل",
+   "name_en": "Growth & CRO",
+   "aliases": [
+    "growth hacking",
+    "growth",
+    "cro",
+    "conversion rate",
+    "نرخ تبدیل"
+   ],
+   "prerequisites": [
+    "web_analytics",
+    "ab_testing",
+    "paid_ads"
+   ]
+  },
+  {
+   "id": "brand_strategy",
+   "name_fa": "استراتژی برند",
+   "name_en": "Brand strategy",
+   "aliases": [
+    "branding",
+    "برندینگ",
+    "brand",
+    "برند"
+   ],
+   "prerequisites": [
+    "marketing_fundamentals"
+   ]
+  },
+  {
+   "id": "marketing_strategy",
+   "name_fa": "استراتژی بازاریابی",
+   "name_en": "Marketing strategy",
+   "aliases": [
+    "marketing plan",
+    "استراتژی بازاریابی",
+    "برنامه بازاریابی"
+   ],
+   "prerequisites": [
+    "growth_marketing",
+    "brand_strategy"
+   ]
+  },
+  {
+   "id": "labor_law",
+   "name_fa": "قانون کار و تأمین اجتماعی",
+   "name_en": "Labor law",
+   "aliases": [
+    "قانون کار",
+    "تامین اجتماعی",
+    "labor law"
+   ],
+   "prerequisites": []
+  },
+  {
+   "id": "recruitment_process",
+   "name_fa": "فرایند جذب و استخدام",
+   "name_en": "Recruitment process",
+   "aliases": [
+    "recruitment",
+    "recruiting",
+    "جذب و استخدام",
+    "sourcing",
+    "screening",
+    "جذب نیرو"
+   ],
+   "prerequisites": [
+    "communication"
+   ]
+  },
+  {
+   "id": "interviewing",
+   "name_fa": "مصاحبه‌ی استخدامی",
+   "name_en": "Interviewing",
+   "aliases": [
+    "interview",
+    "مصاحبه",
+    "behavioral interview",
+    "مصاحبه رفتاری"
+   ],
+   "prerequisites": [
+    "recruitment_process"
+   ]
+  },
+  {
+   "id": "ats_tools",
+   "name_fa": "سامانه‌های جذب و منابع انسانی",
+   "name_en": "ATS & HR software",
+   "aliases": [
+    "ats",
+    "hris",
+    "linkedin recruiter"
+   ],
+   "prerequisites": [
+    "computer_basics"
+   ]
+  },
+  {
+   "id": "employer_branding",
+   "name_fa": "برند کارفرمایی",
+   "name_en": "Employer branding",
+   "aliases": [
+    "employer branding",
+    "برند کارفرمایی"
+   ],
+   "prerequisites": [
+    "recruitment_process",
+    "brand_strategy"
+   ]
+  },
+  {
+   "id": "performance_management",
+   "name_fa": "مدیریت و ارزیابی عملکرد",
+   "name_en": "Performance management",
+   "aliases": [
+    "performance appraisal",
+    "ارزیابی عملکرد",
+    "performance review"
+   ],
+   "prerequisites": [
+    "labor_law"
+   ]
+  },
+  {
+   "id": "compensation_benefits",
+   "name_fa": "حقوق، دستمزد و مزایا",
+   "name_en": "Compensation & benefits",
+   "aliases": [
+    "payroll",
+    "حقوق و دستمزد",
+    "compensation",
+    "جبران خدمات"
+   ],
+   "prerequisites": [
+    "labor_law",
+    "excel"
+   ]
+  },
+  {
+   "id": "hr_analytics",
+   "name_fa": "تحلیل داده‌ی منابع انسانی",
+   "name_en": "HR analytics",
+   "aliases": [
+    "people analytics",
+    "hr analytics"
+   ],
+   "prerequisites": [
+    "excel",
+    "statistics"
+   ]
+  },
+  {
+   "id": "talent_strategy",
+   "name_fa": "مدیریت استعداد و برنامه‌ریزی نیروی انسانی",
+   "name_en": "Talent strategy",
+   "aliases": [
+    "talent management",
+    "workforce planning",
+    "مدیریت استعداد"
+   ],
+   "prerequisites": [
+    "hr_analytics",
+    "performance_management",
+    "employer_branding"
+   ]
+  },
+  {
+   "id": "accounting_principles",
+   "name_fa": "اصول حسابداری",
+   "name_en": "Accounting principles",
+   "aliases": [
+    "accounting",
+    "حسابداری",
+    "حسابداری مالی",
+    "bookkeeping"
+   ],
+   "prerequisites": []
+  },
+  {
+   "id": "accounting_software",
+   "name_fa": "نرم‌افزارهای حسابداری",
+   "name_en": "Accounting software",
+   "aliases": [
+    "سپیدار",
+    "همکاران سیستم",
+    "رهکار",
+    "محک",
+    "هلو",
+    "تدبیر",
+    "accounting software"
+   ],
+   "prerequisites": [
+    "accounting_principles",
+    "computer_basics"
+   ]
+  },
+  {
+   "id": "financial_statements",
+   "name_fa": "صورت‌های مالی",
+   "name_en": "Financial statements",
+   "aliases": [
+    "ترازنامه",
+    "صورت سود و زیان",
+    "balance sheet",
+    "income statement"
+   ],
+   "prerequisites": [
+    "accounting_principles"
+   ]
+  },
+  {
+   "id": "tax_regulations",
+   "name_fa": "قوانین مالیاتی",
+   "name_en": "Tax regulations",
+   "aliases": [
+    "مالیات",
+    "tax",
+    "ارزش افزوده",
+    "vat",
+    "اظهارنامه مالیاتی"
+   ],
+   "prerequisites": [
+    "accounting_principles"
+   ]
+  },
+  {
+   "id": "ifrs",
+   "name_fa": "استانداردهای حسابداری",
+   "name_en": "Accounting standards (IFRS)",
+   "aliases": [
+    "ifrs",
+    "gaap",
+    "استانداردهای حسابداری"
+   ],
+   "prerequisites": [
+    "financial_statements"
+   ]
+  },
+  {
+   "id": "financial_analysis",
+   "name_fa": "تحلیل صورت‌های مالی",
+   "name_en": "Financial analysis",
+   "aliases": [
+    "ratio analysis",
+    "تحلیل مالی",
+    "نسبت های مالی"
+   ],
+   "prerequisites": [
+    "financial_statements",
+    "excel"
+   ]
+  },
+  {
+   "id": "budgeting_forecasting",
+   "name_fa": "بودجه‌ریزی و پیش‌بینی",
+   "name_en": "Budgeting & forecasting",
+   "aliases": [
+    "budgeting",
+    "forecasting",
+    "بودجه",
+    "بودجه ریزی"
+   ],
+   "prerequisites": [
+    "financial_analysis"
+   ]
+  },
+  {
+   "id": "auditing",
+   "name_fa": "حسابرسی",
+   "name_en": "Auditing",
+   "aliases": [
+    "audit",
+    "حسابرسی داخلی",
+    "internal audit"
+   ],
+   "prerequisites": [
+    "financial_statements"
+   ]
+  },
+  {
+   "id": "financial_modeling",
+   "name_fa": "مدل‌سازی مالی و ارزش‌گذاری",
+   "name_en": "Financial modeling & valuation",
+   "aliases": [
+    "dcf",
+    "valuation",
+    "ارزش گذاری",
+    "مدل سازی مالی"
+   ],
+   "prerequisites": [
+    "financial_analysis"
+   ]
+  },
+  {
+   "id": "corporate_finance",
+   "name_fa": "مدیریت مالی شرکت",
+   "name_en": "Corporate finance",
+   "aliases": [
+    "مدیریت مالی",
+    "cash flow",
+    "مدیریت نقدینگی",
+    "treasury"
+   ],
+   "prerequisites": [
+    "financial_modeling",
+    "budgeting_forecasting"
+   ]
+  }
+ ]
+}
