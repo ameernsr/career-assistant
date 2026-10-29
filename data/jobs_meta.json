@@ -1,11 +1,12 @@
 {
- "last_updated": "2026-10-29T09:11:01+00:00",
- "total": 219,
+ "last_updated": "2026-10-29T09:19:22+00:00",
+ "total": 258,
  "duplicates_removed": 2,
  "per_source": {
   "irantalent": 48,
-  "jobvision": 90,
+  "jobinja": 47,
+  "jobvision": 84,
   "karboom": 50,
-  "quera": 31
+  "quera": 29
  }
 }

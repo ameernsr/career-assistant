@@ -25,6 +25,7 @@ def test_role_related_titles_are_kept(title):
     "سرپرست تولید - تهران شمالی",
     "Maintenance Technician",
     "فیلمبردار (موبایلگراف)",
+    "منشی و مسئول دفتر (مشهد)",
 ])
 def test_off_topic_titles_are_dropped(title):
     assert not is_relevant(title)

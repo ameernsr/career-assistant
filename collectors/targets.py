@@ -14,17 +14,17 @@ ROLE_KEYWORDS: dict[str, list[str]] = {
     "frontend_developer": ["frontend", "front-end", "فرانت", "react", "angular", "vue", "next.js", "طراح سایت", "وب‌سایت"],
     "devops_engineer": ["devops", "دواپس", "sre", "kubernetes", "docker", "linux admin", "cloud engineer"],
     "mobile_developer": ["android", "اندروید", "ios", "flutter", "فلاتر", "react native", "برنامه‌نویس موبایل", "توسعه‌دهنده موبایل", "اپلیکیشن موبایل"],
-    "data_analyst": ["data analyst", "تحلیلگر داده", "تحلیل‌گر داده", "تحلیل داده", "power bi", "هوش تجاری", "business intelligence", "bi analyst", "گزارش‌ساز", "تحلیل‌گری داده", "داده‌کاوی", "excel", "اکسل پیشرفته", "sql"],
+    "data_analyst": ["data analyst", "تحلیلگر داده", "تحلیل‌گر داده", "تحلیل داده", "power bi", "هوش تجاری", "business intelligence", "bi analyst", "گزارش‌ساز", "تحلیل‌گری داده", "داده‌کاوی"],
     "data_scientist": ["data scientist", "دانشمند داده", "machine learning", "یادگیری ماشین", "data science"],
     "ml_engineer": ["ml engineer", "هوش مصنوعی", "deep learning", "nlp", "computer vision", "پردازش تصویر", "پردازش زبان"],
     "data_engineer": ["data engineer", "مهندس داده", "etl", "big data", "داده‌کاوی", "dba", "پایگاه داده"],
     "product_manager": ["product manager", "مدیر محصول", "product owner", "مالک محصول", "scrum", "اسکرام", "product designer"],
-    "digital_marketer": ["digital marketing", "دیجیتال مارکتینگ", "بازاریابی دیجیتال", "seo", "سئو", "content", "محتوا", "social media", "شبکه‌های اجتماعی", "اینستاگرام", "performance marketing", "مارکتینگ", "marketing", "بازاریابی", "copywriter", "کپی‌رایتر", "برند"],
+    "digital_marketer": ["digital marketing", "دیجیتال مارکتینگ", "بازاریابی دیجیتال", "seo", "content", "محتوا", "social media", "شبکه‌های اجتماعی", "اینستاگرام", "performance marketing", "مارکتینگ", "marketing", "بازاریابی", "copywriter", "کپی‌رایتر", "برند"],
     "recruiter_hr": ["recruiter", "recruitment", "منابع انسانی", "human resources", "جذب و استخدام", "talent acquisition", "کارگزینی", "آموزش و توسعه"],
     "financial_analyst": ["financial analyst", "تحلیلگر مالی", "حسابدار", "accountant", "accounting", "حسابداری", "finance", "audit", "حسابرس", "auditor", "بودجه"],
 }
-# Short words that need whole-word matching ("ai" in "maintenance", «مالی» in «شمالی»).
-WHOLE_WORDS = ["ai", "bi", "hr", "ui", "qa", "مالی"]
+# Short words that need whole-word matching ("ai" in "maintenance", «مالی» in «شمالی», «سئو» in «مسئول»).
+WHOLE_WORDS = ["ai", "bi", "hr", "ui", "qa", "مالی", "سئو"]
 
 
 
