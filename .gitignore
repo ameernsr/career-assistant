@@ -1,0 +1,28 @@
+# secrets — never commit
+.env
+.env.*
+!.env.example
+*.key
+secrets.toml
+.streamlit/secrets.toml
+
+# python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# private user data (resumes uploaded during testing)
+uploads/
+data/private/
+*.resume.pdf
+
+# crawler raw cache (normalized jobs.json IS committed)
+data/raw/
+
+# os / editors
+.DS_Store
+.idea/
+.vscode/

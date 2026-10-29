@@ -1,0 +1,642 @@
+<title>نقشه‌ی تیم هکاتون رهنما</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Reem+Kufi:wght@500;700&family=Vazirmatn:wght@400;500;700;800&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Layout: a single readable column with a sticky section nav; role cards and module cards sit in responsive grids. */
+:root{
+  --bg:#F4F6F8; --surface:#FFFFFF; --sunk:#E9EDF1; --line:#D5DCE3;
+  --fg:#15212C; --muted:#56657A;
+  --teal:#0E7468; --teal-soft:#D5EEEA;
+  --saffron:#B57A06; --saffron-soft:#F7EACB;
+  --indigo:#4450A8; --indigo-soft:#E0E3F6;
+  --red:#B4372F; --red-soft:#F6DEDB;
+  --green:#2E7D3A; --green-soft:#DCEFDD;
+  --font-display:"Reem Kufi","Vazirmatn",Tahoma,sans-serif;
+  --font-body:"Vazirmatn",Tahoma,"Segoe UI",sans-serif;
+  --font-mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  color-scheme:light;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0D141A; --surface:#141E26; --sunk:#1B2731; --line:#2A3946;
+  --fg:#E4ECF2; --muted:#9AABBB;
+  --teal:#3CC7B4; --teal-soft:#14332F;
+  --saffron:#F0B53D; --saffron-soft:#3A2D10;
+  --indigo:#9BA5F0; --indigo-soft:#232850;
+  --red:#F08A80; --red-soft:#3D1D1A;
+  --green:#7BCB86; --green-soft:#183320;
+  color-scheme:dark;
+}}
+:root[data-theme="dark"]{
+  --bg:#0D141A; --surface:#141E26; --sunk:#1B2731; --line:#2A3946;
+  --fg:#E4ECF2; --muted:#9AABBB;
+  --teal:#3CC7B4; --teal-soft:#14332F;
+  --saffron:#F0B53D; --saffron-soft:#3A2D10;
+  --indigo:#9BA5F0; --indigo-soft:#232850;
+  --red:#F08A80; --red-soft:#3D1D1A;
+  --green:#7BCB86; --green-soft:#183320;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font-family:var(--font-body);font-size:15.5px;line-height:1.85;direction:rtl}
+.wrap{max-width:1040px;margin:0 auto;padding-inline:20px;padding-block:0 64px}
+h1,h2,h3{font-family:var(--font-display);text-wrap:balance;line-height:1.35;margin:0}
+h1{font-size:clamp(1.9rem,4.6vw,2.8rem);font-weight:700}
+h2{font-size:1.55rem;font-weight:700;display:flex;align-items:baseline;gap:.6rem}
+h2 .num{font-family:var(--font-body);font-size:.85rem;font-weight:700;color:var(--teal);background:var(--teal-soft);border-radius:6px;padding:0 .5rem}
+h3{font-size:1.15rem;font-weight:500}
+p{margin:0;max-width:68ch}
+a{color:var(--teal)}
+code,.mono{font-family:var(--font-mono);font-size:.82em;direction:ltr;unicode-bidi:isolate;background:var(--sunk);border-radius:4px;padding:.05em .35em}
+:focus-visible{outline:2px solid var(--teal);outline-offset:2px}
+
+/* header */
+header.hero{padding-block:40px 28px;display:grid;gap:14px;border-bottom:1px solid var(--line)}
+.eyebrow{font-size:.78rem;letter-spacing:.06em;color:var(--muted);font-weight:700}
+.hero .lede{font-size:1.08rem;color:var(--muted)}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.pill{display:inline-flex;align-items:center;gap:.4rem;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:.2rem .8rem;font-size:.85rem;white-space:nowrap}
+.pill b{font-variant-numeric:tabular-nums}
+.pill.clock{border-color:var(--saffron);background:var(--saffron-soft)}
+
+/* nav */
+nav.toc{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line);margin-inline:-20px;padding-inline:20px;overflow-x:auto;white-space:nowrap}
+nav.toc ul{list-style:none;margin:0;padding:10px 0;display:flex;gap:4px}
+nav.toc a{display:block;text-decoration:none;color:var(--muted);font-size:.86rem;padding:.25rem .7rem;border-radius:6px}
+nav.toc a:hover{background:var(--sunk);color:var(--fg)}
+
+section{padding-block:40px 8px;display:grid;gap:18px;scroll-margin-top:56px}
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(min(100%,280px),1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;display:grid;gap:10px;align-content:start;min-width:0}
+.card ul{margin:0;padding-inline-start:1.2rem}
+.card li{margin-block:.15rem}
+.muted{color:var(--muted)}
+.small{font-size:.88rem}
+
+/* score bar */
+.score{display:flex;height:42px;border-radius:10px;overflow:hidden;border:1px solid var(--line)}
+.score div{display:flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:700;color:var(--fg);min-width:0;overflow:hidden;white-space:nowrap;padding-inline:4px}
+.score .s-a{background:var(--teal-soft);flex:25}
+.score .s-b{background:var(--indigo-soft);flex:25}
+.score .s-ml{background:var(--saffron-soft);flex:20}
+.score .s-o{background:var(--sunk);flex:30}
+.legend{display:flex;flex-wrap:wrap;gap:6px 18px;font-size:.86rem;color:var(--muted)}
+.legend span::before{content:"";display:inline-block;width:10px;height:10px;border-radius:3px;margin-inline-end:6px;background:var(--c)}
+
+.callout{border:1px solid var(--red);background:var(--red-soft);border-radius:12px;padding:14px 18px;display:grid;gap:6px}
+.callout strong{color:var(--red)}
+.callout.idea{border-color:var(--teal);background:var(--teal-soft)}
+.callout.idea strong{color:var(--teal)}
+
+/* chips */
+.chip{display:inline-block;font-size:.72rem;font-weight:700;border-radius:5px;padding:.05rem .45rem;white-space:nowrap;vertical-align:middle}
+.must{background:var(--red-soft);color:var(--red)}
+.should{background:var(--saffron-soft);color:var(--saffron)}
+.could{background:var(--indigo-soft);color:var(--indigo)}
+.ok{background:var(--green-soft);color:var(--green)}
+.warn{background:var(--saffron-soft);color:var(--saffron)}
+.no{background:var(--red-soft);color:var(--red)}
+
+/* roles */
+.role{border-top:4px solid var(--rc)}
+.role .who{display:flex;align-items:center;gap:10px}
+.role .badge{width:40px;height:40px;border-radius:10px;display:grid;place-items:center;font-family:var(--font-display);font-size:1.2rem;font-weight:700;background:var(--rs);color:var(--rc);flex:none}
+.role .name{font-size:.84rem;color:var(--muted)}
+.role h4{margin:.4rem 0 0;font-size:.82rem;letter-spacing:.04em;color:var(--rc)}
+.tasks{list-style:none;margin:0;padding:0;display:grid;gap:4px}
+.tasks label{display:flex;gap:8px;align-items:flex-start;cursor:pointer;font-size:.92rem;line-height:1.7}
+.tasks input{margin-top:.42em;accent-color:var(--rc);flex:none}
+.tasks input:checked + span{color:var(--muted);text-decoration:line-through}
+.r1{--rc:var(--teal);--rs:var(--teal-soft)}
+.r2{--rc:var(--indigo);--rs:var(--indigo-soft)}
+.r3{--rc:var(--saffron);--rs:var(--saffron-soft)}
+
+/* tables */
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+th,td{text-align:right;padding:.6rem .8rem;border-bottom:1px solid var(--line);vertical-align:top}
+th{background:var(--sunk);font-weight:700;font-size:.82rem;white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td.t{white-space:nowrap;font-variant-numeric:tabular-nums;font-weight:700}
+tr.cp td{background:var(--saffron-soft)}
+tr.cp td:first-child{color:var(--saffron)}
+td .who1{color:var(--teal);font-weight:700}
+td .who2{color:var(--indigo);font-weight:700}
+td .who3{color:var(--saffron);font-weight:700}
+
+/* code/tree */
+pre.tree{direction:ltr;text-align:left;font-family:var(--font-mono);font-size:.8rem;line-height:1.65;background:var(--sunk);border-radius:12px;padding:16px 18px;overflow-x:auto;margin:0}
+pre.tree .c{color:var(--muted)}
+.diagram{direction:ltr;overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px}
+.formula{direction:ltr;text-align:left;font-family:var(--font-mono);font-size:.84rem;background:var(--sunk);border-radius:8px;padding:10px 12px;overflow-x:auto}
+
+/* persona */
+.persona .tag{font-size:.78rem;color:var(--muted)}
+.qlist{counter-reset:q;list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.qlist li{counter-increment:q;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:12px 14px;display:grid;gap:4px}
+.qlist li::before{content:"سؤال " counter(q, persian);font-size:.75rem;font-weight:700;color:var(--saffron)}
+.decided li::before{content:"تصمیم " counter(q, persian);color:var(--green)}
+
+.demo{display:grid;gap:8px}
+.demo .step{display:grid;grid-template-columns:64px 1fr;gap:12px;align-items:start;background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:10px 14px}
+.demo .step b{font-variant-numeric:tabular-nums;color:var(--teal)}
+
+footer{margin-top:48px;padding-top:20px;border-top:1px solid var(--line);color:var(--muted);font-size:.88rem;display:grid;gap:6px}
+@media (prefers-reduced-motion: reduce){*{scroll-behavior:auto!important}}
+html{scroll-behavior:smooth}
+</style>
+
+<div class="wrap">
+  <header class="hero">
+    <div class="eyebrow">RC-MLB-HACK-2026-01 · بوت‌کمپ ماشین‌لرنینگ رهنما کالج · ۷ آبان ۱۴۰۵</div>
+    <h1>دستیار مسیر شغلی + تطبیق رزومه</h1>
+    <p class="lede">برنامه‌ی کار تیم سه‌نفره‌ی ما برای امروز. کل تسک، تقسیم کار، زمان‌بندی، منابع آگهی، edge caseها و سؤال‌هایی که باید با هم درباره‌شان تصمیم بگیریم. نظرتان را روی هر بخش به‌صورت کامنت بنویسید.</p>
+    <div class="meta">
+      <span class="pill">شروع کار <b>۱۰:۳۰</b></span>
+      <span class="pill">code freeze <b>۱۶:۱۵</b></span>
+      <span class="pill">ارسال <b>۱۷:۰۰</b></span>
+      <span class="pill">استک <b>Python + Streamlit</b></span>
+      <span class="pill clock" id="clock">زمان باقی‌مانده تا freeze: <b id="left">—</b></span>
+    </div>
+  </header>
+
+  <nav class="toc" aria-label="بخش‌ها">
+    <ul>
+      <li><a href="#task">تسک</a></li>
+      <li><a href="#audience">مخاطب</a></li>
+      <li><a href="#roles">چه کسی چه کاری</a></li>
+      <li><a href="#timeline">زمان‌بندی</a></li>
+      <li><a href="#arch">معماری</a></li>
+      <li><a href="#sources">منابع آگهی</a></li>
+      <li><a href="#could">Couldها و بونوس</a></li>
+      <li><a href="#edge">Edge caseها</a></li>
+      <li><a href="#reqs">چک‌لیست الزامات</a></li>
+      <li><a href="#questions">سؤال‌ها</a></li>
+      <li><a href="#demo">دمو</a></li>
+    </ul>
+  </nav>
+
+  <!-- TASK -->
+  <section id="task">
+    <h2><span class="num">۱</span>تسک چی از ما می‌خواد</h2>
+    <p>باید یک پروتوتایپ <b>کارکردی، فارسی و راست‌به‌چپ</b> بسازیم که دو ماژول دارد. <b>هر دو ماژول اجباری‌اند.</b> کد، README، گزارش فنی ۱ تا ۲ صفحه‌ای، اسلاید PDF و دموی زنده‌ی ۵ دقیقه‌ای تحویل می‌دهیم.</p>
+    <div class="grid g2">
+      <div class="card">
+        <h3>ماژول A · دستیار مسیر شغلی</h3>
+        <ul>
+          <li>کاربر می‌گوید «می‌خوام تحلیلگر داده بشم» و دستیار <b>حداکثر ۶ سؤال</b> می‌پرسد.</li>
+          <li>نقشه‌ی راه یادگیری به‌صورت <b>گراف</b> نمایش داده می‌شود.</li>
+          <li>نقشه‌ی راه <b>متن آزاد LLM نیست.</b> از تاکسونومی نقش‌ها، مفاهیم و پیش‌نیازها (یک DAG) <b>با کد</b> حساب می‌شود.</li>
+          <li>منابع یادگیری فقط با لینک‌هایی که <b>وجودشان بررسی شده</b>.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>ماژول B · تطبیق رزومه با شغل</h3>
+        <ul>
+          <li>آپلود رزومه‌ی PDF یا DOCX (فارسی یا انگلیسی) و استخراج پروفایل JSON.</li>
+          <li>جمع‌آوری <b>حداقل ۵۰ آگهی واقعی از حداقل ۲ سایت</b>.</li>
+          <li>نمایش <b>۱۰ شغل برتر</b> با امتیاز، مهارت‌های منطبق، مهارت‌های جاافتاده و لینک آگهی اصلی.</li>
+          <li>اندازه‌گیری کیفیت رتبه‌بندی با P@5 و nDCG@10 در مقایسه با baseline.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>امتیازها از ۱۰۰ (+۱۰ بونوس)</h3>
+      <div class="score" role="img" aria-label="ماژول A ۲۵، ماژول B ۲۵، کیفیت AI و ML ۲۰، بقیه ۳۰">
+        <div class="s-a">ماژول A · ۲۵</div>
+        <div class="s-b">ماژول B · ۲۵</div>
+        <div class="s-ml">AI/ML · ۲۰</div>
+        <div class="s-o">مهندسی ۱۰ · UX ۱۰ · ارائه ۱۰</div>
+      </div>
+      <div class="legend">
+        <span style="--c:var(--teal-soft)">کارکرد کامل A-01 تا A-09</span>
+        <span style="--c:var(--indigo-soft)">کارکرد کامل B-01 تا B-09</span>
+        <span style="--c:var(--saffron-soft)">خروجی grounded، ارزیابی رتبه‌بندی</span>
+        <span style="--c:var(--sunk)">امنیت، اجرای تک‌دستوری، فارسی خوب، دمو</span>
+      </div>
+      <p class="small muted">بونوس تا ۱۰ امتیاز: صدا (A-10)، اتصال دو ماژول (B-10)، داشبورد هزینه، یا نوآوری خوب.</p>
+    </div>
+
+    <div class="callout">
+      <strong>سه کاری که باعث حذف فوری می‌شود</strong>
+      <span>۱. وجود API key یا هر secret دیگر در ریپو (حتی در تاریخچه‌ی commitها). ۲. جمع‌آوری داده‌ی شخصی افراد دیگر. ۳. کرال برخلاف robots.txt یا قوانین سایت. رزومه‌ها فقط مصنوعی باشند، یا رزومه‌ی خودمان با رضایت خودمان.</span>
+    </div>
+
+    <div class="callout idea">
+      <strong>ایده‌ی اصلی ما: تاکسونومی، ستون فقرات مشترک هر دو ماژول</strong>
+      <span>همه‌ی مهارت‌ها (چه در گفتگو، چه در رزومه، چه در آگهی) به یک ID ثابت در تاکسونومی نگاشت می‌شوند و هر مفهوم مترادف فارسی و انگلیسی دارد («اکسل»، «Excel»، «Microsoft Excel»). سه فایده دارد: رزومه‌ی انگلیسی با آگهی فارسی مقایسه‌پذیر می‌شود، LLM نمی‌تواند مهارتی از خودش بسازد، و دکمه‌ی «برای این شغل چه یاد بگیرم؟» (B-10، بونوس) تقریباً بدون کار اضافه ساخته می‌شود.</span>
+    </div>
+  </section>
+
+  <!-- AUDIENCE -->
+  <section id="audience">
+    <h2><span class="num">۲</span>مخاطب ما کیست؟</h2>
+    <p>RFP از <b>«کاربران فارسی‌زبان»</b> حرف می‌زند و سه گروه را نام می‌برد: <b>دانشجو، فارغ‌التحصیل، و کسی که می‌خواهد شغلش را عوض کند</b>. پس مخاطب <b>عمومی</b> است و برای یک شغل خاص نیست. اما پوشش ما محدود به نقش‌هایی است که در تاکسونومی تعریف می‌کنیم (حداقل ۱۰ نقش در ۳ حوزه). داوران با یک رزومه‌ی مخفی تست می‌کنند، پس تاکسونومی را <b>پهن</b> می‌سازیم و نه عمیق روی یک حوزه.</p>
+    <div class="grid g3">
+      <div class="card persona">
+        <span class="tag">Persona ۱ · از Appendix B</span>
+        <h3>دانشجوی بی‌تجربه ← Junior Data Analyst</h3>
+        <p class="small">فقط اسم اکسل و SQL را شنیده. «شنیده‌ام» دانسته حساب <b>نمی‌شود</b> و همه‌ی مفاهیم جونیور در گراف می‌آیند.</p>
+      </div>
+      <div class="card persona">
+        <span class="tag">Persona ۲ · از Appendix B</span>
+        <h3>Junior Backend با ۲ سال تجربه ← Senior</h3>
+        <p class="small">Python و دیتابیس رابطه‌ای را بلد است. مفاهیم پایه دانسته حساب می‌شوند و گراف روی caching، messaging، system design و distributed systems تمرکز می‌کند.</p>
+      </div>
+      <div class="card persona">
+        <span class="tag">Persona ۳ · از Appendix B</span>
+        <h3>فارغ‌التحصیل با رزومه</h3>
+        <p class="small">رزومه آپلود می‌کند، ۱۰ شغل برتر را با مهارت‌های منطبق و جاافتاده می‌بیند، و برای یکی از شغل‌ها نقشه‌ی راه می‌گیرد.</p>
+      </div>
+    </div>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>حوزه</th><th>نقش‌های پیشنهادی (۱۲ نقش؛ هر نقش در سه سطح junior، mid و senior)</th></tr></thead>
+        <tbody>
+          <tr><td>نرم‌افزار</td><td>Backend Developer · Frontend Developer · DevOps Engineer · Mobile Developer</td></tr>
+          <tr><td>داده</td><td>Data Analyst · Data Scientist · ML Engineer · Data Engineer</td></tr>
+          <tr><td>کسب‌وکار</td><td>Product Manager · Digital Marketer · Recruiter / HR · Financial Analyst / حسابدار</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ROLES -->
+  <section id="roles">
+    <h2><span class="num">۳</span>چه کسی روی چه کاری</h2>
+    <p class="muted small">تیک‌ها فقط در مرورگر خودتان ذخیره می‌شوند و بقیه نمی‌بینند. اسم هر نفر را در کامنت بنویسید تا در نسخه‌ی بعد اضافه کنم.</p>
+    <div class="grid g3">
+      <article class="card role r1">
+        <div class="who"><div class="badge">۱</div><div><h3>معمار دانش</h3><div class="name">تاکسونومی · گراف · منابع · گزارش</div></div></div>
+        <h4>صبح</h4>
+        <ul class="tasks">
+          <li><label><input type="checkbox" id="t1-1"><span>توافق روی <code>schemas.py</code> و قالب ID مفاهیم با بقیه <span class="chip must">Must</span></span></label></li>
+          <li><label><input type="checkbox" id="t1-2"><span><code>taxonomy.json</code>: ۱۲ نقش، حدود ۱۰۰ مفهوم، aliases فارسی و انگلیسی، پیش‌نیازها (پیش‌نویس با LLM و بازبینی دستی؛ مرجع roadmap.sh) <span class="chip must">A-02</span></span></label></li>
+          <li><label><input type="checkbox" id="t1-3"><span><code>taxonomy.py</code>: بررسی cycle با <code>nx.find_cycle</code> و گزارش مسیر آن <span class="chip must">A-03</span></span></label></li>
+          <li><label><input type="checkbox" id="t1-4"><span><code>roadmap.py</code>: بستار پیش‌نیازها − دانسته‌ها، سپس لایه‌بندی توپولوژیک، به‌علاوه‌ی تست <span class="chip must">A-05</span></span></label></li>
+        </ul>
+        <h4>بعدازظهر</h4>
+        <ul class="tasks">
+          <li><label><input type="checkbox" id="t1-5"><span><code>resources.json</code> و <code>verify_links.py</code> (فقط لینک‌هایی که کد ۲۰۰ برمی‌گردانند) <span class="chip must">A-07</span></span></label></li>
+          <li><label><input type="checkbox" id="t1-6"><span>خلاصه‌ی متنی قطعی از روی خود گراف <span class="chip should">A-09</span></span></label></li>
+          <li><label><input type="checkbox" id="t1-7"><span>خروجی SVG، PNG و PDF از گراف <span class="chip could">A-11</span></span></label></li>
+          <li><label><input type="checkbox" id="t1-8"><span>برچسب‌زدن داده‌ی ارزیابی همراه نفر ۲</span></label></li>
+          <li><label><input type="checkbox" id="t1-9"><span><code>REPORT.md</code> (۱ تا ۲ صفحه) و اسلاید PDF</span></label></li>
+        </ul>
+      </article>
+
+      <article class="card role r2">
+        <div class="who"><div class="badge">۲</div><div><h3>داده و رتبه‌بندی</h3><div class="name">کرال · matching · ارزیابی</div></div></div>
+        <h4>صبح</h4>
+        <ul class="tasks">
+          <li><label><input type="checkbox" id="t2-1"><span>خواندن ToS سایت‌ها و ثبتشان در README <span class="chip must">NF-08</span></span></label></li>
+          <li><label><input type="checkbox" id="t2-2"><span>اجرای <code>probe.py</code> و کرالرها با VPN خاموش، رسیدن به <b>بیش از ۱۵۰ آگهی</b> و <b>کش کردنشان</b> <span class="chip must">B-03</span></span></label></li>
+          <li><label><input type="checkbox" id="t2-3"><span>نرمال‌سازی به schema مشترک و حذف تکراری‌ها <span class="chip should">B-09</span></span></label></li>
+          <li><label><input type="checkbox" id="t2-4"><span>استخراج مهارت‌های هر آگهی و نگاشت به ID تاکسونومی (اول alias، بعد LLM) و کش آن</span></label></li>
+        </ul>
+        <h4>بعدازظهر</h4>
+        <ul class="tasks">
+          <li><label><input type="checkbox" id="t2-5"><span>baseline (Jaccard) و hybrid (embedding + پوشش مهارت) و رتبه‌بندی مجدد ۲۰ نتیجه‌ی اول با LLM <span class="chip must">B-04</span> <span class="chip should">B-07</span></span></label></li>
+          <li><label><input type="checkbox" id="t2-6"><span>لیست مهارت‌های منطبق و جاافتاده برای هر شغل <span class="chip must">B-05</span></span></label></li>
+          <li><label><input type="checkbox" id="t2-7"><span>فیلتر شهر، سطح و دورکاری <span class="chip should">B-08</span></span></label></li>
+          <li><label><input type="checkbox" id="t2-8"><span><code>eval_ranking.py</code>: ۳ رزومه × ۲۵ آگهی و محاسبه‌ی P@5 و nDCG@10 <span class="chip should">۱۰.۲</span></span></label></li>
+          <li><label><input type="checkbox" id="t2-9"><span>به‌روزرسانی افزایشی آگهی‌ها و دکمه‌ی «به‌روزرسانی» <span class="chip could">B-11</span></span></label></li>
+          <li><label><input type="checkbox" id="t2-10"><span>نقشه‌ی گپ بازار (نوآوری) و تکمیل README و <code>run.sh</code></span></label></li>
+        </ul>
+      </article>
+
+      <article class="card role r3">
+        <div class="who"><div class="badge">۳</div><div><h3>LLM و اپ</h3><div class="name">گفتگو · رزومه · UI · هزینه</div></div></div>
+        <h4>صبح</h4>
+        <ul class="tasks">
+          <li><label><input type="checkbox" id="t3-1"><span><code>llm.py</code>: لیست مدل‌های گیت‌وی و تست chat، embedding، STT، TTS و vision <span class="chip must">NF-04</span></span></label></li>
+          <li><label><input type="checkbox" id="t3-2"><span><code>schemas.py</code> با Pydantic (قرارداد بین هر سه نفر) <span class="chip must">A-04</span></span></label></li>
+          <li><label><input type="checkbox" id="t3-3"><span><code>conversation.py</code>: حداکثر ۶ سؤال با شمارنده‌ای که در <b>کد</b> چک می‌شود و خروجی JSON معتبر <span class="chip must">A-01</span></span></label></li>
+          <li><label><input type="checkbox" id="t3-4"><span>UI چت راست‌به‌چپ با فونت وزیرمتن و نمایش گراف با graphviz <span class="chip must">A-06</span> <span class="chip must">NF-01</span></span></label></li>
+        </ul>
+        <h4>بعدازظهر</h4>
+        <ul class="tasks">
+          <li><label><input type="checkbox" id="t3-5"><span>اصلاح نتیجه («اکسل بلد نیستم») و ساختن دوباره‌ی گراف <span class="chip should">A-08</span></span></label></li>
+          <li><label><input type="checkbox" id="t3-6"><span><code>resume_parser.py</code> با PyMuPDF و python-docx، پیام حریم خصوصی قبل از آپلود <span class="chip must">B-01</span> <span class="chip must">B-02</span> <span class="chip must">NF-03</span></span></label></li>
+          <li><label><input type="checkbox" id="t3-7"><span>مدیریت خطا، retry و پیام فارسی برای کاربر <span class="chip must">NF-06</span></span></label></li>
+          <li><label><input type="checkbox" id="t3-8"><span>دکمه‌ی «برای این شغل چه یاد بگیرم؟» <span class="chip could">B-10</span></span></label></li>
+          <li><label><input type="checkbox" id="t3-9"><span>داشبورد هزینه و توکن <span class="chip should">NF-05</span></span></label></li>
+          <li><label><input type="checkbox" id="t3-10"><span>صدا (ورودی و خروجی) و OCR رزومه‌ی اسکن‌شده <span class="chip could">A-10</span></span></label></li>
+        </ul>
+      </article>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section id="timeline">
+    <h2><span class="num">۴</span>زمان‌بندی</h2>
+    <p>قانون تیم: <b>بیشتر از ۲۰ دقیقه روی یک مشکل گیر نمانید</b>؛ از هم کمک بگیرید یا سراغ منتور بروید. اگر ساعت ۱۴:۴۵ همه‌ی Mustها کار نکنند، Couldها کنار گذاشته می‌شوند.</p>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>ساعت</th><th><span class="who1">نفر ۱</span></th><th><span class="who2">نفر ۲</span></th><th><span class="who3">نفر ۳</span></th></tr></thead>
+        <tbody>
+          <tr><td class="t">۱۱:۰۰ تا ۱۱:۲۰</td><td colspan="3">جلسه‌ی ۱۰ دقیقه‌ای همه با هم: schemaها و ID مفاهیم. بعد هر کس کار خودش را شروع می‌کند. <b>نفر ۲ همین الان کرال را شروع کند.</b></td></tr>
+          <tr><td class="t">۱۱:۲۰ تا ۱۳:۰۰</td><td>taxonomy، roadmap و تست‌ها</td><td>کرالرها، رسیدن به بیش از ۱۵۰ آگهی، نرمال‌سازی و کش</td><td>llm، گفتگو، UI چت و گراف با داده‌ی نمونه</td></tr>
+          <tr class="cp"><td class="t">۱۳:۰۰ ✓</td><td colspan="3">چک‌پوینت ۱: هر بخش جداگانه اجرا شود.</td></tr>
+          <tr><td class="t">۱۳:۰۰ تا ۱۳:۳۰</td><td colspan="3">ناهار</td></tr>
+          <tr><td class="t">۱۳:۳۰ تا ۱۴:۴۵</td><td>منابع و verify_links، اتصال ماژول A، اصلاح نتیجه</td><td>مهارت آگهی‌ها، embedding، baseline و hybrid، فیلترها</td><td>پارسر رزومه، تب B، اتصال به matching</td></tr>
+          <tr class="cp"><td class="t">۱۴:۴۵ ✓</td><td colspan="3">چک‌پوینت ۲: همه‌ی Mustها و Shouldها از اول تا آخر کار کنند.</td></tr>
+          <tr><td class="t">۱۴:۴۵ تا ۱۵:۴۵</td><td>خروجی گراف، خلاصه‌ی متنی، برچسب‌زدن eval</td><td>اعداد ارزیابی، rerank، به‌روزرسانی آگهی‌ها، نقشه‌ی گپ</td><td>B-10، داشبورد هزینه، صدا، OCR</td></tr>
+          <tr><td class="t">۱۵:۴۵ تا ۱۶:۱۵</td><td>گزارش و اسلاید</td><td>README و تست <code>run.sh</code> روی یک کلون تمیز</td><td>رفع باگ و تست سناریوها و edge caseها</td></tr>
+          <tr class="cp"><td class="t">۱۶:۱۵ 🧊</td><td colspan="3">Code freeze</td></tr>
+          <tr><td class="t">۱۶:۱۵ تا ۱۶:۴۵</td><td colspan="3">دو بار تمرین دمو، اسکن secret با <code>git log -p | grep -iE "sk-|api_key"</code>، ضبط ویدیوی پشتیبان</td></tr>
+          <tr><td class="t">۱۶:۴۵ تا ۱۷:۰۰</td><td colspan="3">ارسال تحویلی‌ها</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ARCH -->
+  <section id="arch">
+    <h2><span class="num">۵</span>معماری</h2>
+    <p>بخش‌های <b>قطعی</b> (تاکسونومی، گراف، امتیازدهی) از بخش‌های <b>تولیدی</b> (گفتگو، استخراج، توضیح) جدا هستند تا هر کدام جداگانه تست شود. LLM هیچ‌وقت امتیاز نمی‌دهد، URL نمی‌سازد و گراف نمی‌کشد.</p>
+    <div class="diagram">
+<pre class="mermaid">
+flowchart LR
+  U[User - Streamlit RTL] --> CHAT[Conversation<br/>LLM to JSON]
+  U --> UP[Resume upload<br/>PDF / DOCX]
+  CHAT --> VAL{Pydantic +<br/>taxonomy check}
+  VAL --> RM[Roadmap engine<br/>networkx DAG]
+  TAX[(taxonomy.json<br/>roles, concepts, aliases)] --> VAL
+  TAX --> RM
+  RES[(resources.json<br/>verified links)] --> RM
+  RM --> G[Graph + summary + export]
+  UP --> PARSE[Parser + LLM<br/>ResumeProfile]
+  PARSE --> MATCH[Matching<br/>embedding + coverage + rerank]
+  JOBS[(jobs.json cache)] --> MATCH
+  CRAWL[Collectors<br/>robots-aware] --> JOBS
+  TAX --> MATCH
+  MATCH --> TOP[Top 10 + matched / missing]
+  TOP -- B-10 --> RM
+  CHAT -.-> COST[Cost monitor]
+  PARSE -.-> COST
+  MATCH -.-> COST
+</pre>
+    </div>
+    <div class="grid g2">
+      <div class="card">
+        <h3>نقشه‌ی راه چطور حساب می‌شود</h3>
+        <div class="formula">target  = ∪ concepts(role, level ≤ target_level)
+closure = target ∪ ancestors(target)
+known   = known ∪ ancestors(known)   # implicit prerequisites
+todo    = closure − known
+stages  = topological_generations(G[todo])</div>
+        <p class="small muted">هر generation یک «مرحله»ی یادگیری است. اگر کاربر صراحتاً گفته باشد چیزی را بلد نیست، همیشه به حرف او عمل می‌کنیم.</p>
+      </div>
+      <div class="card">
+        <h3>رتبه‌بندی شغل‌ها</h3>
+        <div class="formula">baseline = Jaccard(skills_resume, skills_job)
+hybrid   = 0.45·cos(emb_resume, emb_job)
+         + 0.35·coverage(required ∩ have)
+         + 0.10·seniority_fit + 0.10·location_fit
+final    = LLM rerank(top 20)</div>
+        <p class="small muted">وزن‌ها را روی داده‌ی ارزیابی تنظیم نمی‌کنیم چون overfit می‌شود. فقط ۲ تا ۳ ترکیب را امتحان و گزارش می‌کنیم.</p>
+      </div>
+    </div>
+<pre class="tree">career-assistant/
+  app.py                <span class="c"># tabs: career path | resume match | evaluation | cost</span>
+  core/
+    config.py llm.py text_fa.py schemas.py
+    taxonomy.py roadmap.py resources.py summary.py export.py
+    conversation.py resume_parser.py matching.py voice.py
+  collectors/
+    base.py probe.py run_collect.py normalize.py dedup.py
+    jobinja.py jobvision.py karboom.py irantalent.py   <span class="c"># main</span>
+    quera.py remotive.py remoteok.py                   <span class="c"># backup</span>
+  data/  taxonomy.json resources.json jobs.json job_embeddings.npy eval/
+  scripts/  verify_links.py eval_ranking.py make_synthetic_resumes.py
+  tests/  test_taxonomy.py test_roadmap.py test_matching.py test_parser.py
+  .env.example .gitignore requirements.txt run.sh Dockerfile README.md REPORT.md</pre>
+  </section>
+
+  <!-- SOURCES -->
+  <section id="sources">
+    <h2><span class="num">۶</span>منابع آگهی</h2>
+    <p>امروز حدود ساعت ۱۰:۵۰ بررسی شد. با VPN روشن، IP ما در ارمنستان دیده می‌شد. <b>تصمیم تیم:</b> منابع اصلی جابینجا، جاب‌ویژن، کاربوم و ایران‌تلنت هستند و کرال با VPN خاموش انجام می‌شود. منابع پشتیبان تضمین می‌کنند که در هر حال ۵۰ آگهی از ۲ منبع داشته باشیم.</p>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>منبع</th><th>نقش</th><th>یافته‌ها</th><th>روش</th></tr></thead>
+        <tbody>
+          <tr><td>Jobinja</td><td><span class="chip warn">اصلی · نامعلوم</span></td><td>با VPN خطای ۴۰۳ (geo-block) داد. robots.txt هنوز دیده نشده.</td><td>بررسی با <code>probe.py</code>. اگر ToS اجازه نداد حذف می‌شود.</td></tr>
+          <tr><td>Jobvision</td><td><span class="chip warn">اصلی · سخت</span></td><td>robots.txt همه‌ی URLهای دارای <code>?</code> را ممنوع کرده. sitemap لینک آگهی‌ها را دارد، ولی صفحه‌ی آگهی با JS ساخته می‌شود و HTML خالی است.</td><td>sitemap، بعد جستجوی JSON-LD یا API عمومی. اگر نشد Quera جایگزینش می‌شود.</td></tr>
+          <tr><td>Karboom</td><td><span class="chip ok">اصلی · آماده</span></td><td>مسیر <code>/jobs</code> مجاز است (فقط <code>/cv</code>، <code>/profile</code> و <code>?q=</code> ممنوع‌اند). HTML سمت سرور ساخته می‌شود.</td><td>صفحه‌ی لیست آگهی‌ها، بعد صفحه‌ی هر آگهی.</td></tr>
+          <tr><td>IranTalent</td><td><span class="chip warn">اصلی · محدود</span></td><td>robots.txt مسیر <code>/jobs-search/</code> و همه‌ی URLهای دارای <code>?</code> را ممنوع کرده.</td><td>فقط از راه sitemap و صفحه‌ی هر آگهی.</td></tr>
+          <tr><td>Quera Magnet</td><td><span class="chip ok">پشتیبان</span></td><td>مجاز است. JSON داخل HTML جاسازی شده، حدود ۱۸ آگهی در هر صفحه، و صفحه‌ی بعد با <code>?page=2</code> جواب می‌دهد.</td><td>خواندن JSON جاسازی‌شده.</td></tr>
+          <tr><td>Remotive API</td><td><span class="chip ok">پشتیبان</span></td><td>API عمومی که کار می‌کند. لینک برگشت و ذکر نام Remotive الزامی است.</td><td>JSON، یک بار فراخوانی و کش.</td></tr>
+          <tr><td>RemoteOK API</td><td><span class="chip ok">پشتیبان</span></td><td>API عمومی که کار می‌کند. لینک برگشت الزامی است و از لوگوی آن نباید استفاده کرد.</td><td>JSON، یک بار فراخوانی و کش.</td></tr>
+          <tr><td>LinkedIn / Indeed</td><td><span class="chip no">ممنوع</span></td><td>ToS آن‌ها اسکرپینگ را صراحتاً ممنوع کرده.</td><td>استفاده نمی‌کنیم.</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="card">
+      <h3>قواعد کرالر</h3>
+      <ul>
+        <li>قبل از هر درخواست <code>robotparser.can_fetch()</code> صدا زده می‌شود. اگر جواب منفی بود، آن URL رد و در لاگ ثبت می‌شود.</li>
+        <li>User-Agent معرف تیم (<code>RahnamaHackathonBot/1.0</code>) و حداقل ۲ تا ۳ ثانیه فاصله بین درخواست‌ها.</li>
+        <li>ترتیب استخراج: اول JSON-LD از نوع <code>JobPosting</code>، بعد JSON جاسازی‌شده، و در آخر سلکتور HTML.</li>
+        <li>فقط این فیلدها ذخیره می‌شوند: عنوان، شرکت، شهر، الزامات، تاریخ، URL و منبع. <b>نام، ایمیل یا تلفن رابط استخدام ذخیره نمی‌شود.</b></li>
+        <li>دمو فقط از <code>jobs.json</code> کش‌شده اجرا می‌شود و به کرال زنده وابسته نیست.</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- COULD -->
+  <section id="could">
+    <h2><span class="num">۷</span>Couldها و بونوس</h2>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>مورد</th><th>روش</th><th>مالک</th><th>زحمت</th></tr></thead>
+        <tbody>
+          <tr><td><span class="chip could">B-10</span> اتصال دو ماژول</td><td>دکمه‌ی «برای این شغل چه یاد بگیرم؟»: مهارت‌های لازم شغل هدف می‌شوند و مهارت‌های رزومه دانسته فرض می‌شوند. خروجی همان گراف ماژول A است.</td><td class="who3">نفر ۳</td><td>کم</td></tr>
+          <tr><td><span class="chip could">A-11</span> خروجی گراف</td><td>تبدیل گراف graphviz به SVG و PNG، و یک PDF شامل گراف، مراحل و منابع. باید باینری graphviz را نصب کنیم.</td><td class="who1">نفر ۱</td><td>کم</td></tr>
+          <tr><td>داشبورد هزینه</td><td>برای هر فراخوانی: مدل، توکن ورودی و خروجی، زمان پاسخ و هزینه. جمع هزینه‌ی جلسه و سقف بودجه.</td><td class="who3">نفر ۳</td><td>کم</td></tr>
+          <tr><td><span class="chip could">B-11</span> به‌روزرسانی آگهی‌ها</td><td>کرال افزایشی <code>--incremental</code> (ادغام بر اساس id، فقط embedding آگهی‌های جدید)، دکمه‌ی به‌روزرسانی، و یک خط cron نمونه در README.</td><td class="who2">نفر ۲</td><td>متوسط</td></tr>
+          <tr><td><span class="chip could">A-10</span> صدا</td><td>ورودی صوتی با <code>st.audio_input</code> و تبدیل به متن، و پخش خلاصه با TTS. کیفیت TTS فارسی را ساعت ۱۱ تست می‌کنیم.</td><td class="who3">نفر ۳</td><td>متوسط</td></tr>
+          <tr><td>نوآوری: نقشه‌ی گپ بازار</td><td>مهارت‌هایی که در ۱۰ شغل برتر بیشتر از همه جاافتاده‌اند، یعنی «اول این‌ها را یاد بگیر».</td><td class="who2">نفر ۲</td><td>کم</td></tr>
+          <tr><td>نوآوری: OCR رزومه</td><td>اگر از PDF متنی درنیامد، صفحه به تصویر تبدیل و به مدل vision داده می‌شود.</td><td class="who3">نفر ۳</td><td>متوسط</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- EDGE -->
+  <section id="edge">
+    <h2><span class="num">۸</span>Edge caseها</h2>
+    <div class="grid g2">
+      <div class="tbl">
+        <table>
+          <thead><tr><th colspan="2">ماژول A · گفتگو و گراف</th></tr></thead>
+          <tbody>
+            <tr><td>نقشی که پوشش نمی‌دهیم («خلبان»)</td><td>پیام «پوشش نمی‌دهیم» و پیشنهاد نزدیک‌ترین نقش‌ها</td></tr>
+            <tr><td>هدف مبهم یا چند نقش همزمان</td><td>انتخاب با دکمه</td></tr>
+            <tr><td>همه‌چیز را در پیام اول گفته</td><td>سؤال اضافه نمی‌پرسیم</td></tr>
+            <tr><td>«نمی‌دونم» یا رد کردن سؤال</td><td>مقدار پیش‌فرض و ادامه</td></tr>
+            <tr><td>به سقف ۶ سؤال رسیدیم</td><td>کد گفتگو را می‌بندد و گراف را می‌سازد</td></tr>
+            <tr><td>«فقط اسمش رو شنیدم»</td><td>دانسته حساب نمی‌شود</td></tr>
+            <tr><td>کاربر همه‌چیز را بلد است</td><td>تبریک و پیشنهاد سطح بالاتر</td></tr>
+            <tr><td>سطح هدف پایین‌تر از سطح فعلی</td><td>هشدار</td></tr>
+            <tr><td>اصلاح درباره‌ی مهارتی که در تاکسونومی نیست</td><td>پیام «در مدل ما نیست» و نادیده گرفتن</td></tr>
+            <tr><td>اصلاح متناقض</td><td>آخرین گفته معتبر است</td></tr>
+            <tr><td>گراف بیش از ۳۰ گره</td><td>نمایش لایه‌ای و نمای «فقط مرحله‌ی بعدی»</td></tr>
+            <tr><td>فینگلیش، ارقام فارسی، ي و ك عربی</td><td>نرمال‌سازی با <code>text_fa.py</code></td></tr>
+            <tr><td>prompt injection</td><td>اعتبارسنجی schema و دور ریختن خروجی نامعتبر</td></tr>
+            <tr><td>لینک منبع مرده</td><td>پیام «منبع تأییدشده موجود نیست»</td></tr>
+            <tr><td>خطای LLM یا تمام شدن اعتبار</td><td>retry، و اگر نشد سؤال‌های ثابت با دکمه</td></tr>
+            <tr><td>cycle در تاکسونومی</td><td>خطا با نمایش مسیر cycle، و تست</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="tbl">
+        <table>
+          <thead><tr><th colspan="2">ماژول B · رزومه و تطبیق</th></tr></thead>
+          <tbody>
+            <tr><td>PDF اسکن‌شده</td><td>OCR با مدل vision</td></tr>
+            <tr><td>متن فارسی PDF بهم‌ریخته یا برعکس</td><td>PyMuPDF، تشخیص متن خراب و روش جایگزین</td></tr>
+            <tr><td>PDF رمزدار یا خراب، فایل .doc، فایل بیش از ۵MB</td><td>پیام خطای دقیق، بدون crash</td></tr>
+            <tr><td>فایل اصلاً رزومه نیست</td><td>فیلد <code>is_resume</code> و رد فایل</td></tr>
+            <tr><td>تاریخ شمسی یا «تاکنون»</td><td>تبدیل با <code>jdatetime</code>؛ سال‌های تجربه در کد حساب می‌شود</td></tr>
+            <tr><td>بی‌تجربه یا تغییر مسیر شغلی</td><td>اولویت با آگهی‌های جونیور و کارآموزی</td></tr>
+            <tr><td>«مرا اول رتبه بده» داخل رزومه</td><td>امتیاز در کد حساب می‌شود، نه با LLM</td></tr>
+            <tr><td>آگهی بدون مهارت قابل‌استخراج</td><td>فقط embedding و برچسب «اطلاعات ناکافی»</td></tr>
+            <tr><td>کمتر از ۱۰ نتیجه بعد از فیلتر</td><td>نمایش همه و پیشنهاد شل کردن فیلتر</td></tr>
+            <tr><td>آگهی تکراری بین سایت‌ها</td><td>کلید عنوان+شرکت و شباهت embedding بالای ۰٫۹۳</td></tr>
+            <tr><td>آگهی قدیمی</td><td>نمایش تاریخ و فیلتر «۳۰ روز اخیر»</td></tr>
+            <tr><td>رزومه‌ی انگلیسی و آگهی فارسی</td><td>ID تاکسونومی و embedding چندزبانه</td></tr>
+            <tr><td>سایت وسط روز بلاک کرد</td><td>دمو از کش اجرا می‌شود</td></tr>
+            <tr><td>حریم خصوصی</td><td>رضایت قبل از آپلود، فایل فقط در حافظه، بدون لاگ متن رزومه، دکمه‌ی پاک کردن</td></tr>
+            <tr><td>فایل <code>.env</code> وجود ندارد</td><td>پیام واضح هنگام اجرا</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- REQS -->
+  <section id="reqs">
+    <h2><span class="num">۹</span>چک‌لیست همه‌ی الزامات RFP</h2>
+    <div class="tbl">
+      <table>
+        <thead><tr><th>ID</th><th>الزام</th><th>اولویت</th><th>مالک</th></tr></thead>
+        <tbody>
+          <tr><td class="mono">A-01</td><td>چت فارسی؛ نقش، سطح و پیشینه با حداکثر ۶ سؤال</td><td><span class="chip must">Must</span></td><td class="who3">۳</td></tr>
+          <tr><td class="mono">A-02</td><td>تاکسونومی: حداقل ۱۰ نقش در ۳ حوزه، مفاهیم در هر سطح</td><td><span class="chip must">Must</span></td><td class="who1">۱</td></tr>
+          <tr><td class="mono">A-03</td><td>پیش‌نیازها به شکل DAG؛ cycle رد یا گزارش شود</td><td><span class="chip must">Must</span></td><td class="who1">۱</td></tr>
+          <tr><td class="mono">A-04</td><td>خروجی JSON مدل در برابر تاکسونومی اعتبارسنجی شود</td><td><span class="chip must">Must</span></td><td class="who3">۳</td></tr>
+          <tr><td class="mono">A-05</td><td>roadmap با کد محاسبه شود و ترتیب مطالعه‌ی معتبر داشته باشد</td><td><span class="chip must">Must</span></td><td class="who1">۱</td></tr>
+          <tr><td class="mono">A-06</td><td>گراف در یک صفحه خوانا باشد</td><td><span class="chip must">Must</span></td><td class="who3">۳</td></tr>
+          <tr><td class="mono">A-07</td><td>منابع با لینک بررسی‌شده؛ هیچ URL ساختگی نباشد</td><td><span class="chip must">Must</span></td><td class="who1">۱</td></tr>
+          <tr><td class="mono">A-08</td><td>اصلاح توسط کاربر و ساختن دوباره‌ی roadmap</td><td><span class="chip should">Should</span></td><td class="who3">۳</td></tr>
+          <tr><td class="mono">A-09</td><td>خلاصه‌ی متنی با گراف یکی باشد</td><td><span class="chip should">Should</span></td><td class="who1">۱</td></tr>
+          <tr><td class="mono">A-10</td><td>ورودی و خروجی صوتی فارسی</td><td><span class="chip could">Could</span></td><td class="who3">۳</td></tr>
+          <tr><td class="mono">A-11</td><td>خروجی تصویر یا PDF از roadmap</td><td><span class="chip could">Could</span></td><td class="who1">۱</td></tr>
+          <tr><td class="mono">B-01</td><td>آپلود PDF و DOCX، فارسی و انگلیسی</td><td><span class="chip must">Must</span></td><td class="who3">۳</td></tr>
+          <tr><td class="mono">B-02</td><td>پروفایل JSON مستند (مهارت‌ها، سال‌های تجربه، تحصیلات، نقش‌ها، شهر)</td><td><span class="chip must">Must</span></td><td class="who3">۳</td></tr>
+          <tr><td class="mono">B-03</td><td>حداقل ۵۰ آگهی از ۲ منبع، با schema مشترک</td><td><span class="chip must">Must</span></td><td class="who2">۲</td></tr>
+          <tr><td class="mono">B-04</td><td>امتیاز همه‌ی آگهی‌ها و نمایش ۱۰ شغل برتر</td><td><span class="chip must">Must</span></td><td class="who2">۲</td></tr>
+          <tr><td class="mono">B-05</td><td>مهارت‌های منطبق و جاافتاده برای هر شغل</td><td><span class="chip must">Must</span></td><td class="who2">۲</td></tr>
+          <tr><td class="mono">B-06</td><td>لینک به آگهی اصلی</td><td><span class="chip must">Must</span></td><td class="who2">۲</td></tr>
+          <tr><td class="mono">B-07</td><td>رتبه‌بندی فراتر از کلیدواژه، با کیفیت اندازه‌گیری‌شده</td><td><span class="chip should">Should</span></td><td class="who2">۲</td></tr>
+          <tr><td class="mono">B-08</td><td>فیلتر شهر، سطح و دورکاری</td><td><span class="chip should">Should</span></td><td class="who2">۲</td></tr>
+          <tr><td class="mono">B-09</td><td>حذف آگهی‌های تکراری</td><td><span class="chip should">Should</span></td><td class="who2">۲</td></tr>
+          <tr><td class="mono">B-10</td><td>roadmap برای مهارت‌های جاافتاده‌ی یک شغل</td><td><span class="chip could">Could</span></td><td class="who3">۳</td></tr>
+          <tr><td class="mono">B-11</td><td>به‌روزرسانی دوره‌ای یا افزایشی آگهی‌ها</td><td><span class="chip could">Could</span></td><td class="who2">۲</td></tr>
+          <tr><td class="mono">NF-01</td><td>رابط فارسی و راست‌به‌چپ</td><td><span class="chip must">Must</span></td><td class="who3">۳</td></tr>
+          <tr><td class="mono">NF-02</td><td>پاسخ چت زیر ۱۰ ثانیه، لیست شغل‌ها زیر ۶۰ ثانیه</td><td><span class="chip should">Should</span></td><td class="who2">۲</td></tr>
+          <tr><td class="mono">NF-03</td><td>حریم خصوصی رزومه و اطلاع‌رسانی قبل از آپلود</td><td><span class="chip must">Must</span></td><td class="who3">۳</td></tr>
+          <tr><td class="mono">NF-04</td><td>کلید API فقط سمت سرور و هرگز در ریپو</td><td><span class="chip must">Must</span></td><td>همه</td></tr>
+          <tr><td class="mono">NF-05</td><td>ثبت توکن و هزینه‌ی هر جلسه</td><td><span class="chip should">Should</span></td><td class="who3">۳</td></tr>
+          <tr><td class="mono">NF-06</td><td>مدیریت خطای مدل بدون crash</td><td><span class="chip must">Must</span></td><td class="who3">۳</td></tr>
+          <tr><td class="mono">NF-07</td><td>اجرا با یک دستور</td><td><span class="chip should">Should</span></td><td class="who2">۲</td></tr>
+          <tr><td class="mono">NF-08</td><td>رعایت robots.txt، محدودیت سرعت و معرفی کرالر</td><td><span class="chip must">Must</span></td><td class="who2">۲</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- QUESTIONS -->
+  <section id="questions">
+    <h2><span class="num">۱۰</span>تصمیم‌ها و سؤال‌های باز</h2>
+    <div class="grid g2">
+      <div class="card">
+        <h3>تصمیم‌های گرفته‌شده</h3>
+        <ol class="qlist decided">
+          <li>بازار آگهی‌ها ایران است (جابینجا، جاب‌ویژن، کاربوم، ایران‌تلنت) و Quera، Remotive و RemoteOK پشتیبان‌اند.</li>
+          <li>اگر کاربر مهارتی را بلد است، پیش‌نیازهایش هم بلد فرض می‌شوند، مگر این‌که صراحتاً بگوید بلد نیست.</li>
+          <li>کلید و base URL گیت‌وی دستمان است. اول لیست مدل‌ها و قیمت‌ها را می‌گیریم.</li>
+          <li>دمو روی لپ‌تاپ با <code>run.sh</code> اجرا می‌شود. Docker فقط برای اجرای تک‌دستوری است.</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>برای بحث در تیم (کامنت بگذارید)</h3>
+        <ol class="qlist">
+          <li>این ۱۲ نقش خوب است، یا نقشی مثل UI/UX، QA یا امنیت را جایگزین کنیم؟</li>
+          <li>تقسیم کار با علاقه و توانایی هر نفر جور است؟ چه کسی کدام کارت را برمی‌دارد؟</li>
+          <li>اسم محصول و رنگ‌بندی اپ چه باشد؟</li>
+          <li>۳ رزومه‌ی ارزیابی کاملاً مصنوعی باشند، یا یکی رزومه‌ی خودمان با رضایت؟</li>
+          <li>اگر TTS فارسی کیفیت خوبی نداشت، صدا فقط ورودی باشد؟</li>
+        </ol>
+      </div>
+      <div class="card">
+        <h3>سؤال از منتور و برگزارکننده</h3>
+        <ol class="qlist">
+          <li>کانال ارسال چیست؟ ریپو public باشد یا private با دسترسی داوران؟</li>
+          <li>مهلت ارسال دقیقاً ۱۶:۳۰ است یا ۱۷:۰۰؟</li>
+          <li>رزومه‌ی مخفی داوران فارسی است یا انگلیسی؟ از چه حوزه‌ای؟</li>
+          <li>سقف اعتبار گیت‌وی برای هر تیم چقدر است؟</li>
+          <li>برای رعایت robots.txt و ToS سایت‌های ایرانی مستند خاصی می‌خواهند؟</li>
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <!-- DEMO -->
+  <section id="demo">
+    <h2><span class="num">۱۱</span>سناریوی دمو (۵ دقیقه)</h2>
+    <div class="demo">
+      <div class="step"><b>۰:۰۰</b><span>مسئله و مخاطب: کاربر می‌داند چه شغلی می‌خواهد، ولی نمی‌داند چه یاد بگیرد و کدام آگهی به او می‌خورد.</span></div>
+      <div class="step"><b>۰:۳۰</b><span>ماژول A با persona ۱: «می‌خوام تحلیلگر داده بشم»، چند سؤال، گراف. بعد «اکسل بلد نیستم» و ساختن دوباره‌ی گراف، خروجی گرفتن، و (اگر آماده بود) صدا.</span></div>
+      <div class="step"><b>۲:۰۰</b><span>ماژول B: آپلود رزومه، ۱۰ شغل برتر با مهارت‌های منطبق و جاافتاده، «برای این شغل چه یاد بگیرم؟»، و نقشه‌ی گپ بازار.</span></div>
+      <div class="step"><b>۳:۳۰</b><span>جدول ارزیابی (baseline، hybrid، و hybrid با rerank) و هزینه‌ی هر جلسه.</span></div>
+      <div class="step"><b>۴:۳۰</b><span>معماری در یک اسلاید و جمع‌بندی.</span></div>
+    </div>
+  </section>
+
+  <footer>
+    <span>نظرتان را روی همین صفحه کامنت بگذارید. بعد از جمع شدن نظرها، نسخه‌ی بعدی با اسم هر نفر و تصمیم‌های نهایی منتشر می‌شود.</span>
+    <span>RFP مرجع: RC-MLB-HACK-2026-01 نسخه‌ی ۱٫۰. این برنامه با کمک Claude Code تهیه شده و این موضوع در گزارش فنی ذکر می‌شود.</span>
+  </footer>
+</div>
+
+<script>
+(function(){
+  // per-viewer checklist memory
+  var KEY='rahnama-team-tasks';
+  var state={};
+  try{state=JSON.parse(localStorage.getItem(KEY)||'{}')||{};}catch(e){state={};}
+  document.querySelectorAll('.tasks input[type=checkbox]').forEach(function(cb){
+    if(state[cb.id]) cb.checked=true;
+    cb.addEventListener('change',function(){
+      state[cb.id]=cb.checked;
+      try{localStorage.setItem(KEY,JSON.stringify(state));}catch(e){}
+    });
+  });
+  // countdown to 16:15 code freeze (viewer's local time)
+  var left=document.getElementById('left');
+  function fa(n){return n.toLocaleString('fa-IR',{minimumIntegerDigits:2,useGrouping:false});}
+  function tick(){
+    var now=new Date(), t=new Date(now); t.setHours(16,15,0,0);
+    var d=Math.floor((t-now)/60000);
+    if(d<=0){left.textContent='freeze شده';return;}
+    left.textContent=fa(Math.floor(d/60))+':'+fa(d%60);
+  }
+  tick(); setInterval(tick,30000);
+})();
+</script>
