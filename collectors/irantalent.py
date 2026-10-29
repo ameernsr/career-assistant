@@ -2,16 +2,22 @@
 job-filter sitemap and link to /job/<slug>/<id> detail pages, which carry JSON-LD."""
 from .base import Fetcher, harvest_links, sitemap_urls
 from .detail import collect_details, last_number
+from .targets import is_relevant
 
 NAME, MARKET = "irantalent", "iran"
 BASE = "https://www.irantalent.com"
-FALLBACK_LISTINGS = [f"{BASE}/jobs/jobs-in-tehran", f"{BASE}/jobs/jobs-in-isfahan", f"{BASE}/jobs/jobs-in-alborz"]
+FALLBACK_LISTINGS = [f"{BASE}/jobs/{s}" for s in (
+    "backend-developer", "frontend-developer", "python-developer", "android-developer",
+    "digital-marketing-specialist", "seo-specialist", "senior-accountant", "financial-manager", "scrum-master",
+)]
 
 
 def _detail_urls(fetcher: Fetcher, limit: int):
-    listings = sitemap_urls(fetcher, f"{BASE}/fa/job-filter/sitemap.xml", r"/jobs/jobs-in-", 8) or FALLBACK_LISTINGS
-    # Tehran first: most postings.
-    listings.sort(key=lambda u: "tehran" not in u)
+    # Role pages (/jobs/backend-developer, /jobs/seo-specialist…) from the job-filter sitemap.
+    listings = [
+        u for u in sitemap_urls(fetcher, f"{BASE}/fa/job-filter/sitemap.xml", r"/jobs/[^/]+$", 2000)
+        if "jobs-in-" not in u and "jobs-for-" not in u and is_relevant(u)
+    ] or FALLBACK_LISTINGS
     seen: set[str] = set()
     for listing in listings:
         html = fetcher.get(listing)
@@ -21,7 +27,7 @@ def _detail_urls(fetcher: Fetcher, limit: int):
             if url not in seen:
                 seen.add(url)
                 yield url
-        if len(seen) >= limit * 2:
+        if len(seen) >= limit * 3:
             return
 
 

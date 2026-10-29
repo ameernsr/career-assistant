@@ -8,6 +8,7 @@ from core.schemas import JobPosting
 
 from .base import Fetcher, extract_jsonld
 from .normalize import job_from_jsonld
+from .targets import is_relevant
 
 
 def collect_details(
@@ -31,6 +32,9 @@ def collect_details(
             fetcher._log(f"no JobPosting JSON-LD on {url}")
             continue
         job = job_from_jsonld(ld, source=source, source_id=id_from_url(url), url=url, market=market)
+        if job and not is_relevant(job.title, " ".join(job.requirements)):
+            fetcher._log(f"off-topic, skipped: {job.title[:50]}")
+            continue
         if job:
             got += 1
             yield job

@@ -3,6 +3,7 @@
     python -m collectors.run_collect                       # all main sources, 60 each
     python -m collectors.run_collect --sources karboom quera --max-per-source 40
     python -m collectors.run_collect --incremental         # B-11: keep old ads, add new ones
+    python -m collectors.run_collect --every 360           # background refresh every 6 h (minutes, min 60)
 
 Per-source files go to data/jobs/<source>.jsonl; the merged, de-duplicated set to data/jobs.json.
 Both are committed to git so the whole team (and the demo) uses the same cached data.
@@ -12,6 +13,7 @@ from __future__ import annotations
 import argparse
 import importlib
 import json
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -85,8 +87,19 @@ def main() -> None:
     ap.add_argument("--incremental", action="store_true", help="keep previously collected ads (B-11)")
     ap.add_argument("--no-cache", action="store_true", help="re-download pages even if cached in data/raw/")
     ap.add_argument("--merge-only", action="store_true", help="just rebuild data/jobs.json from data/jobs/*.jsonl")
+    ap.add_argument("--every", type=int, metavar="MINUTES",
+                    help="keep running and refresh incrementally every N minutes (min 60: be polite to the sites)")
     args = ap.parse_args()
     sources = MAIN + BACKUP if args.sources == ["all"] else args.sources
+    if args.every:
+        interval = max(60, args.every) * 60
+        while True:
+            for name in sources:
+                print(f"== {name}", flush=True)
+                run_source(name, args.max_per_source, True, use_cache=False)
+            meta = merge()
+            print(f"[{meta['last_updated']}] {meta['total']} jobs; next refresh in {interval // 60} min", flush=True)
+            time.sleep(interval)
 
     if not args.merge_only:
         for name in sources:

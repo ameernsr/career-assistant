@@ -21,6 +21,9 @@ python -m venv .venv && .venv/bin/pip install -r requirements.txt
 .venv/bin/python -m collectors.run_collect           # منابع اصلی، ۶۰ آگهی از هر کدام
 .venv/bin/python -m collectors.run_collect --sources jobinja --incremental   # اضافه کردن یک منبع
 ```
+- فقط آگهی‌های مرتبط با ۱۲ نقش تاکسونومی جمع می‌شوند ([`collectors/targets.py`](collectors/targets.py)): صفحه‌های دسته‌بندی همان نقش‌ها کرال می‌شوند و آگهی‌های بی‌ربط بر اساس عنوان کنار گذاشته می‌شوند.
+- اپ هیچ‌وقت موقع درخواست کاربر کرال نمی‌کند و همیشه `data/jobs.json` کش‌شده را می‌خواند. به‌روزرسانی دوره‌ای (B-11) در یک پروسه‌ی جدا اجرا می‌شود:
+  `python -m collectors.run_collect --every 360` (هر ۶ ساعت، افزایشی). در production معادلش یک خط cron است: `0 3 * * * cd /app && python -m collectors.run_collect --incremental`.
 - خروجی: `data/jobs/<source>.jsonl` و فایل ادغام‌شده‌ی `data/jobs.json`. قالب داده در [`data/README.md`](data/README.md) توضیح داده شده.
 - **جابینجا IPهای خارج از ایران را بلاک می‌کند.** برای کرال آن VPN را خاموش کنید.
 - قبل از هر درخواست robots.txt چک می‌شود (با پشتیبانی کامل از wildcard). بین درخواست‌ها ۲.۵ ثانیه فاصله است، User-Agent تیم را معرفی می‌کند و اطلاعات تماس از متن آگهی‌ها حذف می‌شود.

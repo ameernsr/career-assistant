@@ -1,6 +1,7 @@
 """Quera Magnet (backup, tech-focused): listing pages embed jobs in __NEXT_DATA__; detail pages add JSON-LD."""
 from .base import Fetcher, extract_jsonld, extract_next_data
 from .normalize import fa_normalize, job_from_jsonld, make_job, normalize_city, to_iso_date
+from .targets import is_relevant
 
 NAME, MARKET = "quera", "iran"
 BASE = "https://quera.org/magnet/jobs"
@@ -20,6 +21,8 @@ def collect(fetcher: Fetcher, limit: int, with_details: bool = True):
                 continue
             url = f"{BASE}/{node['pk']}"
             techs = [t["technology"]["name"] for t in node.get("jobtechnology_set") or [] if t.get("technology")]
+            if not is_relevant(node.get("title"), " ".join(techs)):
+                continue
             job = None
             if with_details:
                 ld = extract_jsonld(fetcher.get(url) or "")

@@ -2,6 +2,7 @@
 Run `python -m collectors.probe` first and read Jobinja's terms before enabling it."""
 from .base import Fetcher, harvest_links, sitemap_urls
 from .detail import collect_details
+from .targets import is_relevant
 
 NAME, MARKET = "jobinja", "iran"
 BASE = "https://jobinja.ir"
@@ -16,7 +17,7 @@ def _code(url: str) -> str:
 def _detail_urls(fetcher: Fetcher, limit: int):
     urls: list[str] = []
     for sm in fetcher.robots(BASE).sitemaps or [f"{BASE}/sitemap.xml"]:
-        urls += sitemap_urls(fetcher, sm, DETAIL, limit * 2 - len(urls))
+        urls += [u for u in sitemap_urls(fetcher, sm, DETAIL, 20000) if is_relevant(u)]
         if len(urls) >= limit * 2:
             break
     if not urls:
