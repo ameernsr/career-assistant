@@ -1,0 +1,98 @@
+# SPEC — AI Career Path Assistant (RC-MLB-HACK-2026-01)
+
+The single source of truth for **what we build and when it counts as done**. Code freeze 16:15, submission 17:00.
+Data shapes live in [`core/schemas.py`](../core/schemas.py); this file references them, never redefines them.
+
+Owners: **P1** = taxonomy & graph · **P2** = data & ranking · **P3** = LLM & app. (Names: see team-plan.html.)
+
+## 1. Architecture rules
+
+- **Deterministic core, generative edge.** Taxonomy, roadmap, scoring, years-of-experience, dedup are plain Python with tests. The LLM only converses, extracts JSON, and writes explanations.
+- **Taxonomy is the spine.** Every skill anywhere (chat, resume, job ad) is mapped to a taxonomy concept id before use. Unknown ids are dropped, never shown (A-04).
+- **LLM output is untrusted.** Parse → validate with the Pydantic model → filter ids against the taxonomy → use. On failure: retry once, then a rule-based fallback.
+- **Cached data only at demo time.** The app reads `data/*.json`; it never crawls live.
+
+## 2. Module contracts
+
+| Module | Owner | Public function | Returns |
+|---|---|---|---|
+| `core/llm.py` | P3 | `chat_json(messages, model_cls) -> model_cls`, `embed(texts) -> np.ndarray`, `usage()` | validated model / vectors / per-session tokens + cost |
+| `core/taxonomy.py` | P1 | `load_taxonomy() -> Taxonomy`; `Taxonomy.resolve(text) -> id \| None`; `Taxonomy.check_dag()` | raises with the cycle path if not a DAG |
+| `core/roadmap.py` | P1 | `compute_roadmap(tax, role_id, target_level, known, not_known) -> Roadmap` | `Roadmap` |
+| `core/summary.py` | P1 | `summarize(roadmap, tax) -> str` | Persian text built only from `roadmap.stages` (A-09) |
+| `core/conversation.py` | P3 | `next_turn(state, user_msg) -> (reply, state)` | `state.profile: UserProfile`, `state.done: bool` |
+| `core/resume_parser.py` | P3 | `parse_resume(data: bytes, filename: str) -> ResumeProfile` | raises `ResumeError` with a Persian message |
+| `core/matching.py` | P2 | `rank(resume, jobs, method="hybrid"\|"baseline", filters=None, k=10) -> list[MatchResult]` | sorted, score in [0,1] |
+| `collectors/run_collect.py` | P2 | CLI | `data/jobs.json` |
+
+### Data files
+
+```jsonc
+// data/taxonomy.json (P1)
+{
+  "roles": [{"id": "data_analyst", "name_fa": "تحلیلگر داده", "name_en": "Data Analyst", "domain": "data",
+             "levels": {"junior": ["excel", "sql_basics"], "mid": ["..."], "senior": ["..."]}}],
+  "concepts": [{"id": "sql_basics", "name_fa": "مبانی SQL", "name_en": "SQL basics",
+                "aliases": ["sql", "اس‌کیو‌ال", "mysql"], "prerequisites": ["relational_db"]}]
+}
+// data/resources.json (P1) — only entries that passed scripts/verify_links.py
+{"sql_basics": [{"title": "SQL Tutorial", "url": "https://...", "lang": "en", "verified_at": "2026-10-29"}]}
+```
+
+## 3. Algorithms
+
+**Roadmap (A-05):**
+```
+target  = ⋃ role.levels[l] for l ≤ target_level
+closure = target ∪ ancestors(target)
+known   = (claims with proficiency ∈ {used, proficient}) ∪ ancestors(those)   # implicit prerequisites
+known  -= not_known                                                            # explicit "I don't know" wins
+stages  = nx.topological_generations(G.subgraph(closure − known))
+```
+
+**Ranking (B-04, B-07):** baseline = Jaccard on taxonomy ids. hybrid = `0.45·cos(emb) + 0.35·coverage + 0.10·seniority_fit + 0.10·location_fit`, then optional LLM rerank of the top 20. Weights are chosen once, not tuned on the eval set.
+
+**Evaluation (RFP 10.2):** 3 synthetic resumes × 25 postings, labels in `data/eval/labels.csv` (`resume_id,job_id,relevant`). Report P@5 and nDCG@10 for baseline, hybrid, hybrid+rerank.
+
+## 4. Requirements and acceptance criteria
+
+Status: ☐ todo · ◐ in progress · ☑ done (update in your PR).
+
+| ID | Pri | Owner | Done when | Status |
+|---|---|---|---|---|
+| A-01 | Must | P3 | Persian chat reaches `done` in ≤ 6 assistant questions for all 3 Appendix B personas; the counter is enforced in code | ☐ |
+| A-02 | Must | P1 | `taxonomy.json` has ≥ 10 roles in ≥ 3 domains, each with junior/mid/senior concept lists | ☐ |
+| A-03 | Must | P1 | `check_dag()` passes on our file and raises with the cycle path on a test file containing a cycle | ☐ |
+| A-04 | Must | P3 | A test feeds LLM JSON containing a fake role and fake concept; both are dropped | ☐ |
+| A-05 | Must | P1 | Test: every concept appears after all its prerequisites; known concepts are absent | ☐ |
+| A-06 | Must | P3 | Graph renders on one laptop screen for a 25-node roadmap, known vs to-learn colored | ☐ |
+| A-07 | Must | P1 | Every displayed URL comes from `resources.json` and `verify_links.py` reports 0 failures | ☐ |
+| A-08 | Should | P3 | «من اکسل بلد نیستم» adds excel back into the graph without restarting the chat | ☐ |
+| A-09 | Should | P1 | Summary text names exactly the concepts in `roadmap.stages` (test) | ☐ |
+| A-10 | Could | P3 | Voice input transcribed into the chat; summary playable as audio | ☐ |
+| A-11 | Could | P1 | Download buttons for SVG/PNG of the graph | ☐ |
+| B-01 | Must | P3 | Persian PDF, English PDF, and DOCX samples parse; corrupt/encrypted file shows a Persian error | ☐ |
+| B-02 | Must | P3 | `ResumeProfile` filled for all eval resumes; years computed in code (Jalali supported) | ☐ |
+| B-03 | Must | P2 | `jobs_meta.json` shows ≥ 50 jobs from ≥ 2 sources ✅ (155 from 4 at 11:50) | ☑ |
+| B-04 | Must | P2 | Top 10 with scores in < 60 s for the full cached set | ☐ |
+| B-05 | Must | P2 | Each result lists matched and missing taxonomy concepts | ☐ |
+| B-06 | Must | P2 | Each result links to `job.url` | ☐ |
+| B-07 | Should | P2 | Eval table shows hybrid vs baseline P@5 and nDCG@10 | ☐ |
+| B-08 | Should | P2 | Filters for city, seniority, remote change the result list | ☐ |
+| B-09 | Should | P2 | `dedup()` used in `run_collect` ✅; duplicates count shown in meta | ☑ |
+| B-10 | Could | P3 | "برای این شغل چه یاد بگیرم؟" button draws a roadmap of that job's missing concepts | ☐ |
+| B-11 | Could | P2 | `--incremental` crawl + refresh button with last-updated time | ◐ |
+| NF-01 | Must | P3 | Whole UI RTL Persian (Vazirmatn) | ☐ |
+| NF-02 | Should | P2 | Chat reply < 10 s, ranking < 60 s | ☐ |
+| NF-03 | Must | P3 | Consent notice before upload; resume text never logged or saved | ☐ |
+| NF-04 | Must | all | `git log -p \| grep -iE "sk-\|api[_-]?key="` finds nothing but `.env.example` placeholders | ☐ |
+| NF-05 | Should | P3 | Sidebar shows tokens + estimated cost of the session | ☐ |
+| NF-06 | Must | P3 | Killing the network or returning bad JSON shows a Persian message, no traceback | ☐ |
+| NF-07 | Should | P2 | `./run.sh` on a fresh clone starts the app | ☐ |
+| NF-08 | Must | P2 | robots-aware collector ✅; ToS notes for each source in README | ◐ |
+
+## 5. Checkpoints
+
+- **13:00** each module runs alone with sample data.
+- **14:45** every Must and Should works end to end in the app. After this, only Coulds and fixes.
+- **16:15** code freeze → rehearse demo, secret scan, submit by 17:00.
