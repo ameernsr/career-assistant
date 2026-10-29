@@ -87,8 +87,8 @@ Status: ☐ todo · ◐ in progress · ☑ done (update in your PR).
 | NF-02 | Should | P2 | Chat reply < 10 s, ranking < 60 s | ☐ |
 | NF-03 | Must | P3 | Consent notice before upload; resume text never logged or saved | ☐ |
 | NF-04 | Must | all | `git log -p \| grep -iE "sk-\|api[_-]?key="` finds nothing but `.env.example` placeholders | ☐ |
-| NF-05 | Should | P3 | Sidebar shows tokens + estimated cost of the session | ☐ |
-| NF-06 | Must | P3 | Killing the network or returning bad JSON shows a Persian message, no traceback | ☐ |
+| NF-05 | Should | P3 | Sidebar shows tokens + estimated cost of the session | ◐ `LLM.usage` + budget cap done; sidebar pending |
+| NF-06 | Must | P3 | Killing the network or returning bad JSON shows a Persian message, no traceback | ◐ `LLM` raises Persian `LLMError` (tested); UI must catch it |
 | NF-07 | Should | P2 | `./run.sh` on a fresh clone starts the app | ☐ |
 | NF-08 | Must | P2 | robots-aware collector ✅; ToS notes for each source in README | ◐ |
 
