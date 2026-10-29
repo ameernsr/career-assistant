@@ -2,10 +2,8 @@
 # One-command start (NF-07): creates the virtualenv on first run, then launches the app.
 set -euo pipefail
 cd "$(dirname "$0")"
-if [ ! -d .venv ]; then
-  python3 -m venv .venv
-  .venv/bin/pip install -q -r requirements.txt
-fi
+[ -d .venv ] || python3 -m venv .venv
+.venv/bin/pip install -q -r requirements.txt  # fast no-op when nothing changed; picks up new dependencies
 if [ ! -f .env ]; then
   echo "⚠  .env not found: cp .env.example .env and fill in OPENAI_BASE_URL / OPENAI_API_KEY" >&2
   exit 1

@@ -27,7 +27,7 @@ cp .env.example .env        # OPENAI_BASE_URL و OPENAI_API_KEY گیت‌وی ر
 
 ## تست‌ها
 ```bash
-.venv/bin/python -m pytest -q          # ۹۳ تست
+.venv/bin/python -m pytest -q          # ۹۶ تست
 ```
 بخش‌های قطعی با TDD نوشته شده‌اند: تاکسونومی، نقشه‌ی راه، رتبه‌بندی، معیارهای ارزیابی، پارسر رزومه، robots.txt و نرمال‌سازی متن. در تست‌های مربوط به LLM فقط خود گیت‌وی شبیه‌سازی شده و بقیه‌ی منطق واقعاً اجرا می‌شود.
 
@@ -82,7 +82,7 @@ scripts/ tests/
 ```
 
 ## کتابخانه‌ها و قدردانی
-Streamlit (Apache-2.0)، OpenAI Python SDK (Apache-2.0)، Pydantic (MIT)، NetworkX (BSD-3)، **PyMuPDF (AGPL-3.0)**، python-docx (MIT)، Requests (Apache-2.0)، Beautiful Soup (MIT)، lxml (BSD)، jdatetime (Python-2.0)، NumPy (BSD-3)، scikit-learn (BSD-3)، python-dotenv (BSD-3)، pytest (MIT)، Viz.js (MIT؛ فقط در فایل HTML خروجی)، فونت Vazirmatn (OFL-1.1).
+Streamlit (Apache-2.0)، OpenAI Python SDK (Apache-2.0)، Pydantic (MIT)، NetworkX (BSD-3)، **PyMuPDF (AGPL-3.0)**، python-docx (MIT)، Requests (Apache-2.0)، Beautiful Soup (MIT)، lxml (BSD)، jdatetime (Python-2.0)، NumPy (BSD-3)، scikit-learn (BSD-3)، python-dotenv (BSD-3)، pytest (MIT)، lameenc / LAME (LGPL؛ تبدیل WAV میکروفون به MP3)، Viz.js (MIT؛ فقط در فایل HTML خروجی)، فونت Vazirmatn (OFL-1.1).
 
 منابع مرجع برای ساخت تاکسونومی: roadmap.sh و آگهی‌های شغلی جمع‌آوری‌شده. منابع آموزشی متعلق به ناشران خودشان هستند و فقط به آن‌ها لینک داده شده است.
 

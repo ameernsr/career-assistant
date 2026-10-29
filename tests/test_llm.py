@@ -143,3 +143,17 @@ def test_transcribe_and_speak_go_through_gateway():
     assert calls["stt"]["model"] == "stt-m" and calls["stt"]["language"] == "fa"
     assert llm.speak("سلام") == b"ID3fake-mp3" and calls["tts"]["model"] == "tts-m"
     assert llm.usage["calls"] == 2
+
+
+def test_transcribe_sends_mp3_when_given_wav():
+    """The gateway's STT rejects WAV (HTTP 400) but accepts MP3; browsers record WAV."""
+    from tests.test_audio import _wav
+
+    sent = {}
+    gw = FakeGateway()
+    gw.audio = NS(transcriptions=NS(create=lambda **kw: sent.update(kw) or NS(text="سلام")), speech=None)
+    from dataclasses import replace
+
+    LLM(replace(SETTINGS, stt_model="stt-m"), client=gw).transcribe(_wav(), "voice.wav")
+    name, data = sent["file"][0], sent["file"][1]
+    assert name.endswith(".mp3") and not data.startswith(b"RIFF")

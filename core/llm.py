@@ -46,8 +46,12 @@ class LLM:
         return np.stack([self._emb_cache[t] for t in texts]) if texts else np.zeros((0, 0), dtype=np.float32)
 
     def transcribe(self, audio: bytes, filename: str = "voice.wav") -> str:
-        """A-10: Persian speech → text."""
+        """A-10: Persian speech → text. WAV (what browsers record) is converted to MP3 first: the gateway rejects WAV."""
         self._check_budget()
+        if audio[:4] == b"RIFF":
+            from core.audio import wav_to_mp3
+
+            audio, filename = wav_to_mp3(audio), "voice.mp3"
         r = self._call(lambda: self.client.audio.transcriptions.create(
             model=self.settings.stt_model, file=(filename, audio), language="fa"))
         self._record(self.settings.stt_model, 0, 0)

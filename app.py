@@ -155,8 +155,9 @@ with tab_path:
                 try:
                     with st.spinner("در حال تبدیل صدا به متن…"):
                         msg = llm.transcribe(data, "voice.wav") or msg
-                except LLMError as exc:
-                    st.error(str(exc))
+                except Exception as exc:  # broad on purpose: never show a traceback (NF-06)
+                    st.error(str(exc) if isinstance(exc, LLMError) or type(exc).__name__ == "LLMError"
+                             else "تبدیل صدا به متن انجام نشد. لطفاً دوباره امتحان کنید یا پیام را تایپ کنید.")
         if msg:
             ss.chat.append({"role": "user", "content": msg})
             with st.spinner("در حال فکر کردن…"):
@@ -197,8 +198,8 @@ with tab_path:
                 try:
                     with st.spinner("در حال ساختن صدا…"):
                         st.audio(llm.speak(summarize(rm, tax, goal=goal)), format="audio/mpeg", autoplay=True)
-                except LLMError as exc:
-                    st.error(str(exc))
+                except Exception as exc:  # broad on purpose: never show a traceback (NF-06)
+                    st.error(str(exc) if type(exc).__name__ == "LLMError" else "ساختن صدا انجام نشد. لطفاً دوباره امتحان کنید.")
         else:
             st.markdown("#### نقشه‌ی راه شما اینجا نمایش داده می‌شود")
             st.caption("بعد از چند سؤال کوتاه، مسیر یادگیری به‌صورت گراف مرحله‌به‌مرحله ساخته می‌شود.")
