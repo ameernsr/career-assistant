@@ -4,6 +4,8 @@
 
 A link passes when it answers 2xx after redirects, was not redirected to a site's home page, and the page is not
 a "404 / not found" page. Failures are listed so someone can replace them. The app shows only data/resources.json.
+A network error (timeout, connection refused) is not proof a page is gone — some hosts are unreachable from some
+networks (e.g. Iran without VPN) — so a link verified on an earlier run keeps that verification.
 """
 import json
 import re
@@ -27,7 +29,7 @@ def check(url: str) -> tuple[bool, str]:
     try:
         r = requests.get(url, headers={"User-Agent": UA, "Accept-Language": "en,fa"}, timeout=20, allow_redirects=True)
     except requests.RequestException as exc:
-        return False, exc.__class__.__name__
+        return False, f"network:{exc.__class__.__name__}"
     if not 200 <= r.status_code < 300:
         return False, f"HTTP {r.status_code}"
     asked, landed = urlsplit(url), urlsplit(r.url)
@@ -41,14 +43,17 @@ def check(url: str) -> tuple[bool, str]:
 def main() -> None:
     candidates = json.loads(CANDIDATES.read_text(encoding="utf-8"))
     pairs = [(cid, item) for cid, items in candidates.items() for item in items]
-    with ThreadPoolExecutor(max_workers=8) as pool:  # different hosts; one request per link
+    with ThreadPoolExecutor(max_workers=4) as pool:  # different hosts; one request per link
         results = list(pool.map(lambda p: check(p[1]["url"]), pairs))
+    previous = {r["url"]: r for v in (json.loads(OUT.read_text(encoding="utf-8")) if OUT.exists() else {}).values() for r in v}
     verified: dict[str, list[dict]] = {}
     failed = []
     today = date.today().isoformat()
     for (cid, item), (ok, why) in zip(pairs, results):
         if ok:
             verified.setdefault(cid, []).append({**item, "verified_at": today})
+        elif why.startswith("network:") and item["url"] in previous:
+            verified.setdefault(cid, []).append({**item, "verified_at": previous[item["url"]]["verified_at"]})
         else:
             failed.append((cid, item["url"], why))
     OUT.write_text(json.dumps(verified, ensure_ascii=False, indent=1), encoding="utf-8")

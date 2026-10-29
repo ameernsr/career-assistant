@@ -106,7 +106,10 @@ def show_roadmap(rm, goal_title: str, key: str):
         any_res = False
         for i, stage in enumerate(rm.stages, 1):
             for c in stage:
-                for r in res.get(c, [])[:2]:
+                items = res.get(c, [])
+                # one Persian course first (reachable in Iran without VPN), then one official/English source
+                picks = [r for r in items if r.get("lang") == "fa"][:1] + [r for r in items if r.get("lang") != "fa"][:1]
+                for r in picks:
                     any_res = True
                     st.markdown(f"- **مرحله‌ی {i} — {tax.concepts[c]['name_fa']}:** [{r['title']}]({r['url']})")
         if not any_res:

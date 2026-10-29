@@ -5,6 +5,18 @@
    "url": "https://edu.gcfglobal.org/en/computerbasics/",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش icdl جامع",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-icdl-%D8%AC%D8%A7%D9%85%D8%B9-mk14219/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: icdl skills and applications",
+   "url": "https://faradars.org/videos/icdl-skills-and-applications-fvtgs11153",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "english_technical": [
@@ -12,6 +24,12 @@
    "title": "Wikipedia: English for specific purposes",
    "url": "https://en.wikipedia.org/wiki/English_for_specific_purposes",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش زبان انگلیسی صفر",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%B2%D8%A8%D8%A7%D9%86-%D8%A7%D9%86%DA%AF%D9%84%DB%8C%D8%B3%DB%8C-%D8%B5%D9%81%D8%B1-mk10689/",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -25,6 +43,18 @@
   {
    "title": "ویکی‌پدیا: ارتباطات",
    "url": "https://fa.wikipedia.org/wiki/ارتباطات",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش مهارت ارتباطی",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%85%D9%87%D8%A7%D8%B1%D8%AA-%D8%A7%D8%B1%D8%AA%D8%A8%D8%A7%D8%B7%DB%8C-mk1551/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: soft skills",
+   "url": "https://faradars.org/videos/soft-skills-fvtgs12693",
    "lang": "fa",
    "verified_at": "2026-10-29"
   }
@@ -41,6 +71,18 @@
    "url": "https://exceljet.net/",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش اکسل صفر",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%A7%DA%A9%D8%B3%D9%84-%D8%B5%D9%81%D8%B1-mk3323/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: introduction to excel",
+   "url": "https://faradars.org/videos/introduction-to-excel-fvtgs6541",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "statistics": [
@@ -48,6 +90,18 @@
    "title": "Khan Academy: Statistics and probability",
    "url": "https://www.khanacademy.org/math/statistics-probability",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش آمار مقدماتی متخصصان علوم داده",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%A2%D9%85%D8%A7%D8%B1-%D9%85%D9%82%D8%AF%D9%85%D8%A7%D8%AA%DB%8C-%D9%85%D8%AA%D8%AE%D8%B5%D8%B5%D8%A7%D9%86-%D8%B9%D9%84%D9%88%D9%85-%D8%AF%D8%A7%D8%AF%D9%87-mk10763/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: probability solutions",
+   "url": "https://faradars.org/videos/probability-solutions-fvmth3025",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -57,6 +111,18 @@
    "url": "https://www.khanacademy.org/math/linear-algebra",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: ریاضیات مقدماتی",
+   "url": "https://maktabkhooneh.org/course/%D8%B1%DB%8C%D8%A7%D8%B6%DB%8C%D8%A7%D8%AA-%D9%85%D9%82%D8%AF%D9%85%D8%A7%D8%AA%DB%8C-mk14056/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: linear algebra",
+   "url": "https://faradars.org/videos/linear-algebra-fvtgs11400",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "programming_basics": [
@@ -64,6 +130,12 @@
    "title": "Harvard CS50x",
    "url": "https://cs50.harvard.edu/x/",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: مبانی برنامه نویسی کامپیوتر",
+   "url": "https://maktabkhooneh.org/course/%D9%85%D8%A8%D8%A7%D9%86%DB%8C-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3%DB%8C-%DA%A9%D8%A7%D9%85%D9%BE%DB%8C%D9%88%D8%AA%D8%B1-mk296/",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -79,6 +151,18 @@
    "url": "https://www.kaggle.com/learn/python",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: پایتون مقدماتی ساده",
+   "url": "https://maktabkhooneh.org/course/%D9%BE%D8%A7%DB%8C%D8%AA%D9%88%D9%86-%D9%85%D9%82%D8%AF%D9%85%D8%A7%D8%AA%DB%8C-%D8%B3%D8%A7%D8%AF%D9%87-mk16386/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: python socket programming basics",
+   "url": "https://faradars.org/videos/python-socket-programming-basics-fvtgs10209",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "javascript": [
@@ -93,6 +177,18 @@
    "url": "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش جاوا اسکریپت مقدماتی",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AC%D8%A7%D9%88%D8%A7-%D8%A7%D8%B3%DA%A9%D8%B1%DB%8C%D9%BE%D8%AA-%D9%85%D9%82%D8%AF%D9%85%D8%A7%D8%AA%DB%8C-mk16967/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: functions in javascript",
+   "url": "https://faradars.org/videos/functions-in-javascript-fvtgs9948",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "typescript": [
@@ -100,6 +196,18 @@
    "title": "TypeScript Handbook",
    "url": "https://www.typescriptlang.org/docs/handbook/intro.html",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش مبانی typescript 5 ورژن 4",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%85%D8%A8%D8%A7%D9%86%DB%8C-typescript-5-%D9%88%D8%B1%DA%98%D9%86-4-mk7921/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: typescript usage learning job market",
+   "url": "https://faradars.org/videos/typescript-usage-learning-job-market-fvtgs3924",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -109,6 +217,18 @@
    "url": "https://dev.java/learn/",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش جامع جاوا",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AC%D8%A7%D9%85%D8%B9-%D8%AC%D8%A7%D9%88%D8%A7-mk5547/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: java semaphore tutorial",
+   "url": "https://faradars.org/videos/java-semaphore-tutorial-fvtgs10731",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "csharp_dotnet": [
@@ -116,6 +236,18 @@
    "title": "Microsoft Learn: C#",
    "url": "https://learn.microsoft.com/en-us/dotnet/csharp/",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش مقدماتی سی شارپ",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%85%D9%82%D8%AF%D9%85%D8%A7%D8%AA%DB%8C-%D8%B3%DB%8C-%D8%B4%D8%A7%D8%B1%D9%BE-mk16657/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: dotnet reflector source analysis",
+   "url": "https://faradars.org/videos/dotnet-reflector-source-analysis-fvtgs9514",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -125,6 +257,18 @@
    "url": "https://www.php.net/manual/en/getting-started.php",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش جامع امنیت وردپرس",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AC%D8%A7%D9%85%D8%B9-%D8%A7%D9%85%D9%86%DB%8C%D8%AA-%D9%88%D8%B1%D8%AF%D9%BE%D8%B1%D8%B3-mk12095/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: php programming language basics",
+   "url": "https://faradars.org/videos/php-programming-language-basics-fvtgs11618",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "golang": [
@@ -132,6 +276,18 @@
    "title": "A Tour of Go",
    "url": "https://go.dev/tour/",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش برنامه نویسی گو",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3%DB%8C-%DA%AF%D9%88-mk18376/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: go programming language and golang",
+   "url": "https://faradars.org/videos/go-programming-language-and-golang-fvtgs7549",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -141,6 +297,18 @@
    "url": "https://realpython.com/python3-object-oriented-programming/",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: برنامه نویسی شیءگرایی اتوماسیون",
+   "url": "https://maktabkhooneh.org/course/%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3%DB%8C-%D8%B4%DB%8C%D8%A1%DA%AF%D8%B1%D8%A7%DB%8C%DB%8C-%D8%A7%D8%AA%D9%88%D9%85%D8%A7%D8%B3%DB%8C%D9%88%D9%86-mk17950/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: object oriented programming",
+   "url": "https://faradars.org/videos/object-oriented-programming-fvtgs7541",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "data_structures_algorithms": [
@@ -148,6 +316,18 @@
    "title": "roadmap.sh: Data Structures & Algorithms",
    "url": "https://roadmap.sh/datastructures-and-algorithms",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش جامع الگوریتم همه آنچه برنامه نویس بداند",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AC%D8%A7%D9%85%D8%B9-%D8%A7%D9%84%DA%AF%D9%88%D8%B1%DB%8C%D8%AA%D9%85-%D9%87%D9%85%D9%87-%D8%A2%D9%86%DA%86%D9%87-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D9%87-%D9%86%D9%88%DB%8C%D8%B3-%D8%A8%D8%AF%D8%A7%D9%86%D8%AF-mk9400/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: linked lists data structures",
+   "url": "https://faradars.org/videos/linked-lists-data-structures-fvtgs15476",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -157,6 +337,18 @@
    "url": "https://git-scm.com/book/en/v2",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش git",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-git-mk796/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: git",
+   "url": "https://faradars.org/videos/git-fvtgs11405",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "linux": [
@@ -164,6 +356,18 @@
    "title": "Ubuntu: The Linux command line for beginners",
    "url": "https://ubuntu.com/tutorials/command-line-for-beginners",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش لینوکس مقدماتی 2025",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%84%DB%8C%D9%86%D9%88%DA%A9%D8%B3-%D9%85%D9%82%D8%AF%D9%85%D8%A7%D8%AA%DB%8C-2025-mk11591/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: redhat linux tutorial",
+   "url": "https://faradars.org/videos/redhat-linux-tutorial-fvtgs6852",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -173,6 +377,18 @@
    "url": "https://docs.pytest.org/en/stable/getting-started.html",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: تست نویسی vue vitest",
+   "url": "https://maktabkhooneh.org/course/%D8%AA%D8%B3%D8%AA-%D9%86%D9%88%DB%8C%D8%B3%DB%8C-vue-vitest-mk19367/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: pytest for python testing",
+   "url": "https://faradars.org/videos/pytest-for-python-testing-fvtgs10386",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "design_patterns": [
@@ -180,6 +396,18 @@
    "title": "Refactoring.Guru: Design Patterns",
    "url": "https://refactoring.guru/design-patterns",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش رایگان clean code",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86-clean-code-mk1125/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: crystallography solid state physics",
+   "url": "https://faradars.org/videos/crystallography-solid-state-physics-fvtgs14586",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -196,6 +424,18 @@
    "title": "PostgreSQL Tutorial (official)",
    "url": "https://www.postgresql.org/docs/current/tutorial.html",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش مقدماتی دیتابیس",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%85%D9%82%D8%AF%D9%85%D8%A7%D8%AA%DB%8C-%D8%AF%DB%8C%D8%AA%D8%A7%D8%A8%DB%8C%D8%B3-mk15033/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: introduction to database administration or dba",
+   "url": "https://faradars.org/videos/introduction-to-database-administration-or-dba-fvtgs7539",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -215,6 +455,18 @@
   {
    "title": "ویکی‌پدیا: اس‌کیوال",
    "url": "https://fa.wikipedia.org/wiki/اس‌کیوال",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش کوئری نویسی جامع 2022 sql server",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%DA%A9%D9%88%D8%A6%D8%B1%DB%8C-%D9%86%D9%88%DB%8C%D8%B3%DB%8C-%D8%AC%D8%A7%D9%85%D8%B9-2022-sql-server-mk12304/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: introduction to sql",
+   "url": "https://faradars.org/videos/introduction-to-sql-fvtgs3926",
    "lang": "fa",
    "verified_at": "2026-10-29"
   }
@@ -245,6 +497,12 @@
    "url": "https://restfulapi.net/",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: داکر استقرار آمازون وب سرویس",
+   "url": "https://maktabkhooneh.org/course/%D8%AF%D8%A7%DA%A9%D8%B1-%D8%A7%D8%B3%D8%AA%D9%82%D8%B1%D8%A7%D8%B1-%D8%A2%D9%85%D8%A7%D8%B2%D9%88%D9%86-%D9%88%D8%A8-%D8%B3%D8%B1%D9%88%DB%8C%D8%B3-mk17966/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "backend_framework": [
@@ -259,6 +517,18 @@
    "url": "https://fastapi.tiangolo.com/tutorial/",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش رایگان nodejs",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86-nodejs-mk1064/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: laravel basics",
+   "url": "https://faradars.org/videos/laravel-basics-fvtgs11257",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "orm": [
@@ -266,6 +536,12 @@
    "title": "SQLAlchemy ORM Quick Start",
    "url": "https://docs.sqlalchemy.org/en/20/orm/quickstart.html",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: resolving entity framework target framework error",
+   "url": "https://faradars.org/videos/resolving-entity-framework-target-framework-error-fvtgs6811",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -281,6 +557,12 @@
    "url": "https://jwt.io/introduction",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش امنیت وب تست نفوذ",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%A7%D9%85%D9%86%DB%8C%D8%AA-%D9%88%D8%A8-%D8%AA%D8%B3%D8%AA-%D9%86%D9%81%D9%88%D8%B0-mk16707/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "nosql": [
@@ -289,6 +571,18 @@
    "url": "https://learn.mongodb.com/",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش رایگان mongodb",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%B1%D8%A7%DB%8C%DA%AF%D8%A7%D9%86-mongodb-mk1264/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: understanding mongodb database usage",
+   "url": "https://faradars.org/videos/understanding-mongodb-database-usage-fvtgs3935",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "caching": [
@@ -296,6 +590,12 @@
    "title": "Django: Cache framework",
    "url": "https://docs.djangoproject.com/en/stable/topics/cache/",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: redis database",
+   "url": "https://faradars.org/videos/redis-database-fvtgs3423",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -311,6 +611,12 @@
    "url": "https://kafka.apache.org/quickstart",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: apache kafka learning path and job market",
+   "url": "https://faradars.org/videos/apache-kafka-learning-path-and-job-market-fvtgs3418",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "docker": [
@@ -318,6 +624,18 @@
    "title": "Docker: Get started",
    "url": "https://docs.docker.com/get-started/",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش داکر مقدماتی",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AF%D8%A7%DA%A9%D8%B1-%D9%85%D9%82%D8%AF%D9%85%D8%A7%D8%AA%DB%8C-mk974/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: docker and its applications",
+   "url": "https://faradars.org/videos/docker-and-its-applications-fvtgs6450",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -327,6 +645,18 @@
    "url": "https://github.com/donnemartin/system-design-primer",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: مبانی طراحی سیستم",
+   "url": "https://maktabkhooneh.org/course/%D9%85%D8%A8%D8%A7%D9%86%DB%8C-%D8%B7%D8%B1%D8%A7%D8%AD%DB%8C-%D8%B3%DB%8C%D8%B3%D8%AA%D9%85-mk18419/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: software architecture",
+   "url": "https://faradars.org/videos/software-architecture-fvtgs7531",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "distributed_systems": [
@@ -334,6 +664,18 @@
    "title": "microservices.io patterns",
    "url": "https://microservices.io/patterns/",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش عملی ساخت میکروسرویس لاراول",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%B9%D9%85%D9%84%DB%8C-%D8%B3%D8%A7%D8%AE%D8%AA-%D9%85%DB%8C%DA%A9%D8%B1%D9%88%D8%B3%D8%B1%D9%88%DB%8C%D8%B3-%D9%84%D8%A7%D8%B1%D8%A7%D9%88%D9%84-mk11734/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: microservices architecture",
+   "url": "https://faradars.org/videos/microservices-architecture-fvtgs13329",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -349,6 +691,18 @@
    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/Styling_basics",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: دوره مقدماتی tailwind",
+   "url": "https://maktabkhooneh.org/course/%D8%AF%D9%88%D8%B1%D9%87-%D9%85%D9%82%D8%AF%D9%85%D8%A7%D8%AA%DB%8C-tailwind-mk5060/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: css",
+   "url": "https://faradars.org/videos/css-fvtgs11578",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "responsive_design": [
@@ -356,6 +710,12 @@
    "title": "MDN: Responsive design",
    "url": "https://developer.mozilla.org/en-US/docs/Learn_web_development/Core/CSS_layout/Responsive_Design",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: دوره جامع css level up layoutهای مدرن css grid",
+   "url": "https://maktabkhooneh.org/course/%D8%AF%D9%88%D8%B1%D9%87-%D8%AC%D8%A7%D9%85%D8%B9-css-level-up-layout%D9%87%D8%A7%DB%8C-%D9%85%D8%AF%D8%B1%D9%86-css-grid-mk16208/",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -371,6 +731,18 @@
    "url": "https://vuejs.org/guide/introduction.html",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: nextjs react راهنمای جامع",
+   "url": "https://maktabkhooneh.org/course/nextjs-react-%D8%B1%D8%A7%D9%87%D9%86%D9%85%D8%A7%DB%8C-%D8%AC%D8%A7%D9%85%D8%B9-mk19893/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: react basics and market",
+   "url": "https://faradars.org/videos/react-basics-and-market-fvtgs3920",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "state_management": [
@@ -379,6 +751,12 @@
    "url": "https://redux.js.org/tutorials/essentials/part-1-overview-concepts",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: react zustand state management",
+   "url": "https://faradars.org/videos/react-zustand-state-management-fvjs357",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "web_performance": [
@@ -386,6 +764,12 @@
    "title": "MDN: Web performance",
    "url": "https://developer.mozilla.org/en-US/docs/Web/Performance",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: core web vitals and seo improvement techniques",
+   "url": "https://faradars.org/videos/core-web-vitals-and-seo-improvement-techniques-fvtgs9362",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -401,6 +785,18 @@
    "url": "https://help.figma.com/hc/en-us",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش فیگما مقدماتی",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%81%DB%8C%DA%AF%D9%85%D8%A7-%D9%85%D9%82%D8%AF%D9%85%D8%A7%D8%AA%DB%8C-mk12876/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: introduction to figma",
+   "url": "https://faradars.org/videos/introduction-to-figma-fvtgs6472",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "android_kotlin": [
@@ -408,6 +804,18 @@
    "title": "Kotlin: Get started",
    "url": "https://kotlinlang.org/docs/getting-started.html",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش اندروید پایه پیشرفته",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%A7%D9%86%D8%AF%D8%B1%D9%88%DB%8C%D8%AF-%D9%BE%D8%A7%DB%8C%D9%87-%D9%BE%DB%8C%D8%B4%D8%B1%D9%81%D8%AA%D9%87-mk2113/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: introduction to android programming",
+   "url": "https://faradars.org/videos/introduction-to-android-programming-fvtgs6473",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -417,6 +825,18 @@
    "url": "https://developer.apple.com/tutorials/swiftui",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش ملزومات swift 5",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%85%D9%84%D8%B2%D9%88%D9%85%D8%A7%D8%AA-swift-5-mk6219/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: cisco ios",
+   "url": "https://faradars.org/videos/cisco-ios-fvtgs16296",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "cross_platform_mobile": [
@@ -424,6 +844,18 @@
    "title": "Flutter: Get started",
    "url": "https://docs.flutter.dev/get-started",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: فلاتر",
+   "url": "https://maktabkhooneh.org/course/%D9%81%D9%84%D8%A7%D8%AA%D8%B1-mk2287/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: dart for programming beginners",
+   "url": "https://faradars.org/videos/dart-for-programming-beginners-fvtgs13017",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -433,6 +865,12 @@
    "url": "https://m3.material.io/",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: material design principles and usage",
+   "url": "https://faradars.org/videos/material-design-principles-and-usage-fvtgs7723",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "app_publishing": [
@@ -440,6 +878,12 @@
    "title": "Google Play Console Help",
    "url": "https://support.google.com/googleplay/android-developer/",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش ساخت بازی ترسناک اندروید انتشار مایکت",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%B3%D8%A7%D8%AE%D8%AA-%D8%A8%D8%A7%D8%B2%DB%8C-%D8%AA%D8%B1%D8%B3%D9%86%D8%A7%DA%A9-%D8%A7%D9%86%D8%AF%D8%B1%D9%88%DB%8C%D8%AF-%D8%A7%D9%86%D8%AA%D8%B4%D8%A7%D8%B1-%D9%85%D8%A7%DB%8C%DA%A9%D8%AA-mk5257/",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -449,6 +893,18 @@
    "url": "https://www.cloudflare.com/learning/",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: مبانی شبکه کامپیوتری",
+   "url": "https://maktabkhooneh.org/course/%D9%85%D8%A8%D8%A7%D9%86%DB%8C-%D8%B4%D8%A8%DA%A9%D9%87-%DA%A9%D8%A7%D9%85%D9%BE%DB%8C%D9%88%D8%AA%D8%B1%DB%8C-mk11868/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: dns lookup with nslookup",
+   "url": "https://faradars.org/videos/dns-lookup-with-nslookup-fvtgs9015",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "shell_scripting": [
@@ -456,6 +912,12 @@
    "title": "GNU Bash manual",
    "url": "https://www.gnu.org/software/bash/manual/bash.html",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش پاورشل اسکریپت نویسی",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%BE%D8%A7%D9%88%D8%B1%D8%B4%D9%84-%D8%A7%D8%B3%DA%A9%D8%B1%DB%8C%D9%BE%D8%AA-%D9%86%D9%88%DB%8C%D8%B3%DB%8C-mk17213/",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -465,6 +927,12 @@
    "url": "https://docs.github.com/en/actions",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش git github github actions",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-git-github-github-actions-mk19062/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "kubernetes": [
@@ -472,6 +940,18 @@
    "title": "Kubernetes basics tutorial",
    "url": "https://kubernetes.io/docs/tutorials/kubernetes-basics/",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش kubernetes",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-kubernetes-mk8442/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: kubernetes usage guide",
+   "url": "https://faradars.org/videos/kubernetes-usage-guide-fvtgs3934",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -481,6 +961,18 @@
    "url": "https://aws.amazon.com/getting-started/",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: اصول مایکروسافت azure",
+   "url": "https://maktabkhooneh.org/course/%D8%A7%D8%B5%D9%88%D9%84-%D9%85%D8%A7%DB%8C%DA%A9%D8%B1%D9%88%D8%B3%D8%A7%D9%81%D8%AA-azure-mk18785/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: introduction to amazon web services aws",
+   "url": "https://faradars.org/videos/introduction-to-amazon-web-services-aws-fvtgs3933",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "iac": [
@@ -488,6 +980,18 @@
    "title": "Terraform tutorials",
    "url": "https://developer.hashicorp.com/terraform/tutorials",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش terraform خودکارسازی زیرساخت",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-terraform-%D8%AE%D9%88%D8%AF%DA%A9%D8%A7%D8%B1%D8%B3%D8%A7%D8%B2%DB%8C-%D8%B2%DB%8C%D8%B1%D8%B3%D8%A7%D8%AE%D8%AA-mk15935/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: ansible software training",
+   "url": "https://faradars.org/videos/ansible-software-training-fvtgs12548",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -497,6 +1001,18 @@
    "url": "https://prometheus.io/docs/introduction/overview/",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش ابزار مانیتورینگ زبیکس",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%A7%D8%A8%D8%B2%D8%A7%D8%B1-%D9%85%D8%A7%D9%86%DB%8C%D8%AA%D9%88%D8%B1%DB%8C%D9%86%DA%AF-%D8%B2%D8%A8%DB%8C%DA%A9%D8%B3-mk6213/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: monitoring headphones",
+   "url": "https://faradars.org/videos/monitoring-headphones-fvtgs13223",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "data_cleaning": [
@@ -504,6 +1020,18 @@
    "title": "Kaggle Learn: Data Cleaning",
    "url": "https://www.kaggle.com/learn/data-cleaning",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش آماده سازی داده کاوش",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%A2%D9%85%D8%A7%D8%AF%D9%87-%D8%B3%D8%A7%D8%B2%DB%8C-%D8%AF%D8%A7%D8%AF%D9%87-%DA%A9%D8%A7%D9%88%D8%B4-mk7431/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: data cleaning in bi",
+   "url": "https://faradars.org/videos/data-cleaning-in-bi-fvtgs9425",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -513,6 +1041,18 @@
    "url": "https://www.kaggle.com/learn/data-visualization",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش جامع کتابخانه matplotlib پایتون",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AC%D8%A7%D9%85%D8%B9-%DA%A9%D8%AA%D8%A7%D8%A8%D8%AE%D8%A7%D9%86%D9%87-matplotlib-%D9%BE%D8%A7%DB%8C%D8%AA%D9%88%D9%86-mk4194/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: huggingface model output visualization",
+   "url": "https://faradars.org/videos/huggingface-model-output-visualization-fvtgs8179",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "bi_tools": [
@@ -521,6 +1061,18 @@
    "url": "https://learn.microsoft.com/en-us/training/powerplatform/power-bi",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش مبانی هوش تجاری bi",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%85%D8%A8%D8%A7%D9%86%DB%8C-%D9%87%D9%88%D8%B4-%D8%AA%D8%AC%D8%A7%D8%B1%DB%8C-bi-mk5186/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: tableau for beginners course",
+   "url": "https://faradars.org/videos/tableau-for-beginners-course-fvor388",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "dashboard_reporting": [
@@ -528,6 +1080,12 @@
    "title": "Power BI: Dashboards",
    "url": "https://learn.microsoft.com/en-us/power-bi/create-reports/service-dashboards",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش جامع kpi okr",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AC%D8%A7%D9%85%D8%B9-kpi-okr-mk11486/",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -543,6 +1101,18 @@
    "url": "https://pandas.pydata.org/docs/user_guide/10min.html",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش pandas مقدماتی",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-pandas-%D9%85%D9%82%D8%AF%D9%85%D8%A7%D8%AA%DB%8C-mk12171/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: what is pandas library",
+   "url": "https://faradars.org/videos/what-is-pandas-library-fvtgs7555",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "ab_testing": [
@@ -551,6 +1121,18 @@
    "url": "https://www.khanacademy.org/math/statistics-probability/significance-tests-one-sample",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آزمون فرض نرم افزار minitab",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D8%B2%D9%85%D9%88%D9%86-%D9%81%D8%B1%D8%B6-%D9%86%D8%B1%D9%85-%D8%A7%D9%81%D8%B2%D8%A7%D8%B1-minitab-mk3629/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: inferential statistics hypothesis testing",
+   "url": "https://faradars.org/videos/inferential-statistics-hypothesis-testing-fvtgs14733",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "data_storytelling": [
@@ -558,6 +1140,12 @@
    "title": "Storytelling with Data",
    "url": "https://www.storytellingwithdata.com/",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: data storytelling insights and applications",
+   "url": "https://faradars.org/videos/data-storytelling-insights-and-applications-fvtgs9426",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -587,6 +1175,18 @@
    "url": "https://fa.wikipedia.org/wiki/یادگیری_ماشین",
    "lang": "fa",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: مبانی ریاضی یادگیری ماشین",
+   "url": "https://maktabkhooneh.org/course/%D9%85%D8%A8%D8%A7%D9%86%DB%8C-%D8%B1%DB%8C%D8%A7%D8%B6%DB%8C-%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C-%D9%85%D8%A7%D8%B4%DB%8C%D9%86-mk16307/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: machine learning model basics",
+   "url": "https://faradars.org/videos/machine-learning-model-basics-fvtgs9068",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "feature_engineering": [
@@ -603,6 +1203,12 @@
    "url": "https://scikit-learn.org/stable/modules/model_evaluation.html",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: model evaluation metrics",
+   "url": "https://faradars.org/videos/model-evaluation-metrics-fvtgs9070",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "deep_learning": [
@@ -617,6 +1223,18 @@
    "url": "https://pytorch.org/tutorials/beginner/basics/intro.html",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: یادگیری عمیق پایتورچ مقدماتی",
+   "url": "https://maktabkhooneh.org/course/%DB%8C%D8%A7%D8%AF%DA%AF%DB%8C%D8%B1%DB%8C-%D8%B9%D9%85%DB%8C%D9%82-%D9%BE%D8%A7%DB%8C%D8%AA%D9%88%D8%B1%DA%86-%D9%85%D9%82%D8%AF%D9%85%D8%A7%D8%AA%DB%8C-mk6474/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: deep neural networks",
+   "url": "https://faradars.org/videos/deep-neural-networks-fvtgs9473",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "nlp": [
@@ -624,6 +1242,18 @@
    "title": "Hugging Face LLM Course",
    "url": "https://huggingface.co/learn/llm-course/chapter1/1",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: پردازش زبان طبیعی",
+   "url": "https://maktabkhooneh.org/course/%D9%BE%D8%B1%D8%AF%D8%A7%D8%B2%D8%B4-%D8%B2%D8%A8%D8%A7%D9%86-%D8%B7%D8%A8%DB%8C%D8%B9%DB%8C-mk285/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: types of transformers",
+   "url": "https://faradars.org/videos/types-of-transformers-fvtgs11706",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -633,6 +1263,18 @@
    "url": "https://www.kaggle.com/learn/computer-vision",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: مفاهیم پایه پردازش تصویر",
+   "url": "https://maktabkhooneh.org/course/%D9%85%D9%81%D8%A7%D9%87%DB%8C%D9%85-%D9%BE%D8%A7%DB%8C%D9%87-%D9%BE%D8%B1%D8%AF%D8%A7%D8%B2%D8%B4-%D8%AA%D8%B5%D9%88%DB%8C%D8%B1-mk6405/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: image processing basics with python",
+   "url": "https://faradars.org/videos/image-processing-basics-with-python-fvtgs11471",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "mlops": [
@@ -640,6 +1282,18 @@
    "title": "MLOps Zoomcamp",
    "url": "https://github.com/DataTalksClub/mlops-zoomcamp",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: بوتکمپ جامع mlops",
+   "url": "https://maktabkhooneh.org/course/%D8%A8%D9%88%D8%AA%DA%A9%D9%85%D9%BE-%D8%AC%D8%A7%D9%85%D8%B9-mlops-mk13045/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: mlops learning path and market",
+   "url": "https://faradars.org/videos/mlops-learning-path-and-market-fvtgs3919",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -649,6 +1303,12 @@
    "url": "https://fastapi.tiangolo.com/deployment/",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: convert model to onnx",
+   "url": "https://faradars.org/videos/convert-model-to-onnx-fvtgs8173",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "etl_pipelines": [
@@ -656,6 +1316,18 @@
    "title": "Data Engineering Zoomcamp",
    "url": "https://github.com/DataTalksClub/data-engineering-zoomcamp",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش فرآیند etl پاور بی آی",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%81%D8%B1%D8%A2%DB%8C%D9%86%D8%AF-etl-%D9%BE%D8%A7%D9%88%D8%B1-%D8%A8%DB%8C-%D8%A2%DB%8C-mk10114/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: etl process in business intelligence",
+   "url": "https://faradars.org/videos/etl-process-in-business-intelligence-fvtgs9419",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -665,6 +1337,18 @@
    "url": "https://clickhouse.com/docs/en/intro",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: انبار داده کاوی",
+   "url": "https://maktabkhooneh.org/course/%D8%A7%D9%86%D8%A8%D8%A7%D8%B1-%D8%AF%D8%A7%D8%AF%D9%87-%DA%A9%D8%A7%D9%88%DB%8C-mk18727/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: what is enterprise data warehouse",
+   "url": "https://faradars.org/videos/what-is-enterprise-data-warehouse-fvtgs9417",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "big_data": [
@@ -673,6 +1357,18 @@
    "url": "https://spark.apache.org/docs/latest/quick-start.html",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: همایش دوره آموزشی big data",
+   "url": "https://maktabkhooneh.org/course/%D9%87%D9%85%D8%A7%DB%8C%D8%B4-%D8%AF%D9%88%D8%B1%D9%87-%D8%A2%D9%85%D9%88%D8%B2%D8%B4%DB%8C-big-data-mk624/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: spark tester",
+   "url": "https://faradars.org/videos/spark-tester-fvtgs14245",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "workflow_orchestration": [
@@ -680,6 +1376,12 @@
    "title": "Airflow tutorial: Fundamentals",
    "url": "https://airflow.apache.org/docs/apache-airflow/stable/tutorial/fundamentals.html",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش argo project associate",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-argo-project-associate-mk8378/",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -697,6 +1399,12 @@
    "url": "https://en.wikipedia.org/wiki/Business_analysis",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش زبان مدلسازی bpmn تحلیلگران کسب کار",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%B2%D8%A8%D8%A7%D9%86-%D9%85%D8%AF%D9%84%D8%B3%D8%A7%D8%B2%DB%8C-bpmn-%D8%AA%D8%AD%D9%84%DB%8C%D9%84%DA%AF%D8%B1%D8%A7%D9%86-%DA%A9%D8%B3%D8%A8-%DA%A9%D8%A7%D8%B1-mk8790/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "agile_scrum": [
@@ -704,6 +1412,18 @@
    "title": "The Scrum Guide",
    "url": "https://scrumguides.org/scrum-guide.html",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش مبانی agile",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%85%D8%A8%D8%A7%D9%86%DB%8C-agile-mk6810/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: agile and agile hr fundamentals",
+   "url": "https://faradars.org/videos/agile-and-agile-hr-fundamentals-fvtgs7518",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -721,6 +1441,18 @@
    "url": "https://en.wikipedia.org/wiki/Technology_roadmap",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش جامع kpi okr",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AC%D8%A7%D9%85%D8%B9-kpi-okr-mk11486/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: risk matrix prioritization",
+   "url": "https://faradars.org/videos/risk-matrix-prioritization-fvtgs15605",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "product_metrics": [
@@ -728,6 +1460,12 @@
    "title": "Google Analytics help: Metrics",
    "url": "https://support.google.com/analytics/answer/9143382",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: funnel chart in excel",
+   "url": "https://faradars.org/videos/funnel-chart-in-excel-fvtgs11698",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -737,6 +1475,18 @@
    "url": "https://en.wikipedia.org/wiki/Stakeholder_management",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش رهبری تیم",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%B1%D9%87%D8%A8%D8%B1%DB%8C-%D8%AA%DB%8C%D9%85-mk2916/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: autocratic leadership",
+   "url": "https://faradars.org/videos/autocratic-leadership-fvtgs11681",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "product_strategy": [
@@ -744,6 +1494,18 @@
    "title": "SVPG articles",
    "url": "https://www.svpg.com/articles/",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش تحقیقات بازار",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AA%D8%AD%D9%82%DB%8C%D9%82%D8%A7%D8%AA-%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1-mk1248/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: product strategy",
+   "url": "https://faradars.org/videos/product-strategy-fvtgs10319",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -753,6 +1515,12 @@
    "url": "https://academy.hubspot.com/",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: مبانی دیجیتال مارکتینگ",
+   "url": "https://maktabkhooneh.org/course/%D9%85%D8%A8%D8%A7%D9%86%DB%8C-%D8%AF%DB%8C%D8%AC%DB%8C%D8%AA%D8%A7%D9%84-%D9%85%D8%A7%D8%B1%DA%A9%D8%AA%DB%8C%D9%86%DA%AF-mk1571/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "content_marketing": [
@@ -761,12 +1529,36 @@
    "url": "https://academy.hubspot.com/courses/content-marketing",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش جامع تیتر کپی رایتینگ",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AC%D8%A7%D9%85%D8%B9-%D8%AA%DB%8C%D8%AA%D8%B1-%DA%A9%D9%BE%DB%8C-%D8%B1%D8%A7%DB%8C%D8%AA%DB%8C%D9%86%DA%AF-mk6207/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: copywriting",
+   "url": "https://faradars.org/videos/copywriting-fvtgs12024",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "seo": [
   {
    "title": "ویکی‌پدیا: بهینه‌سازی موتور جستجو",
    "url": "https://fa.wikipedia.org/wiki/بهینه‌سازی_موتور_جستجو",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش مقدماتی سئو",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%85%D9%82%D8%AF%D9%85%D8%A7%D8%AA%DB%8C-%D8%B3%D8%A6%D9%88-mk19736/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: seo fundamentals and optimization basics",
+   "url": "https://faradars.org/videos/seo-fundamentals-and-optimization-basics-fvmrt354",
    "lang": "fa",
    "verified_at": "2026-10-29"
   }
@@ -777,6 +1569,18 @@
    "url": "https://academy.hubspot.com/courses/social-media",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش جامع کسب درآمد اینستاگرام",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AC%D8%A7%D9%85%D8%B9-%DA%A9%D8%B3%D8%A8-%D8%AF%D8%B1%D8%A2%D9%85%D8%AF-%D8%A7%DB%8C%D9%86%D8%B3%D8%AA%D8%A7%DA%AF%D8%B1%D8%A7%D9%85-mk11779/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: story selling fundamentals for social media",
+   "url": "https://faradars.org/videos/story-selling-fundamentals-for-social-media-fvmrt355",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "paid_ads": [
@@ -784,6 +1588,18 @@
    "title": "Google Ads Help",
    "url": "https://support.google.com/google-ads/",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش تبلیغات کلیکی",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AA%D8%A8%D9%84%DB%8C%D8%BA%D8%A7%D8%AA-%DA%A9%D9%84%DB%8C%DA%A9%DB%8C-mk15734/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: performance marketing fundamentals",
+   "url": "https://faradars.org/videos/performance-marketing-fundamentals-fvtgs13675",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -793,6 +1609,18 @@
    "url": "https://academy.hubspot.com/courses/email-marketing",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش ترفند حرفه ایمیل مارکتینگ",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AA%D8%B1%D9%81%D9%86%D8%AF-%D8%AD%D8%B1%D9%81%D9%87-%D8%A7%DB%8C%D9%85%DB%8C%D9%84-%D9%85%D8%A7%D8%B1%DA%A9%D8%AA%DB%8C%D9%86%DA%AF-mk7639/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: email marketing key techniques",
+   "url": "https://faradars.org/videos/email-marketing-key-techniques-fvtgs12402",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "web_analytics": [
@@ -800,6 +1628,18 @@
    "title": "Google Analytics Help Center",
    "url": "https://support.google.com/analytics/",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: گوگل آنالیتیکس چهار",
+   "url": "https://maktabkhooneh.org/course/%DA%AF%D9%88%DA%AF%D9%84-%D8%A2%D9%86%D8%A7%D9%84%DB%8C%D8%AA%DB%8C%DA%A9%D8%B3-%DA%86%D9%87%D8%A7%D8%B1-mk3362/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: google analytics 4 overview",
+   "url": "https://faradars.org/videos/google-analytics-4-overview-fvtgs7550",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -809,6 +1649,12 @@
    "url": "https://cxl.com/blog/",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: conversion rate and seo",
+   "url": "https://faradars.org/videos/conversion-rate-and-seo-fvtgs9878",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "brand_strategy": [
@@ -816,6 +1662,18 @@
    "title": "HubSpot: Branding guide",
    "url": "https://blog.hubspot.com/marketing/branding",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش جامع برندسازی استراتژی برند",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AC%D8%A7%D9%85%D8%B9-%D8%A8%D8%B1%D9%86%D8%AF%D8%B3%D8%A7%D8%B2%DB%8C-%D8%A7%D8%B3%D8%AA%D8%B1%D8%A7%D8%AA%DA%98%DB%8C-%D8%A8%D8%B1%D9%86%D8%AF-mk9245/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: internal branding strategies",
+   "url": "https://faradars.org/videos/internal-branding-strategies-fvtgs10122",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -825,12 +1683,30 @@
    "url": "https://blog.hubspot.com/marketing/marketing-plan-examples",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: استراتژی بازاریابی رقابتی",
+   "url": "https://maktabkhooneh.org/course/%D8%A7%D8%B3%D8%AA%D8%B1%D8%A7%D8%AA%DA%98%DB%8C-%D8%A8%D8%A7%D8%B2%D8%A7%D8%B1%DB%8C%D8%A7%D8%A8%DB%8C-%D8%B1%D9%82%D8%A7%D8%A8%D8%AA%DB%8C-mk1564/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: airbnb marketing strategy",
+   "url": "https://faradars.org/videos/airbnb-marketing-strategy-fvtgs7745",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "labor_law": [
   {
    "title": "ویکی‌پدیا: قانون کار ایران",
    "url": "https://fa.wikipedia.org/wiki/قانون_کار_ایران",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: دوره جامع حقوق دستمزد قانون کار",
+   "url": "https://maktabkhooneh.org/course/%D8%AF%D9%88%D8%B1%D9%87-%D8%AC%D8%A7%D9%85%D8%B9-%D8%AD%D9%82%D9%88%D9%82-%D8%AF%D8%B3%D8%AA%D9%85%D8%B2%D8%AF-%D9%82%D8%A7%D9%86%D9%88%D9%86-%DA%A9%D8%A7%D8%B1-mk6110/",
    "lang": "fa",
    "verified_at": "2026-10-29"
   }
@@ -840,6 +1716,12 @@
    "title": "Workable: Recruiting resources",
    "url": "https://resources.workable.com/",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش تسلط فرآیند جذب نیرو",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AA%D8%B3%D9%84%D8%B7-%D9%81%D8%B1%D8%A2%DB%8C%D9%86%D8%AF-%D8%AC%D8%B0%D8%A8-%D9%86%DB%8C%D8%B1%D9%88-mk7173/",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -857,6 +1739,12 @@
    "url": "https://en.wikipedia.org/wiki/Applicant_tracking_system",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: نمایشگاه کار دانشگاه صنعتی شریف hris",
+   "url": "https://maktabkhooneh.org/course/%D9%86%D9%85%D8%A7%DB%8C%D8%B4%DA%AF%D8%A7%D9%87-%DA%A9%D8%A7%D8%B1-%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87-%D8%B5%D9%86%D8%B9%D8%AA%DB%8C-%D8%B4%D8%B1%DB%8C%D9%81-hris-mk5026/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "employer_branding": [
@@ -864,6 +1752,18 @@
    "title": "Workable: Employer branding",
    "url": "https://resources.workable.com/tutorial/employer-branding",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: برند کارفرمایی تجربه کارکنان",
+   "url": "https://maktabkhooneh.org/course/%D8%A8%D8%B1%D9%86%D8%AF-%DA%A9%D8%A7%D8%B1%D9%81%D8%B1%D9%85%D8%A7%DB%8C%DB%8C-%D8%AA%D8%AC%D8%B1%D8%A8%D9%87-%DA%A9%D8%A7%D8%B1%DA%A9%D9%86%D8%A7%D9%86-mk7534/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: employer branding recruitment marketing",
+   "url": "https://faradars.org/videos/employer-branding-recruitment-marketing-fvtgs3912",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -873,6 +1773,12 @@
    "url": "https://en.wikipedia.org/wiki/Performance_management",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: performance management process",
+   "url": "https://faradars.org/videos/performance-management-process-fvtgs10334",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "compensation_benefits": [
@@ -880,6 +1786,12 @@
    "title": "Wikipedia: Employee benefits",
    "url": "https://en.wikipedia.org/wiki/Employee_benefits",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش نظام جبران خدمات کارکنان مبتنی منطق 4p",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%86%D8%B8%D8%A7%D9%85-%D8%AC%D8%A8%D8%B1%D8%A7%D9%86-%D8%AE%D8%AF%D9%85%D8%A7%D8%AA-%DA%A9%D8%A7%D8%B1%DA%A9%D9%86%D8%A7%D9%86-%D9%85%D8%A8%D8%AA%D9%86%DB%8C-%D9%85%D9%86%D8%B7%D9%82-4p-mk9541/",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -896,6 +1808,12 @@
    "title": "Wikipedia: Talent management",
    "url": "https://en.wikipedia.org/wiki/Talent_management",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش مدیریت استعداد",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D8%A7%D8%B3%D8%AA%D8%B9%D8%AF%D8%A7%D8%AF-mk8781/",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -917,6 +1835,12 @@
    "url": "https://fa.wikipedia.org/wiki/حسابداری",
    "lang": "fa",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: دوره جامع حسابداری دفاتر",
+   "url": "https://maktabkhooneh.org/course/%D8%AF%D9%88%D8%B1%D9%87-%D8%AC%D8%A7%D9%85%D8%B9-%D8%AD%D8%B3%D8%A7%D8%A8%D8%AF%D8%A7%D8%B1%DB%8C-%D8%AF%D9%81%D8%A7%D8%AA%D8%B1-mk18600/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "accounting_software": [
@@ -924,6 +1848,18 @@
    "title": "Microsoft Learn: Excel for accounting templates",
    "url": "https://support.microsoft.com/en-us/excel",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش حسابداری سپیدار تولیدی",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-%D8%AD%D8%B3%D8%A7%D8%A8%D8%AF%D8%A7%D8%B1%DB%8C-%D8%B3%D9%BE%DB%8C%D8%AF%D8%A7%D8%B1-%D8%AA%D9%88%D9%84%DB%8C%D8%AF%DB%8C-mk615/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: best accounting software",
+   "url": "https://faradars.org/videos/best-accounting-software-fvtgs11483",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -933,12 +1869,24 @@
    "url": "https://www.accountingcoach.com/financial-statements/explanation",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: حسابداری ثبت رویدادهای مالی ترازنامه",
+   "url": "https://maktabkhooneh.org/course/%D8%AD%D8%B3%D8%A7%D8%A8%D8%AF%D8%A7%D8%B1%DB%8C-%D8%AB%D8%A8%D8%AA-%D8%B1%D9%88%DB%8C%D8%AF%D8%A7%D8%AF%D9%87%D8%A7%DB%8C-%D9%85%D8%A7%D9%84%DB%8C-%D8%AA%D8%B1%D8%A7%D8%B2%D9%86%D8%A7%D9%85%D9%87-mk17689/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "tax_regulations": [
   {
    "title": "ویکی‌پدیا: مالیات بر ارزش افزوده",
    "url": "https://fa.wikipedia.org/wiki/مالیات_بر_ارزش_افزوده",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: حسابداری پایه مالیات ارزش افزوده",
+   "url": "https://maktabkhooneh.org/course/%D8%AD%D8%B3%D8%A7%D8%A8%D8%AF%D8%A7%D8%B1%DB%8C-%D9%BE%D8%A7%DB%8C%D9%87-%D9%85%D8%A7%D9%84%DB%8C%D8%A7%D8%AA-%D8%A7%D8%B1%D8%B2%D8%B4-%D8%A7%D9%81%D8%B2%D9%88%D8%AF%D9%87-mk20073/",
    "lang": "fa",
    "verified_at": "2026-10-29"
   }
@@ -949,6 +1897,18 @@
    "url": "https://www.ifrs.org/issued-standards/list-of-standards/",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: آموزش ifrs استاندارد مالی",
+   "url": "https://maktabkhooneh.org/course/%D8%A2%D9%85%D9%88%D8%B2%D8%B4-ifrs-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86%D8%AF%D8%A7%D8%B1%D8%AF-%D9%85%D8%A7%D9%84%DB%8C-mk16454/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: ifrs standards and applications",
+   "url": "https://faradars.org/videos/ifrs-standards-and-applications-fvtgs9257",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "financial_analysis": [
@@ -956,6 +1916,18 @@
    "title": "AccountingCoach: Financial ratios",
    "url": "https://www.accountingcoach.com/financial-ratios/explanation",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: تحلیل مالی بورسی",
+   "url": "https://maktabkhooneh.org/course/%D8%AA%D8%AD%D9%84%DB%8C%D9%84-%D9%85%D8%A7%D9%84%DB%8C-%D8%A8%D9%88%D8%B1%D8%B3%DB%8C-mk14102/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: equity ratio analysis",
+   "url": "https://faradars.org/videos/equity-ratio-analysis-fvtgs6515",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ],
@@ -973,6 +1945,18 @@
    "url": "https://www.theiia.org/en/standards/",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: مبانی حسابرسی داخلی هوانوردی",
+   "url": "https://maktabkhooneh.org/course/%D9%85%D8%A8%D8%A7%D9%86%DB%8C-%D8%AD%D8%B3%D8%A7%D8%A8%D8%B1%D8%B3%DB%8C-%D8%AF%D8%A7%D8%AE%D9%84%DB%8C-%D9%87%D9%88%D8%A7%D9%86%D9%88%D8%B1%D8%AF%DB%8C-mk19950/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: introduction to auditing and types",
+   "url": "https://faradars.org/videos/introduction-to-auditing-and-types-fvtgs11716",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "financial_modeling": [
@@ -981,6 +1965,12 @@
    "url": "https://en.wikipedia.org/wiki/Financial_modeling",
    "lang": "en",
    "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: ارزش گذاری استارت آپ",
+   "url": "https://maktabkhooneh.org/course/%D8%A7%D8%B1%D8%B2%D8%B4-%DA%AF%D8%B0%D8%A7%D8%B1%DB%8C-%D8%A7%D8%B3%D8%AA%D8%A7%D8%B1%D8%AA-%D8%A2%D9%BE-mk377/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
   }
  ],
  "corporate_finance": [
@@ -988,6 +1978,18 @@
    "title": "Khan Academy: Finance and capital markets",
    "url": "https://www.khanacademy.org/economics-finance-domain/core-finance",
    "lang": "en",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "مکتب‌خونه: مدیریت مالی شرکتی",
+   "url": "https://maktabkhooneh.org/course/%D9%85%D8%AF%DB%8C%D8%B1%DB%8C%D8%AA-%D9%85%D8%A7%D9%84%DB%8C-%D8%B4%D8%B1%DA%A9%D8%AA%DB%8C-mk16576/",
+   "lang": "fa",
+   "verified_at": "2026-10-29"
+  },
+  {
+   "title": "فرادرس: cash flow meaning and calculation",
+   "url": "https://faradars.org/videos/cash-flow-meaning-and-calculation-fvtgs7664",
+   "lang": "fa",
    "verified_at": "2026-10-29"
   }
  ]
