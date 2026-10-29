@@ -13,8 +13,8 @@ ROLE_KEYWORDS: dict[str, list[str]] = {
     "backend_developer": ["backend", "back-end", "بک‌اند", "بک اند", "بکند", "django", "laravel", "php", "java", "golang", "node.js", "nodejs", ".net", "python developer", "برنامه‌نویس", "برنامه نویس", "software engineer", "مهندس نرم‌افزار", "توسعه‌دهنده", "developer"],
     "frontend_developer": ["frontend", "front-end", "فرانت", "react", "angular", "vue", "next.js", "طراح سایت", "وب‌سایت"],
     "devops_engineer": ["devops", "دواپس", "sre", "kubernetes", "docker", "linux admin", "cloud engineer"],
-    "mobile_developer": ["android", "اندروید", "ios", "flutter", "فلاتر", "react native", "موبایل"],
-    "data_analyst": ["data analyst", "تحلیلگر داده", "تحلیل‌گر داده", "تحلیل داده", "power bi", "هوش تجاری", "business intelligence", "bi analyst", "گزارش‌ساز"],
+    "mobile_developer": ["android", "اندروید", "ios", "flutter", "فلاتر", "react native", "برنامه‌نویس موبایل", "توسعه‌دهنده موبایل", "اپلیکیشن موبایل"],
+    "data_analyst": ["data analyst", "تحلیلگر داده", "تحلیل‌گر داده", "تحلیل داده", "power bi", "هوش تجاری", "business intelligence", "bi analyst", "گزارش‌ساز", "تحلیل‌گری داده", "داده‌کاوی", "excel", "اکسل پیشرفته", "sql"],
     "data_scientist": ["data scientist", "دانشمند داده", "machine learning", "یادگیری ماشین", "data science"],
     "ml_engineer": ["ml engineer", "هوش مصنوعی", "deep learning", "nlp", "computer vision", "پردازش تصویر", "پردازش زبان"],
     "data_engineer": ["data engineer", "مهندس داده", "etl", "big data", "داده‌کاوی", "dba", "پایگاه داده"],
@@ -26,8 +26,26 @@ ROLE_KEYWORDS: dict[str, list[str]] = {
 # Short words that need whole-word matching ("ai" in "maintenance", «مالی» in «شمالی»).
 WHOLE_WORDS = ["ai", "bi", "hr", "ui", "qa", "مالی"]
 
-_PATTERNS = [re.escape(fa_normalize(k).lower().replace("-", " ")) for kws in ROLE_KEYWORDS.values() for k in kws]
-_RX = re.compile("|".join(_PATTERNS + [rf"(?<!\w){re.escape(w)}(?!\w)" for w in WHOLE_WORDS]))
+
+
+def _compile(roles: list[str] | None = None) -> re.Pattern:
+    chosen = roles or list(ROLE_KEYWORDS)
+    patterns = [re.escape(fa_normalize(k).lower().replace("-", " ")) for r in chosen for k in ROLE_KEYWORDS[r]]
+    if roles is None:
+        patterns += [rf"(?<!\w){re.escape(w)}(?!\w)" for w in WHOLE_WORDS]
+    return re.compile("|".join(patterns))
+
+
+_RX = _compile()
+
+
+def set_focus(roles: list[str] | None) -> None:
+    """Restrict relevance to some roles (e.g. fill a gap in the dataset); None restores all 12."""
+    global _RX
+    unknown = set(roles or []) - set(ROLE_KEYWORDS)
+    if unknown:
+        raise ValueError(f"unknown roles: {sorted(unknown)}; choose from {sorted(ROLE_KEYWORDS)}")
+    _RX = _compile(roles)
 
 # Category listing pages that map to our roles (path-based, allowed by each robots.txt).
 KARBOOM_CATEGORIES = [

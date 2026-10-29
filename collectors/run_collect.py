@@ -3,6 +3,7 @@
     python -m collectors.run_collect                       # all main sources, 60 each
     python -m collectors.run_collect --sources karboom quera --max-per-source 40
     python -m collectors.run_collect --incremental         # B-11: keep old ads, add new ones
+    python -m collectors.run_collect --focus data_analyst data_scientist --incremental   # fill a role gap
     python -m collectors.run_collect --every 360           # background refresh every 6 h (minutes, min 60)
 
 Per-source files go to data/jobs/<source>.jsonl; the merged, de-duplicated set to data/jobs.json.
@@ -21,6 +22,7 @@ from core.schemas import JobPosting
 
 from .base import ROOT, Blocked, Fetcher
 from .dedup import dedup
+from .targets import is_relevant, set_focus
 
 MAIN = ["jobinja", "jobvision", "karboom", "irantalent"]
 BACKUP = ["quera"]  # remotive.py kept for reference: its robots.txt disallows /api/*, so the crawler refuses it
@@ -62,9 +64,10 @@ def run_source(name: str, limit: int, incremental: bool, use_cache: bool) -> tup
 
 
 def merge() -> dict:
+    set_focus(None)  # judge relevance against all 12 roles, whatever --focus was
     jobs: list[JobPosting] = []
     for f in sorted(JOBS_DIR.glob("*.jsonl")):
-        jobs += load_jsonl(f)
+        jobs += [j for j in load_jsonl(f) if is_relevant(j.title, " ".join(j.requirements))]
     unique, dropped = dedup(jobs)
     MERGED.write_text(json.dumps([j.model_dump() for j in unique], ensure_ascii=False, indent=1), encoding="utf-8")
     per_source: dict[str, int] = {}
@@ -87,10 +90,13 @@ def main() -> None:
     ap.add_argument("--incremental", action="store_true", help="keep previously collected ads (B-11)")
     ap.add_argument("--no-cache", action="store_true", help="re-download pages even if cached in data/raw/")
     ap.add_argument("--merge-only", action="store_true", help="just rebuild data/jobs.json from data/jobs/*.jsonl")
+    ap.add_argument("--focus", nargs="+", metavar="ROLE", help="only collect ads for these taxonomy roles (fills gaps)")
     ap.add_argument("--every", type=int, metavar="MINUTES",
                     help="keep running and refresh incrementally every N minutes (min 60: be polite to the sites)")
     args = ap.parse_args()
     sources = MAIN + BACKUP if args.sources == ["all"] else args.sources
+    if args.focus:
+        set_focus(args.focus)
     if args.every:
         interval = max(60, args.every) * 60
         while True:
