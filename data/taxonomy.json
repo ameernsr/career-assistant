@@ -1153,7 +1153,9 @@
    "name_en": "Pandas & NumPy",
    "aliases": [
     "numpy",
-    "dataframe"
+    "dataframe",
+    "pandas",
+    "پانداس"
    ],
    "prerequisites": [
     "python_basics"
