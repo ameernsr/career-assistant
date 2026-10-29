@@ -1,6 +1,7 @@
 """Module A dialogue (A-01, A-04, A-08): ≤ 6 questions, LLM extracts, code validates against the taxonomy."""
 from __future__ import annotations
 
+import re
 from typing import Literal, Optional
 
 from pydantic import BaseModel, Field
@@ -9,6 +10,7 @@ from core.llm import LLMError
 from core.roadmap import LEVELS
 from core.schemas import ConceptClaim, Level, ProfileDelta, UserProfile
 from core.taxonomy import Taxonomy
+from core.text_fa import fa_normalize
 
 MAX_QUESTIONS = 6
 KNOWN_LEVELS = {"used", "proficient"}
@@ -22,6 +24,63 @@ FALLBACK_QUESTIONS = [
     "با چه ابزارها یا مهارت‌هایی واقعاً کار کرده‌اید؟",
     "چیزی هست که اسمش را شنیده‌اید ولی هنوز با آن کار نکرده‌اید؟",
 ]
+
+
+# Colloquial role names for the no-LLM fallback (matched as whole words, unlike substring keyword lists).
+ROLE_ALIASES = {
+    "backend_developer": ["بک اند", "بک‌اند", "بکند", "backend"],
+    "frontend_developer": ["فرانت اند", "فرانت‌اند", "frontend"],
+    "devops_engineer": ["دواپس", "دوآپس", "devops"],
+    "mobile_developer": ["اندروید", "برنامه نویس موبایل", "برنامه‌نویس موبایل", "flutter"],
+    "data_analyst": ["دیتا آنالیست", "دیتا انالیست", "تحلیل داده", "data analyst"],
+    "data_scientist": ["دیتا ساینتیست", "data scientist"],
+    "ml_engineer": ["یادگیری ماشین", "هوش مصنوعی", "machine learning"],
+    "data_engineer": ["دیتا انجینیر", "data engineer"],
+    "product_manager": ["مدیر محصول", "پروداکت منیجر", "product manager"],
+    "digital_marketer": ["دیجیتال مارکتینگ", "دیجیتال مارکتر", "مارکتینگ", "بازاریابی دیجیتال"],
+    "recruiter_hr": ["منابع انسانی", "جذب و استخدام", "ریکروتر", "recruiter"],
+    "financial_analyst": ["حسابدار", "حسابداری", "تحلیلگر مالی", "financial analyst"],
+}
+HEARD_MARKERS = ("فقط شنیدم", "فقط اسمش", "اسمش رو شنیدم", "اسمشون رو شنیدم", "فقط اسم", "شنیده‌ام", "شنیدم")
+NOT_KNOWN_MARKERS = ("بلد نیستم", "کار نکردم", "ندارم", "آشنایی ندارم", "نمی‌دونم", "نمیدونم")
+
+
+def _fallback_extract(text: str, tax: Taxonomy) -> "TurnExtraction":
+    """Rule-based extraction used when the LLM is unavailable: whole-word role names and skills per clause."""
+    norm = fa_normalize(text).lower()
+    role = None
+    for rid, r in tax.roles.items():
+        names = [r.get("name_fa", ""), r.get("name_en", ""), *ROLE_ALIASES.get(rid, [])]
+        if any(n and re.search(rf"(?<!\w){re.escape(fa_normalize(n).lower())}(?!\w)", norm) for n in names):
+            role = rid
+            break
+    claims, not_known = [], []
+    for clause in re.split(r"[،,.؛;!?؟]|\s(?:ولی|اما|ولیکن)\s", norm):
+        ids = tax.find_in_text(clause)
+        if not ids:
+            continue
+        if any(m in clause for m in HEARD_MARKERS):
+            claims += [ConceptClaim(concept_id=c, proficiency="heard") for c in ids]
+        elif any(m in clause for m in NOT_KNOWN_MARKERS):
+            not_known += list(ids)
+        else:
+            claims += [ConceptClaim(concept_id=c, proficiency="used") for c in ids]
+    level = next((lv for lv, words in (("senior", ("ارشد", "سینیور", "senior")), ("mid", ("میدلول", "مید", "mid")),
+                                       ("junior", ("جونیور", "junior", "مبتدی"))) if any(w in norm for w in words)), None)
+    return TurnExtraction(target_role=role, target_level=level, claims=claims, not_known=not_known)
+
+
+def apply_skill_selection(profile: UserProfile, selected: set[str], previously_known: set[str], tax: Taxonomy) -> None:
+    """A-08 without the LLM: the user ticks the skills they know; ticked → known, unticked → explicitly not known."""
+    for cid in selected - previously_known:
+        if cid in tax.concepts:
+            profile.not_known = [x for x in profile.not_known if x != cid]
+            profile.claims = [c for c in profile.claims if c.concept_id != cid] + [ConceptClaim(concept_id=cid, proficiency="used")]
+    for cid in previously_known - selected:
+        if cid in tax.concepts:
+            profile.claims = [c for c in profile.claims if c.concept_id != cid]
+            if cid not in profile.not_known:
+                profile.not_known.append(cid)
 
 
 class TurnExtraction(BaseModel):
@@ -70,6 +129,7 @@ def next_turn(state: ConversationState, user_msg: str, llm, tax: Taxonomy) -> tu
     try:
         ext = llm.chat_json([{"role": "system", "content": _system_prompt(tax)}, *state.history], TurnExtraction)
     except LLMError as err:
+        _merge(state.profile, _fallback_extract(user_msg, tax), tax)  # keep learning from the message anyway
         return _ask(state, f"{err} {FALLBACK_QUESTIONS[min(state.questions_asked, MAX_QUESTIONS - 1)]}")
 
     _merge(state.profile, ext, tax)

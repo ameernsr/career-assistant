@@ -92,3 +92,32 @@ def test_later_not_known_overrides_earlier_claim(tax):
     _, st = next_turn(st, "راستش آمار بلد نیستم", llm, tax)
     assert all(c.concept_id != "statistics" for c in st.profile.claims)
     assert "statistics" in st.profile.not_known
+
+
+# ---- direct skill editing (idea from Amir's prototype, A-08) ----
+def test_skill_selection_adds_and_removes_known(tax):
+    from core.conversation import apply_skill_selection
+
+    p = UserProfile(target_role="data_analyst", target_level="junior",
+                    claims=[ConceptClaim(concept_id="excel", proficiency="used")])
+    known, _ = known_sets(p, tax)
+    apply_skill_selection(p, selected={"statistics"}, previously_known=known, tax=tax)
+    known, not_known = known_sets(p, tax)
+    assert "statistics" in known and "excel" not in known and "excel" in not_known
+
+
+# ---- fallback extraction when the LLM is down (idea from Amir's prototype, NF-06) ----
+def test_fallback_still_extracts_role_and_skills(tax):
+    llm = FakeLLM(LLMError("سرویس هوش مصنوعی فعلاً در دسترس نیست."))
+    _, st = next_turn(ConversationState(), "می‌خوام تحلیلگر داده بشم، با اکسل کار کردم ولی SQL رو فقط شنیدم", llm, tax)
+    assert st.profile.target_role == "data_analyst"
+    claims = {c.concept_id: c.proficiency for c in st.profile.claims}
+    assert claims.get("excel") == "used"
+    assert claims.get("sql_basics") == "heard"
+
+
+def test_fallback_does_not_match_short_tokens_inside_words(tax):
+    # Amir's keyword fallback mapped "html" to the ML role because "html" contains "ml".
+    llm = FakeLLM(LLMError("قطع"))
+    _, st = next_turn(ConversationState(), "من html بلدم", llm, tax)
+    assert st.profile.target_role is None

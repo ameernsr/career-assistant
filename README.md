@@ -21,13 +21,13 @@ cp .env.example .env        # OPENAI_BASE_URL و OPENAI_API_KEY گیت‌وی ر
 | `OPENAI_BASE_URL`, `OPENAI_API_KEY` | — | گیت‌وی سازگار با OpenAI (Metis). **فقط در `.env` که در git نیست** (NF-04) |
 | `CHAT_MODEL` | `gpt-5.4-mini` | گفتگو و استخراج پروفایل |
 | `EMBED_MODEL` | `text-embedding-3-small` | embedding آگهی و رزومه |
-| `STT_MODEL`, `TTS_MODEL` | `gpt-4o-mini-transcribe`, `gpt-4o-mini-tts` | برای قابلیت صوتی (A-10) |
+| `STT_MODEL`, `TTS_MODEL` | `gpt-transcribe`, `gpt-4o-mini-tts` | ورودی صوتی فارسی و خواندن خلاصه (A-10). مدل‌های transcribe دیگر روی گیت‌وی ۴۰۴ می‌دهند |
 | `MODEL_PRICES` | از [قیمت‌های متیس](https://docs.metisai.ir/pricing) | دلار به‌ازای یک میلیون توکن، برای داشبورد هزینه (NF-05) |
 | `SESSION_BUDGET_USD` | `0.50` | سقف هزینه‌ی هر جلسه. بعد از آن درخواستی به مدل ارسال نمی‌شود |
 
 ## تست‌ها
 ```bash
-.venv/bin/python -m pytest -q          # ۸۸ تست
+.venv/bin/python -m pytest -q          # ۹۳ تست
 ```
 بخش‌های قطعی با TDD نوشته شده‌اند: تاکسونومی، نقشه‌ی راه، رتبه‌بندی، معیارهای ارزیابی، پارسر رزومه، robots.txt و نرمال‌سازی متن. در تست‌های مربوط به LLM فقط خود گیت‌وی شبیه‌سازی شده و بقیه‌ی منطق واقعاً اجرا می‌شود.
 
@@ -85,6 +85,10 @@ scripts/ tests/
 Streamlit (Apache-2.0)، OpenAI Python SDK (Apache-2.0)، Pydantic (MIT)، NetworkX (BSD-3)، **PyMuPDF (AGPL-3.0)**، python-docx (MIT)، Requests (Apache-2.0)، Beautiful Soup (MIT)، lxml (BSD)، jdatetime (Python-2.0)، NumPy (BSD-3)، scikit-learn (BSD-3)، python-dotenv (BSD-3)، pytest (MIT)، Viz.js (MIT؛ فقط در فایل HTML خروجی)، فونت Vazirmatn (OFL-1.1).
 
 منابع مرجع برای ساخت تاکسونومی: roadmap.sh و آگهی‌های شغلی جمع‌آوری‌شده. منابع آموزشی متعلق به ناشران خودشان هستند و فقط به آن‌ها لینک داده شده است.
+
+## مشارکت اعضای تیم
+- ویرایش مستقیم مهارت‌ها با تیک زدن، ورودی و خروجی صوتی، و استخراج قاعده‌محور هنگام قطع LLM بر اساس نمونه‌ی اولیه‌ی ماژول A امیر نصیری پیاده شده‌اند.
+- سند معماری و فرمول‌های معیارهای ارزیابی بر اساس سند عرفان تمیمی نوشته شده‌اند.
 
 ## افشای استفاده از دستیار هوش مصنوعی
 در طراحی، کدنویسی، تست و مستندسازی این پروژه از دستیار کدنویسی **Claude Code** (Anthropic) استفاده شده است. تصمیم‌های اصلی را تیم گرفته و ثبت کرده است: بخش «Decisions log» در `docs/SPEC.md`.

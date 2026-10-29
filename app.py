@@ -9,7 +9,7 @@ import numpy as np
 import streamlit as st
 
 from core.config import ConfigError, load_settings
-from core.conversation import ConversationState, known_sets, next_turn
+from core.conversation import ConversationState, apply_skill_selection, known_sets, next_turn
 from core.graph_view import roadmap_dot, roadmap_html
 from core.llm import LLM, LLMError
 from core.matching import job_skill_ids, rank
@@ -84,6 +84,8 @@ ss.setdefault("conv", ConversationState())
 ss.setdefault("chat", [{"role": "assistant", "content": GREETING}])
 ss.setdefault("resume", None)
 ss.setdefault("resume_hash", None)
+ss.setdefault("audio_hash", None)
+ss.setdefault("skill_ver", 0)
 llm: LLM = ss.llm
 
 
@@ -140,7 +142,19 @@ with tab_path:
         for m in ss.chat:
             st.chat_message(m["role"], avatar="🧑" if m["role"] == "user" else "🧭").markdown(m["content"])
         hint = "اصلاح کنید، مثلاً «من اکسل بلد نیستم»" if ss.conv.done else "پیامتان را بنویسید…"
-        if msg := st.chat_input(hint):
+        msg = st.chat_input(hint)
+        voice = st.audio_input("🎤 یا با صدا بگویید", key="voice")  # A-10 (idea from Amir's prototype)
+        if voice is not None:
+            data = voice.getvalue()
+            h = hashlib.sha256(data).hexdigest()
+            if h != ss.audio_hash:
+                ss.audio_hash = h
+                try:
+                    with st.spinner("در حال تبدیل صدا به متن…"):
+                        msg = llm.transcribe(data, "voice.wav") or msg
+                except LLMError as exc:
+                    st.error(str(exc))
+        if msg:
             ss.chat.append({"role": "user", "content": msg})
             with st.spinner("در حال فکر کردن…"):
                 reply, ss.conv = next_turn(ss.conv, msg, llm, tax)
@@ -166,7 +180,22 @@ with tab_path:
             st.markdown(f"بلد هستید: {chips(rm.known, 'ok') or '—'}", unsafe_allow_html=True)
             if heard:
                 st.markdown(f"فقط اسمش را شنیده‌اید: {chips(heard, 'heard')}", unsafe_allow_html=True)
+            # A-08 without the LLM (idea from Amir's prototype): tick what you know, the graph recomputes instantly.
+            options = rm.known + [c for stage in rm.stages for c in stage]
+            with st.expander("✏️ ویرایش مهارت‌ها: تیک بزنید کدام را بلدید", expanded=False):
+                picked = st.multiselect("مهارت‌هایی که بلدم", options, default=rm.known, key=f"skills-{ss.skill_ver}",
+                                        format_func=lambda c: tax.concepts[c]["name_fa"])
+                if set(picked) != set(rm.known):
+                    apply_skill_selection(p, set(picked), set(rm.known), tax)
+                    ss.skill_ver += 1
+                    st.rerun()
             show_roadmap(rm, goal, key="path")
+            if st.button("🔊 خواندن خلاصه‌ی نقشه‌ی راه"):
+                try:
+                    with st.spinner("در حال ساختن صدا…"):
+                        st.audio(llm.speak(summarize(rm, tax, goal=goal)), format="audio/mpeg", autoplay=True)
+                except LLMError as exc:
+                    st.error(str(exc))
         else:
             st.markdown("#### نقشه‌ی راه شما اینجا نمایش داده می‌شود")
             st.caption("بعد از چند سؤال کوتاه، مسیر یادگیری به‌صورت گراف مرحله‌به‌مرحله ساخته می‌شود.")

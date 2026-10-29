@@ -121,3 +121,25 @@ def test_embed_returns_matrix_and_caches_repeated_texts():
     llm.embed(["اکسل"])
     assert len(gw.calls) == 1  # cached
     assert llm.usage["prompt_tokens"] == 20
+
+
+def test_transcribe_and_speak_go_through_gateway():
+    calls = {}
+
+    def transcriptions_create(**kw):
+        calls["stt"] = kw
+        return NS(text="می‌خوام تحلیلگر داده بشم")
+
+    def speech_create(**kw):
+        calls["tts"] = kw
+        return NS(content=b"ID3fake-mp3")
+
+    gw = FakeGateway()
+    gw.audio = NS(transcriptions=NS(create=transcriptions_create), speech=NS(create=speech_create))
+    from dataclasses import replace
+
+    llm = LLM(replace(SETTINGS, stt_model="stt-m", tts_model="tts-m"), client=gw)
+    assert llm.transcribe(b"webm-bytes", "voice.wav") == "می‌خوام تحلیلگر داده بشم"
+    assert calls["stt"]["model"] == "stt-m" and calls["stt"]["language"] == "fa"
+    assert llm.speak("سلام") == b"ID3fake-mp3" and calls["tts"]["model"] == "tts-m"
+    assert llm.usage["calls"] == 2

@@ -45,6 +45,22 @@ class LLM:
             self._record(model, getattr(r.usage, "prompt_tokens", 0), 0)
         return np.stack([self._emb_cache[t] for t in texts]) if texts else np.zeros((0, 0), dtype=np.float32)
 
+    def transcribe(self, audio: bytes, filename: str = "voice.wav") -> str:
+        """A-10: Persian speech → text."""
+        self._check_budget()
+        r = self._call(lambda: self.client.audio.transcriptions.create(
+            model=self.settings.stt_model, file=(filename, audio), language="fa"))
+        self._record(self.settings.stt_model, 0, 0)
+        return (getattr(r, "text", "") or "").strip()
+
+    def speak(self, text: str) -> bytes:
+        """A-10: text → MP3 bytes."""
+        self._check_budget()
+        r = self._call(lambda: self.client.audio.speech.create(
+            model=self.settings.tts_model, voice="alloy", input=text[:1500]))
+        self._record(self.settings.tts_model, 0, 0)
+        return r.content if hasattr(r, "content") else r.read()
+
     def chat_json(self, messages: list[dict], model_cls: type[M], *, model: str | None = None) -> M:
         """Ask for JSON and validate it. One retry that shows the model its own error, then LLMError."""
         msgs = list(messages)

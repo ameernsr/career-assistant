@@ -70,7 +70,7 @@ Status: ☐ todo · ◐ in progress · ☑ done (update in your PR).
 | A-07 | Must | P1 | Every displayed URL comes from `resources.json` and `verify_links.py` reports 0 failures | ☑ 129/129 links verified, 109/109 concepts covered |
 | A-08 | Should | P3 | «من اکسل بلد نیستم» adds excel back into the graph without restarting the chat | ◐ logic done + real run («داکر بلد نیستم»); UI pending |
 | A-09 | Should | P1 | Summary text names exactly the concepts in `roadmap.stages` (test) | ☐ |
-| A-10 | Could | P3 | Voice input transcribed into the chat; summary playable as audio | ☐ |
+| A-10 | Could | P3 | Voice input transcribed into the chat; summary playable as audio | ☑ `st.audio_input` → `gpt-transcribe`; summary → `gpt-4o-mini-tts` (real round trip verified) |
 | A-11 | Could | P1 | Download buttons for SVG/PNG of the graph | ☐ |
 | B-01 | Must | P3 | Persian PDF, English PDF, and DOCX samples parse; corrupt/encrypted file shows a Persian error | ☐ |
 | B-02 | Must | P3 | `ResumeProfile` filled for all eval resumes; years computed in code (Jalali supported) | ☐ |
@@ -110,4 +110,6 @@ Status: ☐ todo · ◐ in progress · ☑ done (update in your PR).
 | 13:30 | Chat model `gpt-5.4-mini` (fallback `gpt-4.1-mini`), embeddings `text-embedding-3-small`, STT `gpt-4o-mini-transcribe`, TTS `gpt-4o-mini-tts` | `scripts/check_models.py`: 5.4-mini 1.1 s avg, 3/3 valid+correct, fewest tokens; 4.1-mini 1.4 s 3/3; 4o-mini 1.9 s 3/3; 4.1-nano deprecated; gpt-5-mini rejects temperature=0. Embeddings: fa↔en same meaning cos 0.57 vs unrelated 0.19–0.26 |
 | 13:30 | LLM JSON schemas use enums/Literal for ids, never free strings | Smoke test: with a loose schema the model stuffed advice into the `role` field |
 | 14:10 | Measured cost per chat session ≈ $0.01 (gpt-5.4-mini, 4–5 calls, ~2k-token catalog in the system prompt); 1.2–1.8 s per turn | Real runs of personas 1 and 2 |
+| 15:30 | Merged from Amir's FastAPI prototype: direct skill editing (A-08 without LLM), voice (A-10), rule-based fallback extraction. Not merged: FastAPI/Cytoscape frontend, its taxonomy (no aliases), hard-coded cost | Strengths that fit our stack before the freeze; its substring keyword fallback had an `html`→`ml` false positive, ours matches whole words |
+| 15:30 | STT model `gpt-transcribe` | `gpt-4o-mini-transcribe`, `gpt-4o-transcribe`, `whisper-1` return 404 on the gateway; `gpt-transcribe` transcribed a TTS round trip exactly |
 | 12:40 | `fa_normalize` applies NFKC | Persian PDFs extract as presentation forms (ﻣﺴﺎﺑﻘﻪ); verified on a real LuaTeX PDF |
