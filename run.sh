@@ -10,4 +10,7 @@ if [ ! -f .env ]; then
   echo "⚠  .env not found: cp .env.example .env and fill in OPENAI_BASE_URL / OPENAI_API_KEY" >&2
   exit 1
 fi
-exec .venv/bin/streamlit run app.py --server.headless true --browser.gatherUsageStats false "$@"
+# Listen on localhost only, so nobody else on the venue Wi-Fi can spend the team's AI credit.
+# To share on the LAN deliberately: HOST=0.0.0.0 ./run.sh
+exec .venv/bin/streamlit run app.py --server.headless true --browser.gatherUsageStats false \
+  --server.address "${HOST:-localhost}" "$@"
